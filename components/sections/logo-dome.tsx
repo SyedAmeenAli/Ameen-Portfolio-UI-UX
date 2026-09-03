@@ -7,7 +7,7 @@ const DomeGallery = dynamic(() => import("@/components/ui/dome-gallery"), { ssr:
 
 /** animated webp where we have it, still webp/jpg otherwise */
 const src = (l: (typeof LOGOS)[number]) =>
-  l.kind === "video" ? `/logos/${l.slug}.anim.webp` : l.kind === "image" ? `/logos/${l.slug}.webp` : `/logos/${l.slug}.jpg`;
+  l.file ?? (l.kind === "video" ? `/logos/${l.slug}.anim.webp` : l.kind === "image" ? `/logos/${l.slug}.webp` : `/logos/${l.slug}.jpg`);
 
 /** 20 marks on a sphere. The sphere holds still; each mark animates in place. Drag to turn it, direction follows your drag. */
 export function LogoDome() {

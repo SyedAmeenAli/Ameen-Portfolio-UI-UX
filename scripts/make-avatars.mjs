@@ -90,6 +90,7 @@ await cutout(P("me", "back.jpg"), P("me", "back-cut.webp"));
 await cutout(P("me", "side.png"), P("me", "side-cut.webp"), 26, 420);
 await head(P("me", "front.jpg"), P("me", "head.webp"));
 
-await padded(P("me", "front.jpg"), P("me", "front-pad.webp"));
-await padded(P("me", "back.jpg"), P("me", "back-pad.webp"));
+// sources are now Photoroom-cut transparent PNGs (front/side/back.png)
+await padded(P("me", "front.png"), P("me", "front-pad.webp"));
+await padded(P("me", "back.png"), P("me", "back-pad.webp"));
 await padded(P("me", "side.png"), P("me", "side-pad.webp"));

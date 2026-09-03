@@ -114,20 +114,20 @@ export default function PixelReveal() {
   return (
     <div className="mx-auto flex w-full max-w-[340px] flex-col">
       <div className="flex items-baseline justify-between">
-        <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-gold">Pixelated me</p>
+        <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-red">Pixelated me</p>
         <button
           onClick={() => setView((v) => (v + 1) % VIEWS.length)}
-          className="font-mono text-[10px] uppercase tracking-[0.2em] text-bone/60 hover:text-gold"
+          className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink/55 hover:text-red"
         >
           rotate &#8635; {LABELS[view]}
         </button>
       </div>
-      <p className="mt-2 text-xs text-bone/50">Drag across the frame to rebuild the picture.</p>
+      <p className="mt-2 text-xs text-ink/50">Drag across the frame to rebuild the picture.</p>
 
       <div className="relative mx-auto mt-5 w-full" style={{ aspectRatio: `${W} / ${H}` }}>
-        <span className="pointer-events-none absolute -inset-3 border border-gold/50" />
+        <span className="pointer-events-none absolute -inset-3 border border-red/50" />
         {["-left-4 -top-4", "-right-4 -top-4", "-left-4 -bottom-4", "-right-4 -bottom-4"].map((p) => (
-          <span key={p} className={`pointer-events-none absolute ${p} h-2.5 w-2.5 border border-ink bg-gold`} />
+          <span key={p} className={`pointer-events-none absolute ${p} h-2.5 w-2.5 border border-red bg-red`} />
         ))}
         <canvas
           ref={canvas}
@@ -142,27 +142,27 @@ export default function PixelReveal() {
             if (dragging.current || e.pointerType === "mouse") repairAt(e.clientX, e.clientY);
           }}
           onPointerUp={() => (dragging.current = false)}
-          className="h-full w-full touch-none bg-ink"
+          className="h-full w-full touch-none bg-paper-dim"
           style={{ imageRendering: "pixelated", cursor: "crosshair" }}
         />
         {!ready && (
-          <span className="absolute inset-0 grid place-items-center font-mono text-[10px] uppercase tracking-widest text-bone/40">
+          <span className="absolute inset-0 grid place-items-center font-mono text-[10px] uppercase tracking-widest text-ink/40">
             loading
           </span>
         )}
       </div>
 
       <div className="mt-6 flex w-full items-center gap-3">
-        <div className="h-1 flex-1 bg-steel">
-          <div className="h-full bg-gold transition-[width] duration-150" style={{ width: `${progress}%` }} />
+        <div className="h-1 flex-1 bg-ink/10">
+          <div className="h-full bg-red transition-[width] duration-150" style={{ width: `${progress}%` }} />
         </div>
-        <span className="font-mono text-[11px] tabular-nums text-bone/50">{String(progress).padStart(3, " ")}%</span>
+        <span className="font-mono text-[11px] tabular-nums text-ink/50">{String(progress).padStart(3, " ")}%</span>
       </div>
       <div className="mt-3 flex gap-2">
-        <button onClick={reveal} className="border border-gold px-3 py-1 font-mono text-[10px] uppercase tracking-widest text-gold hover:bg-gold hover:text-ink">
+        <button onClick={reveal} className="border border-red px-3 py-1 font-mono text-[10px] uppercase tracking-widest text-red hover:bg-red hover:text-white">
           reveal
         </button>
-        <button onClick={reset} className="border border-steel px-3 py-1 font-mono text-[10px] uppercase tracking-widest text-bone/50 hover:border-bone hover:text-bone">
+        <button onClick={reset} className="border border-ink/30 px-3 py-1 font-mono text-[10px] uppercase tracking-widest text-ink/50 hover:border-ink hover:text-ink">
           reset
         </button>
       </div>

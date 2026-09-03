@@ -1,39 +1,56 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { MINDMAP } from "@/lib/site";
-import GridPaper from "@/components/ui/grid-paper";
+import { CATEGORIES } from "@/lib/site";
+import { POSTERS, SOCIAL, THUMBS, ILLOS, MOTION } from "@/lib/work";
+import { WorkHero } from "@/components/sections/work-hero";
+import { Gallery } from "@/components/sections/gallery";
+import { MotionGallery } from "@/components/sections/motion-gallery";
 
-const REAL = new Set(["logos", "branding", "posters"]);
+const OWN_ROUTE = new Set(["logos", "branding"]);
+const SET = CATEGORIES.filter((c) => !OWN_ROUTE.has(c.key));
+
+const DATA: Record<string, { pieces: typeof POSTERS; tile: "ink" | "paper"; fit: "cover" | "contain" }> = {
+  posters: { pieces: POSTERS, tile: "ink", fit: "cover" },
+  social: { pieces: SOCIAL, tile: "ink", fit: "cover" },
+  thumbnails: { pieces: THUMBS, tile: "ink", fit: "cover" },
+  illustration: { pieces: ILLOS, tile: "paper", fit: "contain" },
+};
 
 export function generateStaticParams() {
-  return MINDMAP.filter((m) => !REAL.has(m.key)).map((m) => ({ category: m.key }));
+  return SET.map((c) => ({ category: c.key }));
 }
 
 export async function generateMetadata({ params }: PageProps<"/work/[category]">): Promise<Metadata> {
   const { category } = await params;
-  const node = MINDMAP.find((m) => m.key === category);
-  return { title: node ? node.label : "Work" };
+  const c = CATEGORIES.find((x) => x.key === category);
+  return { title: c ? c.label : "Work" };
 }
 
 export default async function CategoryPage({ params }: PageProps<"/work/[category]">) {
   const { category } = await params;
-  const node = MINDMAP.find((m) => m.key === category);
-  if (!node || REAL.has(category)) notFound();
+  const c = CATEGORIES.find((x) => x.key === category);
+  if (!c || OWN_ROUTE.has(category)) notFound();
+
+  const idx = CATEGORIES.findIndex((x) => x.key === category);
+  const next = CATEGORIES[(idx + 1) % CATEGORIES.length];
+
   return (
-    <main className="relative isolate flex min-h-screen flex-col justify-between px-[3vw] pb-[10vh] pt-8">
-      <GridPaper className="absolute inset-0 -z-10 opacity-60" />
-      <Link href="/" className="font-mono text-[10px] uppercase tracking-[0.35em] text-bone/40 hover:text-gold">
-        &larr; back
-      </Link>
-      <div>
-        <p className="font-mono text-[11px] uppercase tracking-[0.35em] text-gold">in progress</p>
-        <h1 className="mt-4 font-display text-[clamp(2.4rem,11vw,10rem)] uppercase leading-[0.82]">{node.label}</h1>
-        <p className="mt-4 max-w-md text-sm text-bone/55">This set is being put together. It lands here soon.</p>
-      </div>
-      <Link href="/work/logos" className="font-mono text-[11px] uppercase tracking-widest text-gold">
-        see logos &amp; marks &rarr;
-      </Link>
+    <main className="relative bg-ink">
+      <WorkHero category={c} />
+
+      {c.kind === "motion" ? (
+        <MotionGallery pieces={MOTION} />
+      ) : (
+        <Gallery pieces={DATA[category].pieces} tile={DATA[category].tile} fit={DATA[category].fit} />
+      )}
+
+      <footer className="border-t border-steel/60 px-[4vw] py-[14vh] text-center">
+        <p className="font-mono text-[10px] uppercase tracking-[0.35em] text-concrete-dim">next</p>
+        <Link href={next.href} className="mt-4 inline-block font-display text-[clamp(1.8rem,7vw,4.5rem)] uppercase text-bone hover:text-red">
+          {next.label} →
+        </Link>
+      </footer>
     </main>
   );
 }

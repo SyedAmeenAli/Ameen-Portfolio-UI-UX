@@ -2,122 +2,112 @@
 
 /* ---------------------------------------------------------------------------
    Ameen Ali — Portfolio 2026
-   Forged gunmetal · poured concrete · molten gold in the cracks.
+   Crumpled paper + ink. Accents: red / yellow / purple.
+   Reference: Raagav Sundar GRAPHIC DESIGN PORTFOLIO 2026.
 --------------------------------------------------------------------------- */
 @theme {
-  --color-void: #060507;
-  --color-ink: #0c0b0e;
-  --color-iron: #1b1a1f;
-  --color-steel: #2b2a31;
+  --color-paper: #ececea;
+  --color-paper-dim: #d7d5d0;
+  --color-ink: #0a0a0b;
+  --color-void: #060506;
+  --color-iron: #141416;
+  --color-steel: #2a2a2e;
+  --color-bone: #f4f2ec;
   --color-concrete: #d8d4cc;
-  --color-concrete-dim: #a8a49c;
-  --color-bone: #efe9dd;
+  --color-concrete-dim: #8a8880;
 
-  --color-gold: #f0b323;
-  --color-gold-hot: #ffe08a;
-  --color-gold-deep: #7a4a00;
-
-  --color-ember: #ff3b2f;
-  --color-violet: #7c4dff;
+  --color-red: #ff2d1a;
+  --color-ember: #ff2d1a;
+  --color-yellow: #ffd400;
+  --color-gold: #ffd400;
+  --color-gold-hot: #fff08a;
+  --color-purple: #7c3aed;
+  --color-violet: #7c3aed;
   --color-jade: #2ec27e;
 
   --font-display: var(--font-display), "Arial Black", system-ui, sans-serif;
+  --font-condensed: var(--font-condensed), "Arial Narrow", system-ui, sans-serif;
   --font-grotesk: var(--font-grotesk), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-mono), ui-monospace, monospace;
 }
 
-:root {
-  color-scheme: dark;
-}
+:root { color-scheme: dark; }
 
 html {
-  background: var(--color-void);
+  background: var(--color-ink);
   color: var(--color-bone);
   -webkit-font-smoothing: antialiased;
   overflow-x: clip;
 }
+body { font-family: var(--font-grotesk); background: var(--color-ink); overflow-x: clip; }
 
-body {
-  font-family: var(--font-grotesk);
-  overflow-x: clip;
-  background: var(--color-void);
-}
+::selection { background: var(--color-red); color: #fff; }
 
-::selection {
-  background: var(--color-gold);
-  color: var(--color-ink);
-}
-
-/* headings default to the heavy display face */
 h1, h2, h3 {
   font-family: var(--font-display);
-  letter-spacing: -0.03em;
-  line-height: 0.86;
+  letter-spacing: -0.035em;
+  line-height: 0.82;
 }
 
-/* --- shared textures ---------------------------------------------------- */
-
-/* fine paper / concrete fibre, multiplied over any panel */
-.fibre {
-  position: relative;
-  isolation: isolate;
+/* --- paper -------------------------------------------------------------- */
+.paper {
+  background-color: var(--color-paper);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='c'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.012' numOctaves='3' seed='7'/%3E%3CfeDiffuseLighting lighting-color='%23ffffff' surfaceScale='2.4'%3E%3CfeDistantLight azimuth='235' elevation='58'/%3E%3C/feDiffuseLighting%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23c)'/%3E%3C/svg%3E");
+  background-size: 620px 620px;
+  background-blend-mode: multiply;
 }
+.grid-lines {
+  background-image:
+    linear-gradient(rgba(10,10,11,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(10,10,11,0.05) 1px, transparent 1px);
+  background-size: 46px 46px;
+}
+.fibre { position: relative; isolation: isolate; }
 .fibre::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  mix-blend-mode: overlay;
-  opacity: 0.5;
+  content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  mix-blend-mode: overlay; opacity: 0.4;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
 }
 
-/* gold hairline */
-.rule-gold {
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--color-gold-deep) 12%, var(--color-gold) 50%, var(--color-gold-deep) 88%, transparent);
+/* torn bottom edge — mask a block into a ragged strip */
+.torn-b {
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='60' preserveAspectRatio='none'%3E%3Cpath d='M0 0 H1200 V30 C1120 52 1040 18 960 34 C880 50 800 20 720 38 C640 54 560 22 480 36 C400 50 320 20 240 40 C160 55 80 24 0 40 Z' fill='%23000'/%3E%3C/svg%3E") bottom/100% 60px no-repeat, linear-gradient(#000 0 0) top/100% calc(100% - 40px) no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='60' preserveAspectRatio='none'%3E%3Cpath d='M0 0 H1200 V30 C1120 52 1040 18 960 34 C880 50 800 20 720 38 C640 54 560 22 480 36 C400 50 320 20 240 40 C160 55 80 24 0 40 Z' fill='%23000'/%3E%3C/svg%3E") bottom/100% 60px no-repeat, linear-gradient(#000 0 0) top/100% calc(100% - 40px) no-repeat;
 }
-
-/* molten crack seam — a thin glowing line */
-.seam {
-  position: relative;
-}
-.seam::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #ffcf6b, #fff2d0 45%, #ff9b3d 55%, transparent);
-  filter: drop-shadow(0 0 8px #ffb347) drop-shadow(0 0 20px #ff7a1840);
-}
-
-/* text set in gold foil */
-.foil {
-  background: linear-gradient(100deg, #7a4a00 0%, #f0b323 26%, #fff2d0 44%, #f0b323 60%, #7a4a00 100%);
-  background-size: 220% 100%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  animation: foil-drift 7s ease-in-out infinite;
-}
-@keyframes foil-drift {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+.torn-t {
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='60' preserveAspectRatio='none'%3E%3Cpath d='M0 60 H1200 V26 C1120 6 1040 44 960 24 C880 8 800 40 720 22 C640 6 560 40 480 24 C400 8 320 42 240 20 C160 4 80 40 0 20 Z' fill='%23000'/%3E%3C/svg%3E") top/100% 60px no-repeat, linear-gradient(#000 0 0) bottom/100% calc(100% - 40px) no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='60' preserveAspectRatio='none'%3E%3Cpath d='M0 60 H1200 V26 C1120 6 1040 44 960 24 C880 8 800 40 720 22 C640 6 560 40 480 24 C400 8 320 42 240 20 C160 4 80 40 0 20 Z' fill='%23000'/%3E%3C/svg%3E") top/100% 60px no-repeat, linear-gradient(#000 0 0) bottom/100% calc(100% - 40px) no-repeat;
 }
 
 /* outlined display text */
-.stroke {
-  color: transparent;
-  -webkit-text-stroke: clamp(1px, 0.18vw, 2.5px) currentColor;
+.stroke { color: transparent; -webkit-text-stroke: clamp(1px, 0.16vw, 2.4px) currentColor; }
+.stroke-ink { color: transparent; -webkit-text-stroke: 2px var(--color-ink); }
+
+/* selection-box handles around a hero word (reference motif) */
+.select-box { position: relative; }
+.select-box::before {
+  content: ""; position: absolute; inset: -0.32em -0.5em;
+  border: 1.5px solid var(--color-red);
+  pointer-events: none;
+}
+.select-box::after {
+  content: ""; position: absolute; inset: -0.32em -0.5em; pointer-events: none;
+  background:
+    radial-gradient(circle, var(--color-red) 46%, transparent 48%) top left,
+    radial-gradient(circle, var(--color-red) 46%, transparent 48%) top right,
+    radial-gradient(circle, var(--color-red) 46%, transparent 48%) bottom left,
+    radial-gradient(circle, var(--color-red) 46%, transparent 48%) bottom right,
+    radial-gradient(circle, var(--color-red) 46%, transparent 48%) top center,
+    radial-gradient(circle, var(--color-red) 46%, transparent 48%) bottom center,
+    radial-gradient(circle, var(--color-red) 46%, transparent 48%) center left,
+    radial-gradient(circle, var(--color-red) 46%, transparent 48%) center right;
+  background-size: 9px 9px; background-repeat: no-repeat;
 }
 
-/* engraved into metal */
-.engrave {
-  color: #d8d4cc;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.08), 0 -1px 1px rgba(0, 0, 0, 0.8);
-}
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes shimmer { to { background-position: -200% 0; } }
+@keyframes marquee-x { to { transform: translateX(-50%); } }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
@@ -126,12 +116,3 @@ h1, h2, h3 {
     transition-duration: 0.001ms !important;
   }
 }
-
-@keyframes noise-shift {
-  0% { transform: translate(0, 0); }
-  50% { transform: translate(-4%, 3%); }
-  100% { transform: translate(3%, -2%); }
-}
-
-@keyframes spin { to { transform: rotate(360deg); } }
-@keyframes shimmer { to { background-position: -200% 0; } }
