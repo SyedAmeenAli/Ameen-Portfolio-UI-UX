@@ -9,12 +9,12 @@ const DomeGallery = dynamic(() => import("@/components/ui/dome-gallery"), { ssr:
 const src = (l: (typeof LOGOS)[number]) =>
   l.kind === "video" ? `/logos/${l.slug}.anim.webp` : l.kind === "image" ? `/logos/${l.slug}.webp` : `/logos/${l.slug}.jpg`;
 
-/** 20 marks on an auto-rotating sphere; drag to spin, click to enlarge. */
+/** 20 marks on a sphere. The sphere holds still; each mark animates in place. Drag to turn it, direction follows your drag. */
 export function LogoDome() {
   const images = LOGOS.filter((l) => l.kind !== "todo").map((l) => ({ src: src(l), alt: `${l.name} — ${l.type}` }));
   return (
     <div className="h-[86vh] w-full">
-      <DomeGallery images={images} fit={0.62} minRadius={480} segments={28} autoSpin={0.05} overlayBlurColor="#060507" />
+      <DomeGallery images={images} fit={0.62} minRadius={480} segments={28} autoSpin={false} overlayBlurColor="#060507" />
     </div>
   );
 }

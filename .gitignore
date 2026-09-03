@@ -42,3 +42,5 @@ next-env.d.ts
 
 # raw design drops (large, not needed for build)
 /assets-raw
+/public.bak-wm/
+/tools/*.exe

@@ -86,7 +86,7 @@ export default function DomeGallery({
   imageBorderRadius = "12px",
   openedImageBorderRadius = "16px",
   grayscale = false,
-  autoSpin = 0.03,
+  autoSpin = false,
 }: {
   images?: ImageItem[];
   fit?: number;
@@ -103,7 +103,7 @@ export default function DomeGallery({
   imageBorderRadius?: string;
   openedImageBorderRadius?: string;
   grayscale?: boolean;
-  autoSpin?: number;
+  autoSpin?: boolean | number;
 }) {
   const rootRef = useRef<HTMLDivElement>(null);
   const mainRef = useRef<HTMLElement>(null);

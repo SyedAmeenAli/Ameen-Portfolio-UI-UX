@@ -124,7 +124,7 @@ export default function PixelReveal() {
   };
 
   return (
-    <div className="w-full">
+    <div className="mx-auto flex w-full max-w-[360px] flex-col">
       <div className="flex items-baseline justify-between">
         <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-gold">Pixelated me</p>
         <button
@@ -136,7 +136,7 @@ export default function PixelReveal() {
       </div>
       <p className="mt-2 text-xs text-bone/50">Drag across the frame to rebuild the picture.</p>
 
-      <div ref={wrap} className="relative mt-5 w-[calc(100%-2rem)] max-w-[360px]" style={{ aspectRatio: "0.46" }}>
+      <div ref={wrap} className="relative mt-5 w-full" style={{ aspectRatio: "0.46" }}>
         <span className="pointer-events-none absolute -inset-3 border border-gold/50" />
         {["-left-4 -top-4", "-right-4 -top-4", "-left-4 -bottom-4", "-right-4 -bottom-4"].map((p) => (
           <span key={p} className={`pointer-events-none absolute ${p} h-2.5 w-2.5 border border-ink bg-gold`} />
@@ -162,7 +162,7 @@ export default function PixelReveal() {
         )}
       </div>
 
-      <div className="mt-6 flex w-[calc(100%-2rem)] max-w-[360px] items-center gap-3">
+      <div className="mt-6 flex w-full items-center gap-3">
         <div className="h-1 flex-1 bg-steel">
           <div className="h-full bg-gold transition-[width] duration-150" style={{ width: `${progress}%` }} />
         </div>
