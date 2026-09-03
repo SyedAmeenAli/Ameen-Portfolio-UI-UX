@@ -36,8 +36,10 @@ export type Brand = {
   tagline: string;
   sector: string;
   color: string;
+  palette: string[];
   board: string;
   sketch: string;
+  blurb: string;
 };
 
 export const BRANDS: Brand[] = [
@@ -49,6 +51,9 @@ export const BRANDS: Brand[] = [
     color: "#7c4dff",
     board: "/brands/auria-brand-visualization.jpg",
     sketch: "/brands/auria-sketch.jpg",
+    palette: ["#7c4dff","#3b1e8f","#b39cff","#1b1a1f","#efe9dd"],
+    blurb:
+      "A studio identity for immersive audio. The mark is a live equaliser frozen mid-beat — it reads as sound before it reads as a letter. Sora for display, DM Sans for text, a violet-to-black system that carries from app UI to retail signage and merch.",
   },
   {
     slug: "nexora",
@@ -58,6 +63,9 @@ export const BRANDS: Brand[] = [
     color: "#f0b323",
     board: "/brands/nexora-brand-visualisation.jpg",
     sketch: "/brands/nexora-sketch.jpg",
+    palette: ["#f0b323","#c88a1f","#2a2318","#0c0b0e","#e8e2d4"],
+    blurb:
+      "A property brand built on an arch and a rising stair — climb, threshold, the ordinary left behind. Cinzel for the wordmark, gold foil on matte black across stationery, vehicle livery, hoardings and the pitch deck.",
   },
   {
     slug: "terralis",
@@ -67,6 +75,9 @@ export const BRANDS: Brand[] = [
     color: "#b98a4b",
     board: "/brands/terralis-brand-visualisation.jpg",
     sketch: "/brands/terralis-sketch.jpg",
+    palette: ["#b98a4b","#7a8b5a","#d8c9a3","#3a3226","#efe6d2"],
+    blurb:
+      "Homeware made by hand. A leaf inside an arched doorway, drawn with one weight so it stamps cleanly on a candle jar or a shipping box. Warm earth palette, generous letter-spacing, packaging that looks made not printed.",
   },
   {
     slug: "vayora",
@@ -76,6 +87,9 @@ export const BRANDS: Brand[] = [
     color: "#2c93d8",
     board: "/brands/vayora-brand-visualisation.jpg",
     sketch: "/brands/vayora-sketch.jpg",
+    palette: ["#2c93d8","#0f5c8f","#1c6b5a","#0c0b0e","#e4ecef"],
+    blurb:
+      "A tech mark with a hidden V and a star of forward motion. Geometric, minimal, one accent colour. Built to survive a favicon and a billboard without losing the point.",
   },
   {
     slug: "verdant",
@@ -85,5 +99,8 @@ export const BRANDS: Brand[] = [
     color: "#2ec27e",
     board: "/brands/verdant-brand-visulaisation.jpg",
     sketch: "/brands/verdant-sketch.jpg",
+    palette: ["#2ec27e","#1c7a4f","#a7e3c4","#12211a","#eef6f1"],
+    blurb:
+      "Plant-tech that grows a better world. Two leaves resolve into a V; Inter for the system, DM Sans for support. Green-forward, applied across app dashboards, environment graphics and merch.",
   },
 ];

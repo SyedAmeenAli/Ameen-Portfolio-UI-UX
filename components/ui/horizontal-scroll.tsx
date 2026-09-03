@@ -52,16 +52,19 @@ export function HorizontalScroll({ panels }: { panels: HScrollPanel[] }) {
             <img
               src={p.image}
               alt={p.heading}
-              className="absolute bottom-0 left-1/2 h-[74vh] w-auto max-w-none -translate-x-1/2 object-contain"
+              className="absolute left-1/2 top-1/2 h-[96vh] w-auto max-w-[94vw] -translate-x-1/2 -translate-y-1/2 object-contain"
             />
-            <h3 className="stroke pointer-events-none relative z-10 mb-6 whitespace-nowrap font-display text-[16vw] uppercase text-bone will-change-transform">
-              {p.heading}
-            </h3>
-            {p.caption && (
-              <p className="absolute bottom-10 left-1/2 z-10 -translate-x-1/2 font-mono text-[10px] uppercase tracking-[0.35em] text-gold">
-                {p.caption}
-              </p>
-            )}
+            <div className="pointer-events-none absolute left-[3vw] top-[4vh] z-10 will-change-transform">
+              <h3 className="font-display text-[clamp(1.4rem,3.4vw,3rem)] uppercase leading-none text-bone mix-blend-difference">
+                {p.heading}
+              </h3>
+              {p.caption && (
+                <p className="mt-2 font-mono text-[10px] uppercase tracking-[0.3em] text-gold">{p.caption}</p>
+              )}
+            </div>
+            <span className="pointer-events-none absolute bottom-[3vh] right-[3vw] z-10 font-mono text-[10px] tabular-nums text-bone/40">
+              {String(i + 1).padStart(2, "0")} / {String(panels.length).padStart(2, "0")}
+            </span>
           </li>
         ))}
       </ul>

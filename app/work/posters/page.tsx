@@ -9,7 +9,7 @@ export const metadata: Metadata = { title: "Posters" };
 export default function PostersPage() {
   return (
     <main className="relative">
-      <header className="relative isolate flex min-h-[70vh] flex-col justify-between px-[3vw] pb-[8vh] pt-8">
+      <header className="relative isolate flex min-h-[48vh] flex-col justify-between gap-[8vh] px-[3vw] pb-[8vh] pt-8">
         <Waves className="-z-10 opacity-40" lineColor="rgba(240,179,35,0.35)" />
         <Link href="/" className="font-mono text-[10px] uppercase tracking-[0.35em] text-bone/40 hover:text-gold">
           ← back

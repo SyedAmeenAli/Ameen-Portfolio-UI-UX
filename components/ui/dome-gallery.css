@@ -36,6 +36,10 @@ main.sphere-main {
   perspective: calc(var(--radius) * 2);
   perspective-origin: 50% 50%;
 }
+.sphere-spin { transform-style: preserve-3d; }
+.sphere-spin[data-spin="on"] { animation: dome-spin 70s linear infinite; }
+.sphere-root[data-enlarging="true"] .sphere-spin { animation-play-state: paused; }
+@keyframes dome-spin { to { transform: rotateY(-360deg); } }
 .sphere {
   transform: translateZ(calc(var(--radius) * -1));
   will-change: transform;

@@ -86,6 +86,7 @@ export default function DomeGallery({
   imageBorderRadius = "12px",
   openedImageBorderRadius = "16px",
   grayscale = false,
+  autoSpin = 0.03,
 }: {
   images?: ImageItem[];
   fit?: number;
@@ -102,6 +103,7 @@ export default function DomeGallery({
   imageBorderRadius?: string;
   openedImageBorderRadius?: string;
   grayscale?: boolean;
+  autoSpin?: number;
 }) {
   const rootRef = useRef<HTMLDivElement>(null);
   const mainRef = useRef<HTMLElement>(null);
@@ -181,6 +183,7 @@ export default function DomeGallery({
   useEffect(() => {
     applyTransform(rotationRef.current.x, rotationRef.current.y);
   }, []);
+
 
   const stopInertia = useCallback(() => {
     if (inertiaRAF.current) {
@@ -381,6 +384,7 @@ export default function DomeGallery({
     <div ref={rootRef} className="sphere-root" style={{ ["--segments-x" as string]: segments, ["--segments-y" as string]: segments }}>
       <main ref={mainRef} className="sphere-main">
         <div className="stage">
+          <div className="sphere-spin" data-spin={autoSpin ? "on" : "off"}>
           <div ref={sphereRef} className="sphere">
             {items.map((it, i) => (
               <div
@@ -404,6 +408,7 @@ export default function DomeGallery({
                 </div>
               </div>
             ))}
+          </div>
           </div>
         </div>
         <div className="overlay" />
