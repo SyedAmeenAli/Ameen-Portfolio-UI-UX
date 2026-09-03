@@ -1,7 +1,7 @@
 "use client";
 
 // ui-layouts / olivierlarose stacking cards — adapted, generic children.
-import { useRef, type ReactNode } from "react";
+import { useRef } from "react";
 import { motion, useScroll, useTransform, type MotionValue } from "motion/react";
 
 export type StackItem = {
@@ -94,7 +94,6 @@ function Card({
             </div>
           </div>
           <div className="relative flex-1 overflow-hidden border border-steel">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
             <motion.img
               src={item.image}
               alt={item.title}
