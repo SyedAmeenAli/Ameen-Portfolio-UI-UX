@@ -6,7 +6,7 @@ export function MotionGallery({ pieces }: { pieces: Piece[] }) {
   return (
     <div className="grid grid-cols-1 gap-4 px-[3vw] pb-[14vh] sm:grid-cols-2">
       {pieces.map((p, i) => (
-        <figure key={p.slug} className="group relative overflow-hidden border border-steel/60 bg-iron">
+        <figure key={p.slug} className="group relative overflow-hidden border border-ink/15 bg-ink">
           <video
             src={p.file}
             muted

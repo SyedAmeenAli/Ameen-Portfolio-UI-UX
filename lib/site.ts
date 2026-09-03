@@ -56,7 +56,7 @@ export type Category = {
   tag: string;      // marquee word
   count: string;
   accent: "red" | "yellow" | "purple";
-  kind: "grid" | "dome" | "sketch" | "motion";
+  kind: "grid" | "dome" | "sketch" | "motion" | "type" | "colour";
   blurb: string;
 };
 
@@ -75,6 +75,10 @@ export const CATEGORIES: Category[] = [
     blurb: "Character work — food people, fashion figures, the odd bird man. Drawn to have a point of view." },
   { key: "motion", label: "2D / 3D Motion", href: "/work/motion", tag: "2D MOTION", count: "07", accent: "purple", kind: "motion",
     blurb: "Motion studies in 2D and 3D — type in space, objects that behave wrong on purpose." },
+  { key: "typography", label: "Typography", href: "/work/typography", tag: "TYPE", count: "12", accent: "purple", kind: "type",
+    blurb: "Not a list of fonts. Font choice → personality → pairing → hierarchy → spacing → application. Type has a voice." },
+  { key: "colours", label: "Colour", href: "/work/colours", tag: "COLOUR", count: "06", accent: "yellow", kind: "colour",
+    blurb: "Not a colour picker. Six palettes, live-switched through a real interface — every colour has a role." },
 ];
 
 export const MINDMAP = CATEGORIES.map((c) => ({ key: c.key, label: c.label, href: c.href }));

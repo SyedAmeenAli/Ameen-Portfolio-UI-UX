@@ -44,3 +44,5 @@ next-env.d.ts
 /assets-raw
 /public.bak-wm/
 /tools/*.exe
+public/cat/cat walking_frames/
+assets-raw/cat-frames-src/

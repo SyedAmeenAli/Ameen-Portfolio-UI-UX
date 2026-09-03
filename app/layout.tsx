@@ -1,13 +1,12 @@
 import type { Metadata, Viewport } from "next";
-import { Archivo_Black, Anton, Space_Grotesk, Space_Mono } from "next/font/google";
+import { Fraunces, Bebas_Neue, Space_Grotesk, Space_Mono } from "next/font/google";
 import "./globals.css";
 import { StyledRegistry } from "@/components/styled-registry";
-import { SectionNoise } from "@/components/ui/section-noise";
 import { SmoothScroll } from "@/components/smooth-scroll";
 import { SITE } from "@/lib/site";
 
-const display = Archivo_Black({ variable: "--font-display", weight: "400", subsets: ["latin"], display: "swap" });
-const condensed = Anton({ variable: "--font-condensed", weight: "400", subsets: ["latin"], display: "swap" });
+const serif = Fraunces({ variable: "--font-serif", subsets: ["latin"], display: "swap", axes: ["SOFT", "WONK", "opsz"] });
+const condensed = Bebas_Neue({ variable: "--font-condensed", weight: "400", subsets: ["latin"], display: "swap" });
 const grotesk = Space_Grotesk({ variable: "--font-grotesk", subsets: ["latin"], display: "swap" });
 const mono = Space_Mono({ variable: "--font-mono", weight: ["400", "700"], subsets: ["latin"], display: "swap" });
 
@@ -20,13 +19,12 @@ export const metadata: Metadata = {
   openGraph: { title: `${SITE.name} — ${SITE.role}`, description, type: "website" },
 };
 
-export const viewport: Viewport = { themeColor: "#0a0a0b", colorScheme: "dark" };
+export const viewport: Viewport = { themeColor: "#ece9e1", colorScheme: "light" };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${display.variable} ${condensed.variable} ${grotesk.variable} ${mono.variable} h-full`}>
-      <body className="min-h-full bg-ink text-bone">
-        <SectionNoise opacity={0.04} />
+    <html lang="en" className={`${serif.variable} ${condensed.variable} ${grotesk.variable} ${mono.variable} h-full`}>
+      <body className="grain min-h-full bg-bone text-ink">
         <StyledRegistry>
           <SmoothScroll>
             <div className="relative z-10">{children}</div>

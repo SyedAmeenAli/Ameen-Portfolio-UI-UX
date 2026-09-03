@@ -142,7 +142,7 @@ export default function PixelReveal() {
             if (dragging.current || e.pointerType === "mouse") repairAt(e.clientX, e.clientY);
           }}
           onPointerUp={() => (dragging.current = false)}
-          className="h-full w-full touch-none bg-paper-dim"
+          className="h-full w-full touch-none bg-bone-dim"
           style={{ imageRendering: "pixelated", cursor: "crosshair" }}
         />
         {!ready && (

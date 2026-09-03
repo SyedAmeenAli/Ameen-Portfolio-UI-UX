@@ -22,8 +22,8 @@ export function Gallery({
           key={p.slug}
           onMouseEnter={() => setHover(i)}
           onMouseLeave={() => setHover(null)}
-          className={`group relative overflow-hidden border border-steel/60 ${
-            tile === "paper" ? "paper" : "bg-iron"
+          className={`group relative overflow-hidden border border-ink/15 ${
+            tile === "paper" ? "bg-white" : "bg-bone-dim"
           }`}
         >
           <div className={fit === "contain" ? "p-6" : ""}>
