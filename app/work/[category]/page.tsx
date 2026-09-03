@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { MINDMAP } from "@/lib/site";
+import GridPaper from "@/components/ui/grid-paper";
 
 const REAL = new Set(["logos", "branding", "posters"]);
 
@@ -20,7 +21,8 @@ export default async function CategoryPage({ params }: PageProps<"/work/[categor
   const node = MINDMAP.find((m) => m.key === category);
   if (!node || REAL.has(category)) notFound();
   return (
-    <main className="flex min-h-screen flex-col justify-between px-[3vw] pb-[10vh] pt-8">
+    <main className="relative isolate flex min-h-screen flex-col justify-between px-[3vw] pb-[10vh] pt-8">
+      <GridPaper className="absolute inset-0 -z-10 opacity-60" />
       <Link href="/" className="font-mono text-[10px] uppercase tracking-[0.35em] text-bone/40 hover:text-gold">
         &larr; back
       </Link>

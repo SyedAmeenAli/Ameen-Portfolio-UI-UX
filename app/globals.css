@@ -132,3 +132,6 @@ h1, h2, h3 {
   50% { transform: translate(-4%, 3%); }
   100% { transform: translate(3%, -2%); }
 }
+
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes shimmer { to { background-position: -200% 0; } }

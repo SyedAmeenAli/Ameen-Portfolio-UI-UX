@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { HorizontalScroll } from "@/components/ui/horizontal-scroll";
+import Waves from "@/components/ui/waves";
 import { POSTERS } from "@/lib/work";
 
 export const metadata: Metadata = { title: "Posters" };
@@ -8,7 +9,8 @@ export const metadata: Metadata = { title: "Posters" };
 export default function PostersPage() {
   return (
     <main className="relative">
-      <header className="flex min-h-[70vh] flex-col justify-between px-[3vw] pb-[8vh] pt-8">
+      <header className="relative isolate flex min-h-[70vh] flex-col justify-between px-[3vw] pb-[8vh] pt-8">
+        <Waves className="-z-10 opacity-40" lineColor="rgba(240,179,35,0.35)" />
         <Link href="/" className="font-mono text-[10px] uppercase tracking-[0.35em] text-bone/40 hover:text-gold">
           ← back
         </Link>
