@@ -7,8 +7,8 @@
    type, asymmetric layout. Dark sections used deliberately.
 --------------------------------------------------------------------------- */
 @theme {
-  --color-bone: #ece9e1;      /* off-white ground */
-  --color-bone-dim: #dcd8cd;
+  --color-bone: #f3f0e8;      /* warm off-white ground */
+  --color-bone-dim: #e2ded2;
   --color-ink: #0a0a0b;       /* near-black */
   --color-void: #050505;
   --color-iron: #17171a;
@@ -16,8 +16,8 @@
   --color-line: rgba(10, 10, 11, 0.16);   /* black hairline */
   --color-line-soft: rgba(10, 10, 11, 0.08);
 
-  --color-yellow: #ffd400;
-  --color-gold: #ffd400;
+  --color-yellow: #ffd600;
+  --color-gold: #ffd600;
   --color-purple: #7c3aed;
   --color-violet: #7c3aed;
   --color-red: #ff2d1a;
@@ -102,6 +102,20 @@ h1, h2, h3 { font-family: var(--font-condensed); letter-spacing: 0.005em; line-h
 @keyframes shimmer { to { background-position: -200% 0; } }
 @keyframes marquee-x { to { transform: translateX(-50%); } }
 @keyframes load-bar { from { width: 0; } to { width: 100%; } }
+@keyframes float-idle { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-1.2%); } }
+
+/* cinematic hero reveal — clip + blur + opacity, staggered by --i */
+@keyframes reveal-in {
+  from { opacity: 0; filter: blur(7px); clip-path: inset(0 0 100% 0); transform: translateY(0.4em); }
+  to   { opacity: 1; filter: blur(0);   clip-path: inset(0 0 -10% 0);  transform: translateY(0); }
+}
+.reveal > * {
+  animation: reveal-in 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: calc(var(--d, 0) * 1ms + var(--i, 0) * 95ms);
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal > * { animation: none; }
+}
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {

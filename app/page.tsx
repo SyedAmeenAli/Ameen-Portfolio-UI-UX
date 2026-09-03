@@ -1,152 +1,80 @@
-import Link from "next/link";
-import PixelReveal from "@/components/ui/pixel-reveal";
+import { SiteNav } from "@/components/sections/site-nav";
+import { Hero } from "@/components/sections/hero";
+import { SelectedWork } from "@/components/sections/selected-work";
 import { NameCubes } from "@/components/sections/name-cubes";
 import { MindMap } from "@/components/sections/mind-map";
 import { Cat } from "@/components/sections/cat";
 import { LineStrip } from "@/components/ui/line-strip";
-import { SITE, SKILLS, CATEGORIES } from "@/lib/site";
+import PixelReveal from "@/components/ui/pixel-reveal";
+import { SITE } from "@/lib/site";
 
-const TOOLS = ["photoshop", "illustrator", "aftereffects", "framer", "figma", "blender", "canva", "spline"];
+const TOOLS = "Figma · Photoshop · Illustrator · After Effects · Blender · Spline · Framer · Canva";
+const CONTACT = "amelio123ali@gmail.com";
 
 export default function Home() {
   return (
     <main className="relative">
-      {/* ============================ HERO ============================ */}
-      <section className="grid-lines relative min-h-screen border-b border-ink/15 px-[5vw] pb-[10vh] pt-10">
-        <div className="flex items-start justify-between font-mono text-[10px] uppercase tracking-[0.2em] text-ink/60">
-          <span>{SITE.kicker}</span>
-          <span className="font-condensed text-[clamp(1rem,3vw,2.2rem)] tracking-normal text-ink">{SITE.year}</span>
-        </div>
+      <SiteNav />
 
-        {/* loading bar */}
-        <div className="mt-[6vh] flex items-center gap-3">
-          <span className="h-3 w-40 border border-ink/50">
-            <span className="block h-full bg-ink" style={{ animation: "load-bar 2.2s ease-out both" }} />
-          </span>
-          <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-ink/50">loading</span>
-        </div>
+      {/* 02 — HERO */}
+      <Hero />
 
-        {/* Portfolio wordmark — serif, with pixel face + ghost */}
-        <div className="mt-[3vh] flex flex-wrap items-end gap-x-4">
-          <h1 className="font-serif text-[clamp(3.5rem,17vw,15rem)] font-light leading-[0.8] tracking-[-0.02em] text-ink">
-            Port<span className="italic">folio</span>
-          </h1>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/me/head.webp" alt="Ameen, pixelated" className="mb-3 h-[clamp(3rem,9vw,7rem)] w-[clamp(3rem,9vw,7rem)] object-contain" style={{ imageRendering: "pixelated" }} />
-          <span className="mb-4 text-[clamp(2rem,6vw,4rem)] grayscale contrast-200">👻</span>
-        </div>
+      {/* marquee — structural separator */}
+      <LineStrip text="DIGITAL DESIGN · UI/UX · VISUAL SYSTEMS · BRAND IDENTITY · ART DIRECTION · EXPERIMENTAL DESIGN" speed={34} />
 
-        <div className="mt-4 flex items-center gap-3 font-mono text-sm text-ink/60">
-          <span>Edc design 2026</span>
-          <span>←</span>
-        </div>
-
-        <p className="mt-[5vh] max-w-[54ch] font-serif text-[clamp(1rem,1.7vw,1.35rem)] leading-relaxed text-ink/75">
-          {SITE.name} — {SITE.role} &amp; illustrator, based in India. {SITE.polaroid.info} {SITE.thesis}
-        </p>
-
-        <div className="mt-8 inline-block border border-ink px-6 py-2 font-mono text-[11px] uppercase tracking-[0.25em]">
-          {SITE.name} · {SITE.kicker}
-        </div>
-
-        <p className="mt-[6vh] font-mono text-[10px] uppercase tracking-[0.35em] text-ink/40">scroll ↓</p>
-      </section>
-
-      {/* ============================ HELLO ============================ */}
-      <section className="grid-lines grid gap-[8vh] border-b border-ink/15 px-[5vw] py-[12vh] md:grid-cols-[0.9fr_1.1fr]">
-        <div className="flex items-center justify-center">
+      {/* 03 — PIXEL SELF / ABOUT */}
+      <section id="about" className="grid-lines grid gap-[7vh] border-b border-ink/15 px-[4vw] py-[15vh] md:grid-cols-[0.85fr_1.15fr] md:items-center">
+        <div className="flex justify-center">
           <PixelReveal />
         </div>
         <div>
-          <h2 className="font-condensed text-[clamp(3rem,10vw,6.5rem)] uppercase">Hello</h2>
-          <div className="mt-6 max-w-[46ch] space-y-4 text-[0.95rem] leading-relaxed text-ink/70">
-            {SITE.bio.map((p) => (
-              <p key={p} className={p.startsWith("Hi,") ? "font-semibold text-ink" : ""}>{p}</p>
-            ))}
-          </div>
+          <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-ink/50">03 / The Pixel Self</p>
+          <p className="mt-5 max-w-[30ch] font-condensed text-[clamp(1.6rem,4vw,3rem)] uppercase leading-[1.02] text-ink">
+            This is me. The face stays a mark, <span className="text-purple">not a photo.</span>
+          </p>
+          <p className="mt-6 max-w-[44ch] text-sm leading-relaxed text-ink/65">{SITE.bio[1]}</p>
 
-          <h3 className="mt-12 font-condensed text-2xl uppercase">Education</h3>
-          <p className="mt-2 text-sm font-semibold text-ink">{SITE.education.title}</p>
-          <p className="text-xs text-ink/50">{SITE.education.school} · {SITE.education.when}</p>
-
-          <h3 className="mt-10 font-condensed text-2xl uppercase">Experience</h3>
-          <ul className="mt-3 space-y-3">
+          <dl className="mt-10 space-y-3 border-t border-ink/15 pt-4 font-mono text-[10px] uppercase tracking-[0.16em]">
+            <div className="flex gap-4"><dt className="w-24 shrink-0 text-ink/45">Study</dt><dd className="text-ink/80">{SITE.education.title}, {SITE.education.school} — {SITE.education.when}</dd></div>
             {SITE.experience.map((e) => (
-              <li key={e.when}>
-                <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-red">{e.when}</p>
-                <p className="text-sm font-semibold text-ink">{e.what}</p>
-                <p className="text-xs text-ink/50">{e.where}</p>
-              </li>
+              <div key={e.when} className="flex gap-4"><dt className="w-24 shrink-0 text-ink/45">{e.when}</dt><dd className="text-ink/80">{e.what} — {e.where}</dd></div>
             ))}
-          </ul>
+            <div className="flex gap-4"><dt className="w-24 shrink-0 text-ink/45">Tools</dt><dd className="text-ink/80">{TOOLS}</dd></div>
+          </dl>
         </div>
       </section>
 
-      {/* ============================ SKILLS ============================ */}
-      <section className="grid-lines border-b border-ink/15 px-[5vw] pb-[14vh] pt-[6vh]">
-        <h2 className="font-condensed text-[clamp(2.4rem,8vw,5rem)] uppercase">Skills</h2>
-        <div className="mt-10 grid grid-cols-4 gap-4 sm:max-w-2xl">
-          {TOOLS.map((t) => {
-            const s = SKILLS.find((x) => x.key === t);
-            return (
-              <div key={t} className="group relative flex aspect-square items-center justify-center border border-ink/15 bg-white">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={`/tools/${t}.png`} alt={s?.name ?? t} className="h-1/2 w-1/2 object-contain" />
-                <span className="pointer-events-none absolute -bottom-5 left-0 font-mono text-[8px] uppercase tracking-wider text-ink/40 opacity-0 transition-opacity group-hover:opacity-100">
-                  {s?.name}
-                </span>
-              </div>
-            );
-          })}
-        </div>
-      </section>
-
-      {/* ============================ CAT ============================ */}
+      {/* 06 — INTERACTIVE MOMENT: the cat walks you into the archive */}
       <Cat />
 
-      {/* ============================ MANIFESTO ============================ */}
-      <LineStrip text="DESIGN LOUDER" />
-      <section className="mx-auto max-w-[70ch] px-[5vw] py-[16vh]">
-        <p className="font-condensed text-[clamp(2rem,7vw,5rem)] uppercase leading-[0.95]">{SITE.manifesto[0]}</p>
-        <div className="mt-8 max-w-[46ch] space-y-3 font-serif text-[clamp(1rem,1.6vw,1.35rem)] leading-relaxed text-ink/70">
-          <p>{SITE.manifesto[1]}</p>
-          <p>{SITE.manifesto[2]} {SITE.manifesto[3]}</p>
-        </div>
-        <ul className="mt-12 flex flex-wrap gap-x-8 gap-y-2 font-mono text-[10px] uppercase tracking-[0.3em] text-ink/40">
-          <li className="text-red">not this —</li>
-          {SITE.against.map((a) => (
-            <li key={a} className="line-through decoration-red decoration-2">{a}</li>
-          ))}
-        </ul>
-      </section>
+      {/* 04 — SELECTED WORK */}
+      <SelectedWork />
 
-      {/* ============================ AMEEN cubes ============================ */}
-      <NameCubes />
-
-      {/* ============================ MIND MAP ============================ */}
+      {/* 05 — WHAT I MAKE */}
       <MindMap />
 
-      {/* ============================ WORK INDEX ============================ */}
-      <section className="border-t border-ink/15 px-[5vw] py-[16vh]">
-        <h2 className="font-condensed text-[clamp(2.4rem,8vw,6rem)] uppercase">The Work</h2>
-        <ul className="mt-12 divide-y divide-ink/12 border-y border-ink/15">
-          {CATEGORIES.map((c) => (
-            <li key={c.key}>
-              <Link href={c.href} className="group flex items-center justify-between py-7 transition-colors hover:text-red">
-                <span className="font-condensed text-[clamp(1.5rem,5vw,3.2rem)] uppercase">{c.label}</span>
-                <span className="font-mono text-xs tabular-nums text-ink/40 group-hover:text-red">{c.count} →</span>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </section>
+      {/* personality beat */}
+      <NameCubes />
 
-      {/* ============================ THESIS ============================ */}
-      <section className="on-dark px-[5vw] pb-[22vh] pt-[16vh]">
-        <p className="max-w-[18ch] font-condensed text-[clamp(2rem,9vw,8.5rem)] uppercase leading-[0.86] text-bone">
-          {SITE.thesis}
+      {/* 07 — FINAL CTA */}
+      <section id="contact" className="on-dark grid-lines-dark px-[4vw] py-[20vh]">
+        <p className="font-condensed text-[clamp(3rem,18vw,15rem)] uppercase leading-[0.82] text-bone">
+          Let&apos;s make<br />something<br /><span className="text-yellow">memorable.</span>
         </p>
-        <p className="mt-8 font-mono text-[10px] uppercase tracking-[0.35em] text-yellow">{SITE.name} · {SITE.year}</p>
+        <div className="mt-12 flex flex-wrap items-end justify-between gap-8">
+          <p className="max-w-[24ch] font-condensed text-[clamp(1.2rem,3vw,2.2rem)] uppercase leading-tight text-bone/70">
+            Am I the designer you were looking for?
+          </p>
+          <a
+            href={`mailto:${CONTACT}`}
+            className="inline-flex items-center gap-3 border border-bone/30 px-6 py-3 font-mono text-[11px] uppercase tracking-[0.25em] text-bone transition-colors hover:bg-yellow hover:text-ink"
+          >
+            Contact me <span className="text-2xl leading-none">↗</span>
+          </a>
+        </div>
+        <p className="mt-16 font-mono text-[9px] uppercase tracking-[0.3em] text-bone/40">
+          {SITE.name} · Portfolio / 2026 · {SITE.coords}
+        </p>
       </section>
     </main>
   );

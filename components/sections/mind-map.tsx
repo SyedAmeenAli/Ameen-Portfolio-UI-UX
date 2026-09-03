@@ -20,10 +20,10 @@ const THUMB: Record<string, string> = {
 /** The mind map — a flowing-menu list; hover floods a marquee, click routes. */
 export function MindMap() {
   return (
-    <section className="border-t border-steel/70">
+    <section id="index" className="border-t border-steel/70">
       <div className="px-[4vw] py-[10vh]">
-        <h2 className="font-display text-[clamp(2.4rem,9vw,7rem)] uppercase">Mind Map</h2>
-        <p className="mt-3 max-w-md text-sm text-bone/55">Every thread leads somewhere. Pick a discipline.</p>
+        <h2 className="font-condensed text-[clamp(2.4rem,9vw,7rem)] uppercase">What I Make</h2>
+        <p className="mt-3 max-w-md text-sm text-ink/55">Eight disciplines, one practice. Hover a thread, follow it in.</p>
       </div>
       <div className="h-[80vh]">
         <FlowingMenu
