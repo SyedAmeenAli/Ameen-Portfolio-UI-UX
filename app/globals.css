@@ -1,205 +1,134 @@
 @import "tailwindcss";
 
 /* ---------------------------------------------------------------------------
-   Ameen Ali — UI/UX Portfolio 2026
-   Palette: black · paper-white · purple · yellow  (+ flame red accent)
+   Ameen Ali — Portfolio 2026
+   Forged gunmetal · poured concrete · molten gold in the cracks.
 --------------------------------------------------------------------------- */
 @theme {
-  --color-ink: #0b0b0c;
-  --color-ink-soft: #1b1b1f;
-  --color-paper: #f5f2ea;
-  --color-pure: #ffffff;
+  --color-void: #060507;
+  --color-ink: #0c0b0e;
+  --color-iron: #1b1a1f;
+  --color-steel: #2b2a31;
+  --color-concrete: #d8d4cc;
+  --color-concrete-dim: #a8a49c;
+  --color-bone: #efe9dd;
 
-  --color-purple: #7a3cf0;
-  --color-purple-deep: #4c1d95;
-  --color-purple-glow: #9d6bff;
+  --color-gold: #f0b323;
+  --color-gold-hot: #ffe08a;
+  --color-gold-deep: #7a4a00;
 
-  --color-yellow: #ffd400;
-  --color-flame: #ff2b2b;
+  --color-ember: #ff3b2f;
+  --color-violet: #7c4dff;
+  --color-jade: #2ec27e;
 
-  --font-display: var(--font-display), "Arial Black", sans-serif;
-  --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-display), "Arial Black", system-ui, sans-serif;
+  --font-grotesk: var(--font-grotesk), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-mono), ui-monospace, monospace;
-
-  --shadow-torn: 0 2px 0 rgba(0, 0, 0, 0.08), 0 18px 40px -12px rgba(0, 0, 0, 0.35);
-  --shadow-lift: 0 30px 60px -20px rgba(76, 29, 149, 0.45);
 }
 
 :root {
-  --bg: var(--color-paper);
-  --fg: var(--color-ink);
+  color-scheme: dark;
 }
 
 html {
-  background: var(--bg);
-  color: var(--fg);
+  background: var(--color-void);
+  color: var(--color-bone);
   -webkit-font-smoothing: antialiased;
   overflow-x: clip;
 }
 
 body {
-  font-family: var(--font-sans);
+  font-family: var(--font-grotesk);
   overflow-x: clip;
+  background: var(--color-void);
 }
 
-/* torn-paper deckle edge — used via .torn on any block */
-.torn {
-  position: relative;
-  background: var(--color-pure);
-  box-shadow: var(--shadow-torn);
-  clip-path: polygon(
-    0% 3%, 4% 0%, 12% 2%, 22% 0%, 34% 3%, 46% 0%, 58% 2%, 70% 0%, 82% 3%, 92% 0%, 100% 4%,
-    99% 14%, 100% 26%, 98% 40%, 100% 54%, 99% 68%, 100% 82%, 98% 94%, 100% 100%,
-    88% 98%, 76% 100%, 64% 97%, 52% 100%, 40% 98%, 28% 100%, 16% 97%, 6% 100%, 0% 96%,
-    2% 82%, 0% 68%, 1% 54%, 0% 40%, 2% 26%, 0% 14%
-  );
-}
-
-/* ---- torn 3D display letters ------------------------------------------- */
-.torn-letter {
-  position: relative;
-  display: inline-block;
-  background: var(--color-pure);
+::selection {
+  background: var(--color-gold);
   color: var(--color-ink);
-  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
-  filter: drop-shadow(0 14px 18px rgba(0, 0, 0, 0.28))
-    drop-shadow(0 2px 0 var(--color-purple-deep));
-  animation: letter-float 6s ease-in-out infinite;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
-}
-.torn-letter:hover {
-  transform: translateY(-10px) rotate(-2deg) scale(1.04);
-  filter: drop-shadow(0 22px 30px rgba(76, 29, 149, 0.55))
-    drop-shadow(0 3px 0 var(--color-purple));
-}
-@keyframes letter-float {
-  0%, 100% { transform: translateY(0) rotate(var(--tilt, 0deg)); }
-  50% { transform: translateY(-6px) rotate(calc(var(--tilt, 0deg) * -1)); }
 }
 
-/* ---- hanging name tiles ------------------------------------------------- */
-.tile-sway {
-  transform-origin: 50% -28px;
-  animation: sway 5s ease-in-out infinite;
-}
-@keyframes sway {
-  0%, 100% { transform: rotate(-2.2deg); }
-  50% { transform: rotate(2.2deg); }
-}
-.chain-glow {
-  animation: chain-pulse 5s ease-in-out infinite;
-}
-@keyframes chain-pulse {
-  0%, 12%, 100% {
-    color: var(--color-ink);
-    box-shadow: var(--shadow-torn);
-    background: var(--color-pure);
-  }
-  5% {
-    color: var(--color-pure);
-    background: var(--color-purple);
-    box-shadow: 0 0 34px 6px var(--color-purple-glow), var(--shadow-torn);
-  }
+/* headings default to the heavy display face */
+h1, h2, h3 {
+  font-family: var(--font-display);
+  letter-spacing: -0.03em;
+  line-height: 0.86;
 }
 
-@keyframes eq {
-  from { height: 3px; }
-  to { height: 12px; }
-}
+/* --- shared textures ---------------------------------------------------- */
 
-@keyframes ring-undulate {
-  0%, 100% { transform: translateY(-4px) scaleY(0.9) rotate(-6deg); }
-  50% { transform: translateY(4px) scaleY(1.05) rotate(6deg); }
+/* fine paper / concrete fibre, multiplied over any panel */
+.fibre {
+  position: relative;
+  isolation: isolate;
 }
-
-/* ---- skills ring -------------------------------------------------------- */
-.ring-spin {
-  animation: spin 46s linear infinite;
-}
-.ring-spin-rev {
-  animation: spin 46s linear infinite reverse;
-}
-.ring-paused .ring-spin,
-.ring-paused .ring-spin-rev {
-  animation-play-state: paused;
-}
-@keyframes spin {
-  to { transform: rotate(360deg); }
-}
-
-/* ---- universe ----------------------------------------------------------- */
-@keyframes drift-x {
-  from { transform: translate3d(0, 0, 0); }
-  to { transform: translate3d(-50%, 0, 0); }
-}
-.drift {
-  animation: drift-x var(--dur, 40s) linear infinite;
-}
-@keyframes cat-pulse {
-  0%, 100% { opacity: 0.55; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.03); }
-}
-
-/* ---- mind-map thread vibration ----------------------------------------- */
-@keyframes thread-buzz {
-  0%, 100% { stroke-dashoffset: 0; }
-  50% { stroke-dashoffset: -14; }
-}
-.thread {
-  stroke-dasharray: 5 7;
-  animation: thread-buzz 1.1s linear infinite;
-}
-
-@keyframes marquee-x {
-  from {
-    transform: translate3d(0, 0, 0);
-  }
-  to {
-    /* -50% of the doubled track + half the gap */
-    transform: translate3d(calc(-50% - 0.5rem), 0, 0);
-  }
-}
-.marquee-track {
-  animation: marquee-x 55s linear infinite;
-}
-.marquee:hover .marquee-track {
-  animation-play-state: paused;
-}
-@media (prefers-reduced-motion: reduce) {
-  .marquee-track {
-    animation: none;
-  }
-}
-
-.logo-tile {
-  transition:
-    transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-    box-shadow 0.35s ease,
-    border-color 0.2s ease;
-}
-.logo-tile:hover {
-  transform: translateY(-6px) rotate(-0.6deg);
-  filter: drop-shadow(0 22px 34px rgba(122, 60, 240, 0.45));
-}
-.logo-tile:hover .logo-media {
-  filter: saturate(1.05) contrast(1.03);
-}
-
-.grain::after {
+.fibre::after {
   content: "";
   position: absolute;
   inset: 0;
+  z-index: 1;
   pointer-events: none;
+  mix-blend-mode: overlay;
   opacity: 0.5;
-  mix-blend-mode: multiply;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.35'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
+}
+
+/* gold hairline */
+.rule-gold {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-gold-deep) 12%, var(--color-gold) 50%, var(--color-gold-deep) 88%, transparent);
+}
+
+/* molten crack seam — a thin glowing line */
+.seam {
+  position: relative;
+}
+.seam::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #ffcf6b, #fff2d0 45%, #ff9b3d 55%, transparent);
+  filter: drop-shadow(0 0 8px #ffb347) drop-shadow(0 0 20px #ff7a1840);
+}
+
+/* text set in gold foil */
+.foil {
+  background: linear-gradient(100deg, #7a4a00 0%, #f0b323 26%, #fff2d0 44%, #f0b323 60%, #7a4a00 100%);
+  background-size: 220% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: foil-drift 7s ease-in-out infinite;
+}
+@keyframes foil-drift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* outlined display text */
+.stroke {
+  color: transparent;
+  -webkit-text-stroke: clamp(1px, 0.18vw, 2.5px) currentColor;
+}
+
+/* engraved into metal */
+.engrave {
+  color: #d8d4cc;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.08), 0 -1px 1px rgba(0, 0, 0, 0.8);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
+  *, *::before, *::after {
     animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
   }
+}
+
+@keyframes noise-shift {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(-4%, 3%); }
+  100% { transform: translate(3%, -2%); }
 }
