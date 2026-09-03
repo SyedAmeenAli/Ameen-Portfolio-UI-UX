@@ -4,6 +4,7 @@ import "./globals.css";
 import { SmoothScroll } from "@/components/smooth-scroll";
 import { MobileNotice } from "@/components/mobile-notice";
 import { CrackDefs } from "@/components/logos/crack";
+import { PaperDefs } from "@/components/paper/paper-defs";
 import { SoundToggle } from "@/components/sound-toggle";
 import { PageTransition } from "@/components/page-transition";
 import { SITE } from "@/lib/site";
@@ -68,6 +69,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${display.variable} ${sans.variable} ${mono.variable} h-full`}
     >
       <body className="min-h-full flex flex-col bg-paper text-ink">
+        <PaperDefs />
         <CrackDefs />
         <MobileNotice />
         <PageTransition />

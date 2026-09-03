@@ -53,7 +53,7 @@ export function NameChain() {
                 play("glow");
               }}
               onMouseLeave={() => setHot(null)}
-              className={`chain-glow grain grid h-[clamp(56px,9vw,120px)] w-[clamp(52px,8vw,112px)] place-items-center border-2 border-ink font-display text-[clamp(1.4rem,4vw,3.4rem)] ${
+              className={`chain-glow grain grid h-[clamp(64px,12vw,170px)] w-[clamp(58px,10.5vw,150px)] place-items-center border-2 border-ink font-display text-[clamp(1.6rem,5.4vw,4.6rem)] ${
                 hot === i ? "!bg-purple !text-pure" : ""
               }`}
               style={{

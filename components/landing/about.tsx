@@ -57,10 +57,10 @@ export function About() {
           </h2>
 
           <p className="mt-6 max-w-xl text-sm leading-relaxed text-ink/70">
-            Hi, I&apos;m {SITE.name}. {SITE.heroSub}
+            {SITE.name}. {SITE.manifesto[0]} {SITE.manifesto[1]}
           </p>
           <p className="mt-4 max-w-xl text-sm leading-relaxed text-ink/70">
-            {SITE.creativity.body}
+            {SITE.manifesto[2]} {SITE.manifesto[3]}
           </p>
 
           <div className="mt-12 grid gap-12 sm:grid-cols-2">
@@ -68,7 +68,9 @@ export function About() {
               <h3 className="font-display text-lg uppercase tracking-tight">Education</h3>
               <span className="mt-2 block h-[2px] w-10 bg-purple" />
               <p className="mt-4 text-sm font-semibold">{SITE.education.title}</p>
-              <p className="mt-1 text-xs text-ink/55">{SITE.education.school}</p>
+              <p className="mt-1 text-xs text-ink/55">
+                {SITE.education.school} · {SITE.education.when}
+              </p>
             </div>
 
             <div>

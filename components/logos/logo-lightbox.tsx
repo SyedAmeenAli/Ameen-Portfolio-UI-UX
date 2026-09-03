@@ -122,14 +122,14 @@ export function LogoLightbox({
           <div>
             <h3 className="font-display text-2xl uppercase leading-none">{logo.name}</h3>
             <p className="mt-1 font-mono text-[11px] uppercase tracking-widest text-purple">
-              {[logo.tag, logo.client, logo.year].filter(Boolean).join(" · ")}
+              {[logo.type, logo.line].filter(Boolean).join(" · ")}
             </p>
           </div>
           <span className="font-mono text-sm text-ink/40">
             {String(logo.n).padStart(2, "0")} / {String(logos.length).padStart(2, "0")}
           </span>
         </div>
-        {logo.blurb && <p className="mt-3 text-sm text-ink/70">{logo.blurb}</p>}
+        {logo.line && <p className="mt-3 text-sm text-ink/70">{logo.line}</p>}
       </div>
     </div>
   );

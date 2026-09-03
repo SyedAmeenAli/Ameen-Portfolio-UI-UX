@@ -17,10 +17,10 @@ export function SkillsRing() {
           <span className="ml-2 text-yellow">✦</span>
         </p>
         <p className="mt-3 font-mono text-[10px] uppercase tracking-[0.3em] text-purple">
-          {SITE.creativity.label}
+          {"02 — My Creativity"}
         </p>
         <p className="mt-2 text-sm leading-relaxed text-ink/65">
-          {SITE.creativity.body}
+          {SITE.manifesto[2]}
         </p>
         <ul className="mt-6 grid gap-3 sm:grid-cols-2">
           {SKILLS.map((s) => (
@@ -36,7 +36,7 @@ export function SkillsRing() {
           ))}
         </ul>
         <p className="mt-5 font-mono text-[10px] uppercase tracking-wider text-yellow-600">
-          {SITE.creativity.tagline}
+          {SITE.manifesto[3]}
         </p>
       </div>
 
@@ -106,13 +106,13 @@ export function SkillsRing() {
         ) : (
           <>
             <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-purple">
-              {SITE.creativity.label}
+              {"02 — My Creativity"}
             </p>
             <p className="mt-2 text-xs leading-relaxed text-ink/65">
-              {SITE.creativity.body}
+              {SITE.manifesto[2]}
             </p>
             <p className="mt-3 font-mono text-[10px] uppercase tracking-wider text-yellow-600">
-              {SITE.creativity.tagline}
+              {SITE.manifesto[3]}
             </p>
           </>
         )}

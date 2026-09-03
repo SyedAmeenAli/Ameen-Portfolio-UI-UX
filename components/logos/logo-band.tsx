@@ -1,48 +1,54 @@
 import Link from "next/link";
+import { Torn } from "@/components/paper/torn";
 
-/** Shaded top band with the pinned torn "LOGOS AND MARKS" sign (sketch p.3). */
+/** Full-bleed dark band with the torn sign pinned into it. */
 export function LogoBand({ count }: { count: number }) {
   return (
-    <header className="relative isolate overflow-hidden bg-ink pb-20 pt-24 text-paper">
-      {/* smudged shading */}
+    <header className="relative isolate overflow-hidden bg-ink px-[3vw] pb-[16vh] pt-[12vh] text-paper">
       <div
         aria-hidden
-        className="grain absolute inset-0 -z-10 opacity-70"
+        className="absolute inset-0 -z-20"
         style={{
           background:
-            "radial-gradient(120% 80% at 50% 0%, #2a2340 0%, #14121c 45%, #0b0b0c 100%)",
+            "radial-gradient(130% 85% at 22% 0%, #2e2450 0%, #16131f 44%, #08080b 100%)",
         }}
       />
-      {/* torn bottom edge into the paper */}
+      {/* smudge */}
       <div
         aria-hidden
-        className="absolute inset-x-0 bottom-0 h-10 bg-paper"
-        style={{
-          clipPath:
-            "polygon(0 60%,3% 40%,7% 70%,12% 45%,18% 75%,24% 48%,30% 72%,37% 44%,45% 70%,52% 46%,60% 74%,68% 45%,76% 72%,84% 46%,92% 74%,100% 50%,100% 100%,0 100%)",
-        }}
+        className="absolute inset-0 -z-10 opacity-40 mix-blend-overlay"
+        style={{ filter: "url(#fibre)" }}
+      />
+      {/* the paper tears open at the bottom of the band */}
+      <div
+        aria-hidden
+        className="absolute inset-x-0 bottom-0 h-[7vh] bg-paper"
+        style={{ filter: "url(#tear-lift)", transform: "scaleY(-1) translateX(-6%)", width: "112%" }}
       />
 
-      <div className="mx-auto w-[min(1100px,92vw)]">
-        <Link
-          href="/"
-          className="font-mono text-[11px] uppercase tracking-[0.3em] text-paper/50 hover:text-yellow"
-        >
-          ← back
-        </Link>
+      <Link
+        href="/"
+        className="font-mono text-[10px] uppercase tracking-[0.35em] text-paper/45 transition-colors hover:text-yellow"
+      >
+        ← back
+      </Link>
 
-        <div className="mt-6 inline-block -rotate-2">
-          <span className="grain torn inline-block bg-pure px-8 py-5 font-display text-4xl uppercase leading-[0.85] text-ink shadow-lift md:text-6xl">
-            Logos
-            <br />
-            and Marks
+      <div className="mt-[6vh] flex flex-wrap items-end justify-between gap-8">
+        <h1 className="font-display text-[clamp(2.6rem,12vw,12rem)] uppercase leading-[0.8] tracking-[-0.04em]">
+          Logos
+          <br />
+          <span className="text-transparent [-webkit-text-stroke:clamp(1px,0.2vw,3px)_var(--color-paper)]">
+            &amp; Marks
           </span>
-        </div>
+        </h1>
 
-        <p className="mt-6 max-w-md text-sm text-paper/60">
-          {count} marks — identities, wordmarks and emblems. Hover to bring one to
-          life, click to enlarge, use ← → to move through the set.
-        </p>
+        <Torn tilt={-2.4} className="px-6 py-4" tone="pure">
+          <p className="font-mono text-[10px] uppercase leading-relaxed tracking-[0.25em] text-ink">
+            {count} marks
+            <br />
+            <span className="text-purple">hover · click · ← →</span>
+          </p>
+        </Torn>
       </div>
     </header>
   );

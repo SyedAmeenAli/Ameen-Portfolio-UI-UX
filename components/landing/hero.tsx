@@ -1,69 +1,100 @@
 import { SITE } from "@/lib/site";
-import { Crack } from "@/components/logos/crack";
+import { Rip } from "@/components/paper/rip";
 import { NameChain } from "./name-chain";
 
-const WORD = "PORTFOLIO".split("");
-
+/**
+ * Full-bleed hero. The word is set edge to edge with no container, and the
+ * pixel avatar stands in for the O — the identity is the work, not the face.
+ */
 export function Hero() {
   return (
-    <section className="relative isolate overflow-hidden pb-10 pt-24">
-      <div className="mx-auto w-[min(1240px,94vw)]">
-        <div className="flex items-start justify-between gap-4 font-mono text-[9px] uppercase tracking-[0.2em] text-ink/70 sm:text-[11px] sm:tracking-[0.35em]">
-          <span className="min-w-0">
-            {SITE.kicker}
-            <span className="ml-2 text-purple sm:ml-3">UI / UX</span>
-          </span>
-          <span className="shrink-0 font-display text-xl tracking-normal text-ink/80 sm:text-2xl md:text-4xl">
-            {SITE.year}
-          </span>
-        </div>
+    <section className="relative isolate overflow-hidden pt-14">
+      {/* meta rail, hard against the page edges */}
+      <div className="flex items-end justify-between px-[3vw] font-mono text-[10px] uppercase tracking-[0.3em] text-ink/60 sm:text-[11px]">
+        <span>{SITE.kicker}</span>
+        <span className="hidden sm:block">Portfolio</span>
+        <span className="font-display text-[clamp(1rem,2.6vw,2.2rem)] tracking-normal text-ink">
+          {SITE.year}
+        </span>
+      </div>
 
-        {/* torn cardboard letters */}
-        <h1
-          className="mt-2 flex w-full flex-nowrap items-end justify-between font-display leading-none"
-          aria-label="Portfolio"
+      {/* PORTFOLI + avatar-as-O */}
+      <h1
+        className="mt-1 flex w-full items-center justify-between px-[2vw] font-display leading-[0.78] tracking-[-0.04em]"
+        aria-label="Portfolio"
+      >
+        <span aria-hidden className="text-[clamp(2.6rem,14.7vw,14rem)]">
+          PORTF
+        </span>
+
+        {/* the O — the pixel figure stands inside the counter. Absolute so the
+            tall artwork can never stretch the letter out of round. */}
+        <span
+          aria-hidden
+          className="relative block aspect-square w-[clamp(2.6rem,14.4vw,13.7rem)] shrink-0"
         >
-          {WORD.map((ch, i) => (
-            <span
-              key={i}
-              aria-hidden
-              className="torn-letter grain px-[0.7vw] py-[0.35vw] text-[clamp(1.6rem,8.4vw,7.6rem)]"
-              style={
-                {
-                  "--tilt": `${(i % 3) - 1}deg`,
-                  animationDelay: `${i * 0.28}s`,
-                  clipPath:
-                    i % 2
-                      ? "polygon(0 6%,6% 0,22% 4%,42% 0,64% 5%,84% 0,100% 5%,97% 24%,100% 48%,98% 72%,100% 94%,82% 100%,60% 96%,38% 100%,16% 96%,0 100%,3% 76%,0 52%,2% 28%)"
-                      : "polygon(2% 0,20% 5%,40% 0,60% 4%,80% 0,100% 4%,98% 26%,100% 50%,97% 74%,100% 96%,80% 100%,58% 95%,36% 100%,14% 96%,0 100%,2% 74%,0 50%,3% 26%,0 4%)",
-                } as React.CSSProperties
-              }
-            >
-              {ch}
-            </span>
-          ))}
-        </h1>
+          {/* the counter of the O, filled by the pixel portrait */}
+          <span className="absolute inset-[clamp(0.5rem,2.4vw,2.3rem)] overflow-hidden rounded-full bg-ink">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/me/head.webp"
+              alt=""
+              width={384}
+              height={384}
+              className="h-full w-full scale-[1.18] object-cover"
+              style={{ imageRendering: "pixelated" }}
+            />
+          </span>
+          <span className="absolute inset-0 rounded-full border-[clamp(0.5rem,2.4vw,2.3rem)] border-ink" />
+        </span>
 
-        <p className="mt-3 text-right font-display text-[clamp(0.9rem,2.4vw,2rem)] uppercase tracking-[0.3em] text-ink/85">
+        <span aria-hidden className="text-[clamp(2.6rem,14.7vw,14rem)]">
+          LIO
+        </span>
+      </h1>
+
+      <div className="flex items-start justify-between px-[3vw]">
+        <p className="max-w-[22ch] font-mono text-[10px] uppercase leading-relaxed tracking-[0.2em] text-ink/50">
+          the face stays off the page
+        </p>
+        <p className="font-display text-[clamp(0.8rem,2.3vw,2rem)] uppercase tracking-[0.3em] text-ink">
           Designer
         </p>
+      </div>
 
-        {/* the tear across the page — hover it to set the purple alight */}
-        <div className="relative mt-10 h-12 w-full">
-          <Crack className="inset-0 h-full w-full" />
+      {/* the page tears open */}
+      <Rip height={140} className="mt-[6vh]" />
+
+      <NameChain />
+
+      {/* manifesto, set like a poster not a paragraph */}
+      <div className="mt-[12vh] px-[3vw] pb-[10vh]">
+        <p className="font-display text-[clamp(1.8rem,7.6vw,7rem)] uppercase leading-[0.86] tracking-[-0.03em]">
+          {SITE.manifesto[0]}
+        </p>
+
+        <div className="mt-[6vh] grid gap-x-[6vw] gap-y-8 md:grid-cols-[1fr_1fr_auto]">
+          <p className="max-w-[34ch] text-[clamp(1rem,1.5vw,1.35rem)] leading-relaxed text-ink/70">
+            {SITE.manifesto[1]}
+          </p>
+          <p className="max-w-[34ch] text-[clamp(1rem,1.5vw,1.35rem)] leading-relaxed text-ink/70">
+            {SITE.manifesto[2]}{" "}
+            <span className="text-ink">{SITE.manifesto[3]}</span>
+          </p>
+
+          <ul className="space-y-2 font-mono text-[10px] uppercase tracking-[0.25em] text-ink/35">
+            <li className="text-purple/70">not this</li>
+            {SITE.against.map((a) => (
+              <li key={a} className="line-through decoration-purple decoration-2">
+                {a}
+              </li>
+            ))}
+          </ul>
         </div>
 
-        <NameChain />
-
-        <div className="mx-auto mt-16 max-w-3xl text-center">
-          <p className="font-display text-[clamp(1.1rem,2.6vw,2rem)] leading-tight">
-            {SITE.hero}
-          </p>
-          <p className="mt-5 text-sm leading-relaxed text-ink/60">{SITE.heroSub}</p>
-          <p className="mt-6 font-mono text-[11px] uppercase tracking-[0.3em] text-purple">
-            {SITE.disciplines.join("  ·  ")}
-          </p>
-        </div>
+        <p className="mt-[8vh] border-t border-ink/15 pt-5 font-mono text-[10px] uppercase tracking-[0.3em] text-purple">
+          {SITE.disciplines.join("  /  ")}
+        </p>
       </div>
     </section>
   );
