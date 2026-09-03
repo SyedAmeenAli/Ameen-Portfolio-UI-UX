@@ -54,7 +54,42 @@ async function head(src, out) {
   await report(out);
 }
 
+/**
+ * Trim the cutout, then centre it on a fixed 900x1600 transparent canvas
+ * scaled so the FIGURE is the same height in every view (front / side / back).
+ * pixel-reveal then treats all three as one size — no per-image geometry.
+ */
+async function padded(src, out) {
+  const CW = 900;
+  const CH = 1600;
+  const FIG_H = 1520; // figure height inside the canvas (leaves a small margin)
+
+  const { data, info } = await sharp(src)
+    .ensureAlpha()
+    .raw()
+    .toBuffer({ resolveWithObject: true });
+  for (let i = 0; i < data.length; i += 4) {
+    if (data[i] < 26 && data[i + 1] < 26 && data[i + 2] < 26) data[i + 3] = 0;
+  }
+  const fig = await sharp(data, { raw: { width: info.width, height: info.height, channels: 4 } })
+    .trim({ threshold: 1 })
+    .resize({ height: FIG_H, fit: "inside", kernel: "nearest" })
+    .toBuffer({ resolveWithObject: true });
+
+  await sharp({
+    create: { width: CW, height: CH, channels: 4, background: { r: 0, g: 0, b: 0, alpha: 0 } },
+  })
+    .composite([{ input: fig.data, raw: { width: fig.info.width, height: fig.info.height, channels: 4 }, gravity: "center" }])
+    .webp({ quality: 88, alphaQuality: 100, effort: 6 })
+    .toFile(out);
+  await report(out);
+}
+
 await cutout(P("me", "front.jpg"), P("me", "front-cut.webp"));
 await cutout(P("me", "back.jpg"), P("me", "back-cut.webp"));
 await cutout(P("me", "side.png"), P("me", "side-cut.webp"), 26, 420);
 await head(P("me", "front.jpg"), P("me", "head.webp"));
+
+await padded(P("me", "front.jpg"), P("me", "front-pad.webp"));
+await padded(P("me", "back.jpg"), P("me", "back-pad.webp"));
+await padded(P("me", "side.png"), P("me", "side-pad.webp"));
