@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 
-export type Art = { src: string; title: string; meta?: string; bg?: string };
+export type Art = { src: string; title: string; meta?: string; bg?: string; video?: boolean };
 
 /** Editorial artwork viewer — click a piece, ESC / ← → to navigate. */
 export function useArtLightbox(items: Art[]) {
@@ -38,13 +38,26 @@ export function useArtLightbox(items: Art[]) {
           className="flex items-center justify-center border border-purple/30 p-3 sm:p-4"
           style={{ background: items[i].bg ?? "#0b0a10", maxHeight: "88dvh", maxWidth: "94vw" }}
         >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={items[i].src}
-            alt={items[i].title}
-            className="h-auto w-auto object-contain"
-            style={{ maxHeight: "82dvh", maxWidth: "88vw" }}
-          />
+          {items[i].video ? (
+            <video
+              key={items[i].src}
+              src={items[i].src}
+              controls
+              autoPlay
+              loop
+              playsInline
+              className="h-auto w-auto object-contain"
+              style={{ maxHeight: "82dvh", maxWidth: "88vw" }}
+            />
+          ) : (
+            /* eslint-disable-next-line @next/next/no-img-element */
+            <img
+              src={items[i].src}
+              alt={items[i].title}
+              className="h-auto w-auto object-contain"
+              style={{ maxHeight: "82dvh", maxWidth: "88vw" }}
+            />
+          )}
         </span>
       </div>
       <button onClick={(e) => { e.stopPropagation(); prev(); }} aria-label="Previous"

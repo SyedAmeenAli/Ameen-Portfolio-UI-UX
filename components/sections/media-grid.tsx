@@ -16,8 +16,7 @@ export function MediaGrid({
   rows?: string;
   cols?: string;
 }) {
-  const imgs = items.filter((i) => !i.video);
-  const { open, view } = useArtLightbox(imgs);
+  const { open, view } = useArtLightbox(items);
 
   return (
     <section className={`grid ${cols} gap-2 border-b border-purple/40 p-[1vw] ${rows}`}>
@@ -25,20 +24,24 @@ export function MediaGrid({
         const span = it.span ?? SPANS[idx % SPANS.length];
         if (it.video) {
           return (
-            <figure key={idx} className={`group relative overflow-hidden border border-purple/25 bg-iron ${span}`}>
+            <button
+              key={idx}
+              onClick={() => open(idx)}
+              className={`group relative cursor-zoom-in overflow-hidden border border-purple/25 bg-iron text-left transition-colors hover:border-yellow ${span}`}
+            >
               <video src={it.src} muted loop autoPlay playsInline preload="metadata" className="h-full w-full object-cover" />
-              <figcaption className="absolute inset-x-0 bottom-0 flex items-center justify-between bg-gradient-to-t from-black/90 to-transparent p-3 font-grotesk text-[9px] font-semibold uppercase tracking-[0.16em] text-bone">
+              <span className="pointer-events-none absolute right-2 top-2 z-10 bg-bone px-1.5 py-0.5 font-grotesk text-[9px] font-bold text-black">▶</span>
+              <figcaption className="pointer-events-none absolute inset-x-0 bottom-0 flex items-center justify-between bg-gradient-to-t from-black/90 to-transparent p-3 font-grotesk text-[9px] font-semibold uppercase tracking-[0.16em] text-bone">
                 <span>{it.title}</span>
                 {it.meta && <span className="text-purple">{it.meta}</span>}
               </figcaption>
-            </figure>
+            </button>
           );
         }
-        const li = imgs.indexOf(it);
         return (
           <button
             key={idx}
-            onClick={() => open(li)}
+            onClick={() => open(idx)}
             className={`group relative flex cursor-zoom-in flex-col justify-between overflow-hidden border border-purple/25 bg-iron text-left transition-colors hover:border-yellow ${span}`}
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}

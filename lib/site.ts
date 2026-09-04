@@ -73,7 +73,7 @@ export const CATEGORIES: Category[] = [
     blurb: "Stop-the-scroll thumbnails — contrast, one face, one promise." },
   { key: "illustration", label: "Illustration", href: "/work/illustration", tag: "ILLUSTRATION", count: "25", accent: "yellow", kind: "grid",
     blurb: "Character work — food people, fashion figures, the odd bird man. Drawn to have a point of view." },
-  { key: "motion", label: "2D / 3D Motion", href: "/work/motion", tag: "2D MOTION", count: "07", accent: "purple", kind: "motion",
+  { key: "motion", label: "2D / 3D Motion", href: "/work/motion", tag: "2D MOTION", count: "05", accent: "purple", kind: "motion",
     blurb: "Motion studies in 2D and 3D — type in space, objects that behave wrong on purpose." },
   { key: "typography", label: "Typography", href: "/work/typography", tag: "TYPE", count: "12", accent: "purple", kind: "type",
     blurb: "Not a list of fonts. Font choice → personality → pairing → hierarchy → spacing → application. Type has a voice." },

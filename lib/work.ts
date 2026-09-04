@@ -33,7 +33,9 @@ const SOCIAL_EXCLUDE = new Set(["continuous-table-passing-through", "koro-coffee
 export const SOCIAL = toPieces(SOCIAL_FILES.filter((m) => !SOCIAL_EXCLUDE.has(m.slug)));
 export const THUMBS = toPieces(THUMB_FILES);
 export const ILLOS = toPieces(ILLO_FILES);
-export const MOTION = MOTION_FILES.map((m) => ({ slug: m.slug, file: m.file, title: titleFrom(m.slug) }));
+// dropped: 3d-video-1 and 3d-video-3 read as too obviously AI-generated
+const MOTION_EXCLUDE = new Set(["3d-video-1", "3d-video-3"]);
+export const MOTION = MOTION_FILES.filter((m) => !MOTION_EXCLUDE.has(m.slug)).map((m) => ({ slug: m.slug, file: m.file, title: titleFrom(m.slug) }));
 
 export type Brand = {
   slug: string; name: string; tagline: string; sector: string;
