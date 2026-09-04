@@ -3,6 +3,7 @@ import { Fraunces, Anton, Space_Grotesk, Space_Mono } from "next/font/google";
 import "./globals.css";
 import { StyledRegistry } from "@/components/styled-registry";
 import { SmoothScroll } from "@/components/smooth-scroll";
+import { PortfolioIntro } from "@/components/portfolio-intro";
 import { SITE } from "@/lib/site";
 
 const serif = Fraunces({ variable: "--font-serif", subsets: ["latin"], display: "swap", axes: ["SOFT", "WONK", "opsz"] });
@@ -25,6 +26,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${serif.variable} ${condensed.variable} ${grotesk.variable} ${mono.variable}`}>
       <body className="grain bg-void text-bone">
+        <PortfolioIntro />
         <StyledRegistry>
           <SmoothScroll>
             <div className="relative z-10">{children}</div>
