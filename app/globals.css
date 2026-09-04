@@ -98,6 +98,42 @@ h1, h2, h3 { font-family: var(--font-condensed); letter-spacing: 0.005em; line-h
 }
 .select-box-light::before, .select-box-light::after { --color-ink: var(--color-bone); }
 
+/* -------------------------------------------------------------------------
+   HOMEPAGE ONLY — strict poster palette: black / #800080 / #FFD600.
+   Scoped so the rest of the portfolio keeps its own system.
+------------------------------------------------------------------------- */
+.home {
+  --color-ink: #000000;
+  --color-void: #000000;
+  --color-bone: #f3f0e8;
+  --color-bone-dim: #14121a;
+  --color-iron: #0c0b10;
+  --color-steel: #241f2e;
+  --color-line: rgba(243, 240, 232, 0.14);
+  --color-line-soft: rgba(243, 240, 232, 0.07);
+  --color-purple: #800080;
+  --color-violet: #800080;
+  --color-yellow: #ffd600;
+  --color-gold: #ffd600;
+  --color-red: #ffd600;
+  --color-concrete-dim: #7a7684;
+  background: #000;
+  color: var(--color-bone);
+}
+.home .grid-lines {
+  background-image:
+    linear-gradient(rgba(243,240,232,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(243,240,232,0.06) 1px, transparent 1px);
+  background-size: 46px 46px;
+}
+.home ::selection { background: #800080; color: #fff; }
+
+/* the O of PORTFOLIO opening as a portal onto the pixel head */
+@keyframes portal-open {
+  from { clip-path: circle(0% at 50% 50%); }
+  to   { clip-path: circle(75% at 50% 50%); }
+}
+
 @keyframes spin { to { transform: rotate(360deg); } }
 @keyframes shimmer { to { background-position: -200% 0; } }
 @keyframes marquee-x { to { transform: translateX(-50%); } }

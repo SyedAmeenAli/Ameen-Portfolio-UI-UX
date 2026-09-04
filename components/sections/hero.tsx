@@ -1,86 +1,78 @@
-"use client";
-
 import type { CSSProperties } from "react";
-import dynamic from "next/dynamic";
-import { SITE } from "@/lib/site";
-import { LOGOS } from "@/lib/logos";
-
-const DomeGallery = dynamic(() => import("@/components/ui/dome-gallery"), { ssr: false });
-
-const domeImages = LOGOS.filter((l) => l.kind !== "todo").map((l) => ({
-  src: l.file ?? (l.kind === "video" ? `/logos/${l.slug}.anim.webp` : `/logos/${l.slug}.webp`),
-  alt: `${l.name} — ${l.type}`,
-}));
-
-const META: [string, string][] = [
-  ["Based in", "Hyderabad, India"],
-  ["Specialising in", "UI/UX · Visual Design · Branding · Art Direction"],
-  ["Available for", "Select projects · Collaborations"],
-];
+import { WhoAmI } from "@/components/sections/who-am-i";
 
 const step = (i: number): CSSProperties => ({ ["--i" as string]: i } as CSSProperties);
 
+const META: [string, string][] = [
+  ["Based in", "Hyderabad, India"],
+  ["Roles", "UI/UX · Visual · Product"],
+  ["Available", "Select projects"],
+];
+
+/** Dense editorial poster. Name is the hero; the O of PORTFOLIO frames the pixel head. */
 export function Hero() {
   return (
-    <section className="grid-lines relative min-h-screen overflow-hidden border-b border-ink/15 px-[4vw] pb-[6vh] pt-[13vh]">
-      <div className="reveal flex items-start justify-between font-mono text-[9px] uppercase tracking-[0.24em] text-ink/55 sm:text-[10px]">
-        <span style={step(0)}>Portfolio / 2026</span>
-        <span className="text-right leading-relaxed" style={step(1)}>
-          17°23&apos;N<br />78°29&apos;E
-        </span>
+    <section className="grid-lines relative min-h-screen overflow-hidden border-b border-bone/15 px-[4vw] pb-[5vh] pt-[10vh]">
+      {/* top meta line */}
+      <div className="reveal flex items-center justify-between font-grotesk text-[10px] font-semibold uppercase tracking-[0.28em] text-bone/50">
+        <span style={step(0)}>01 / Home</span>
+        <span className="text-yellow" style={step(0)}>2026</span>
       </div>
 
-      <div className="reveal relative mt-[6vh]">
-        <h1 className="font-condensed leading-[0.78] tracking-[-0.01em]">
-          <span className="block text-[clamp(4rem,26vw,22rem)] text-ink" style={step(2)}>Ameen</span>
-          <span className="block text-[clamp(4rem,26vw,22rem)] text-purple" style={step(3)}>Ali</span>
-        </h1>
+      <div className="mt-[2vh] grid gap-x-[3vw] gap-y-[3vh] lg:grid-cols-[1fr_auto]">
+        {/* NAME + PORTFOLIO */}
+        <div className="reveal min-w-0">
+          <h1 className="font-condensed uppercase leading-[0.74] tracking-[-0.01em] text-bone">
+            <span className="block text-[clamp(3rem,15.5vw,12rem)]" style={step(1)}>Ameen</span>
+            <span className="block text-[clamp(3rem,15.5vw,12rem)] text-yellow" style={step(2)}>Ali</span>
+          </h1>
 
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/me/front-pad.webp"
-          alt="Ameen, pixelated"
-          className="pointer-events-none absolute right-0 top-[-4vh] hidden h-[62vh] w-auto object-contain md:block"
-          style={{ ...step(4), imageRendering: "pixelated", animation: "float-idle 6s ease-in-out infinite" } as CSSProperties}
-        />
-      </div>
+          {/* PORTFOLI[O = pixel head portal] */}
+          <div className="mt-[2.5vh] flex flex-nowrap items-center font-condensed text-[clamp(2rem,9vw,7rem)] uppercase leading-none text-bone" style={step(3)}>
+            <span className="tracking-[-0.02em]">Portfoli</span>
+            <span
+              className="relative ml-[0.04em] inline-block aspect-square h-[0.92em] shrink-0 overflow-hidden rounded-full border-[0.06em] border-purple bg-black"
+              aria-hidden
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/me/head.webp"
+                alt=""
+                className="absolute inset-0 h-full w-full scale-[1.08] object-cover"
+                style={{ imageRendering: "pixelated", animation: "portal-open 0.7s cubic-bezier(0.16,1,0.3,1) 0.55s both" }}
+              />
+            </span>
+          </div>
+        </div>
 
-      <div className="reveal mt-[8vh] grid gap-[6vh] md:grid-cols-[1.2fr_0.8fr] md:items-end">
-        <div style={step(5)}>
-          <p className="max-w-[34ch] font-condensed text-[clamp(1.2rem,2.6vw,2rem)] uppercase leading-[1.05] text-ink">
-            Digital designer. I build experiences, identities and visual systems meant to be remembered.
+        {/* META COLUMN */}
+        <aside className="reveal relative z-10 self-end lg:-ml-[8vw] lg:max-w-[16rem]">
+          <p className="font-grotesk text-[10px] font-semibold uppercase tracking-[0.24em] text-purple" style={step(4)}>
+            Ameen Ali — Digital Designer
           </p>
-          <dl className="mt-8 space-y-3">
+          <dl className="mt-4 space-y-3" style={step(5)}>
             {META.map(([k, v]) => (
-              <div key={k} className="flex gap-4 border-t border-ink/15 pt-2 font-mono text-[10px] uppercase tracking-[0.18em]">
-                <dt className="w-28 shrink-0 text-ink/45">{k}</dt>
-                <dd className="text-ink/80">{v}</dd>
+              <div key={k} className="border-t border-purple/60 pt-1.5">
+                <dt className="font-grotesk text-[9px] font-semibold uppercase tracking-[0.24em] text-bone/45">{k}</dt>
+                <dd className="font-grotesk text-sm font-semibold uppercase tracking-wide text-bone/85">{v}</dd>
               </div>
             ))}
           </dl>
-        </div>
-
-        <div className="justify-self-start md:justify-self-end" style={step(6)}>
-          <div className="h-[34vh] w-[min(80vw,22rem)] border border-ink/15">
-            <DomeGallery images={domeImages} fit={0.5} minRadius={360} segments={22} autoSpin={false} overlayBlurColor="#f3f0e8" />
-          </div>
-          <p className="mt-2 font-mono text-[9px] uppercase tracking-[0.24em] text-ink/45">Selected marks — drag to turn ↗</p>
-        </div>
+          <p className="mt-5 max-w-[22ch] font-grotesk text-[13px] font-medium leading-snug text-bone/70" style={step(6)}>
+            I design digital experiences, visual systems and identities.
+          </p>
+        </aside>
       </div>
 
-      <p className="reveal mt-[6vh] font-mono text-[10px] uppercase tracking-[0.35em] text-ink/40" style={step(7)}>
-        Scroll to explore ↓
-      </p>
-
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src="/me/front-pad.webp"
-        alt="Ameen, pixelated"
-        className="mx-auto mt-10 h-[40vh] w-auto object-contain md:hidden"
-        style={{ imageRendering: "pixelated" }}
-      />
-
-      <span className="sr-only">{SITE.thesis}</span>
+      {/* lower band */}
+      <div className="reveal mt-[4vh] flex flex-wrap items-end justify-between gap-[4vh]">
+        <div style={step(7)}><WhoAmI /></div>
+        <div className="flex items-center gap-3 font-grotesk text-[10px] font-semibold uppercase tracking-[0.3em] text-bone/50" style={step(7)}>
+          <span className="h-3 w-3 bg-purple" />
+          Scroll to explore
+          <span className="text-yellow">↓</span>
+        </div>
+      </div>
     </section>
   );
 }

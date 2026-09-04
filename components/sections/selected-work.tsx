@@ -14,33 +14,33 @@ const ROWS: Row[] = [
 
 export function SelectedWork() {
   return (
-    <section id="work" className="border-b border-ink/15 px-[4vw] py-[16vh]">
-      <div className="flex items-baseline justify-between font-mono text-[10px] uppercase tracking-[0.3em] text-ink/50">
-        <h2 className="font-condensed text-[clamp(2.4rem,9vw,7rem)] tracking-normal text-ink">Selected Work</h2>
-        <span>04 / Projects</span>
+    <section id="work" className="border-b border-bone/15 px-[4vw] py-[12vh]">
+      <div className="flex items-baseline justify-between font-grotesk text-[10px] font-semibold uppercase tracking-[0.3em] text-bone/50">
+        <h2 className="font-condensed text-[clamp(2rem,8vw,5.5rem)] tracking-normal text-bone">Selected Work</h2>
+        <span className="text-yellow">04 / Projects</span>
       </div>
 
-      <ul className="mt-14 border-t border-ink/15">
+      <ul className="mt-10 border-t border-bone/15">
         {ROWS.map((r, i) => (
           <li key={r.kind} id={r.tag && i === 5 ? "experiments" : undefined}>
             <Link
               href={r.href}
-              className="group relative flex flex-col gap-1 overflow-hidden border-b border-ink/15 py-8 transition-colors hover:bg-ink hover:text-bone md:flex-row md:items-baseline md:gap-8 md:py-10"
+              className="group relative flex flex-col gap-1 overflow-hidden border-b border-bone/15 py-5 transition-colors hover:bg-purple md:flex-row md:items-baseline md:gap-6 md:py-6"
             >
-              <span className="font-mono text-[11px] text-ink/40 group-hover:text-bone/50">{String(i + 1).padStart(2, "0")}</span>
-              <span className="w-44 shrink-0 font-mono text-[10px] uppercase tracking-[0.2em] text-ink/55 group-hover:text-yellow">
-                {r.kind}{r.tag && <span className="ml-2 text-purple">·{r.tag}</span>}
+              <span className="font-grotesk text-[11px] font-semibold text-yellow">{String(i + 1).padStart(2, "0")}</span>
+              <span className="w-40 shrink-0 font-grotesk text-[10px] font-semibold uppercase tracking-[0.2em] text-purple group-hover:text-yellow">
+                {r.kind}{r.tag && <span className="ml-1 text-bone/50 group-hover:text-bone">·{r.tag}</span>}
               </span>
-              <span className="flex-1 font-condensed text-[clamp(1.6rem,5vw,3.4rem)] uppercase leading-none">{r.title}</span>
-              <span className="font-mono text-[10px] uppercase tracking-[0.15em] text-ink/45 group-hover:text-bone/60">{r.meta}</span>
-              <span className="font-mono text-[11px] text-ink/50 group-hover:text-bone">View ↗</span>
+              <span className="flex-1 font-condensed text-[clamp(1.4rem,4.5vw,2.8rem)] uppercase leading-none text-bone">{r.title}</span>
+              <span className="font-grotesk text-[10px] font-medium uppercase tracking-[0.14em] text-bone/40 group-hover:text-bone/80">{r.meta}</span>
+              <span className="font-grotesk text-[11px] font-semibold text-bone/55 group-hover:text-yellow">↗</span>
 
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={r.img}
                 alt=""
                 aria-hidden
-                className="pointer-events-none absolute right-[14vw] top-1/2 hidden h-[140%] w-40 -translate-y-1/2 rotate-2 object-cover opacity-0 transition-opacity duration-300 group-hover:opacity-90 lg:block"
+                className="pointer-events-none absolute right-[12vw] top-1/2 hidden h-[150%] w-36 -translate-y-1/2 rotate-2 object-cover opacity-0 grayscale transition-opacity duration-300 group-hover:opacity-80 lg:block"
               />
             </Link>
           </li>
