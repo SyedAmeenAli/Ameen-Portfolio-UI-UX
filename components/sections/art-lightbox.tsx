@@ -29,9 +29,14 @@ export function useArtLightbox(items: Art[]) {
         <span>{items[i].title}{items[i].meta ? ` · ${items[i].meta}` : ""}</span>
         <span>{String(i + 1).padStart(2, "0")} / {String(items.length).padStart(2, "0")}</span>
       </div>
-      <div className="flex flex-1 items-center justify-center overflow-hidden px-[4vw] pb-8" onClick={(e) => e.stopPropagation()}>
+      <div className="flex min-h-0 flex-1 items-center justify-center overflow-hidden px-[10vw] pb-8 sm:px-[12vw]" onClick={(e) => e.stopPropagation()}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={items[i].src} alt={items[i].title} className="max-h-full max-w-full object-contain" />
+        <img
+          src={items[i].src}
+          alt={items[i].title}
+          className="h-auto w-auto object-contain"
+          style={{ maxHeight: "80dvh", maxWidth: "100%" }}
+        />
       </div>
       <button onClick={(e) => { e.stopPropagation(); prev(); }} aria-label="Previous"
         className="absolute left-[3vw] top-1/2 -translate-y-1/2 font-condensed text-4xl text-bone/60 hover:text-yellow">←</button>
