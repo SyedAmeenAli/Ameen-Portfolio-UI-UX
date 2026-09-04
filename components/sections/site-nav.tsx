@@ -5,21 +5,22 @@ const LINKS = [
   { label: "Identity", href: "/work/branding", key: "branding" },
   { label: "Illustration", href: "/work/illustration", key: "illustration" },
   { label: "Posters", href: "/work/posters", key: "posters" },
+  { label: "Experimental", href: "/work/colours", key: "experimental" },
   { label: "About", href: "/#about", key: "about" },
   { label: "Contact", href: "/#contact", key: "contact" },
 ];
 
 /** Compact editorial nav — metadata attached to the artwork, not a navbar. */
-export function SiteNav({ active }: { active?: string }) {
+export function SiteNav({ active, label = "Portfolio" }: { active?: string; label?: string }) {
   return (
     <header className="absolute inset-x-0 top-0 z-50">
-      <nav className="flex items-center justify-between border-b border-purple/40 px-[4vw] py-4 font-grotesk text-[10px] font-semibold uppercase tracking-[0.24em] text-bone">
+      <nav className="flex items-center justify-between border-b border-purple/40 px-[4vw] py-4 font-grotesk text-[10px] font-semibold uppercase tracking-[0.22em] text-bone">
         <Link href="/" className="flex items-baseline gap-2">
-          <span className="text-yellow">AM</span>
-          <span className="text-bone/45">/ Portfolio</span>
+          <span className="font-condensed text-lg leading-none text-yellow">AM</span>
+          <span className="text-purple">/ {label}</span>
         </Link>
 
-        <ul className="hidden gap-5 sm:flex">
+        <ul className="hidden gap-4 md:flex">
           {LINKS.map((l) => (
             <li key={l.key}>
               <a
@@ -35,7 +36,7 @@ export function SiteNav({ active }: { active?: string }) {
           ))}
         </ul>
 
-        <span className="text-yellow">+</span>
+        <span className="font-condensed text-xl leading-none text-yellow">+</span>
       </nav>
     </header>
   );

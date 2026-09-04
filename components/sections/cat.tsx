@@ -8,7 +8,7 @@ const COUNT = 49;
 const FPS = 5;
 const src = (i: number) => `/cat/f/${String(i).padStart(4, "0")}.webp`;
 
-export function Cat({ compact = false }: { compact?: boolean }) {
+export function Cat({ compact = false, bare = false }: { compact?: boolean; bare?: boolean }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const frames = useRef<HTMLImageElement[]>([]);
   const cur = useRef(0);
@@ -87,16 +87,9 @@ export function Cat({ compact = false }: { compact?: boolean }) {
     stopT.current = setTimeout(() => { walking.current = false; }, 2800);
   };
 
-  return (
-    <section className={`on-dark grid-lines-dark relative overflow-hidden border-y border-bone/10 ${compact ? "py-[5vh]" : "py-[10vh]"}`}>
-      <div className="mx-auto max-w-6xl px-[5vw]">
-        <p className="font-grotesk text-[10px] font-semibold uppercase tracking-[0.3em] text-yellow">
-          {compact ? "Signature — click a side, the cat walks" : "the easter egg"}
-        </p>
-        {!compact && <h2 className="mt-2 font-condensed text-[clamp(2.5rem,9vw,6rem)] uppercase leading-none">Move the cat</h2>}
-
-        <div
-          className={`relative w-full select-none ${compact ? "mt-4 aspect-[24/7]" : "mt-8 aspect-[16/9]"}`}
+  const stage = (
+    <div
+      className={`relative w-full select-none ${bare ? "h-full min-h-[120px]" : compact ? "mt-4 aspect-[24/7]" : "mt-8 aspect-[16/9]"}`}
           onPointerMove={(e) => {
             const r = e.currentTarget.getBoundingClientRect();
             setHint(e.clientX - r.left < r.width / 2 ? "left" : "right");
@@ -119,8 +112,19 @@ export function Cat({ compact = false }: { compact?: boolean }) {
           <span className={`pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 font-grotesk text-[10px] font-semibold uppercase tracking-[0.3em] transition-opacity ${hint === "right" ? "opacity-100 text-yellow" : "opacity-30 text-bone"}`}>
             walk right →
           </span>
-        </div>
+    </div>
+  );
 
+  if (bare) return stage;
+
+  return (
+    <section className={`on-dark grid-lines-dark relative overflow-hidden border-y border-bone/10 ${compact ? "py-[5vh]" : "py-[10vh]"}`}>
+      <div className="mx-auto max-w-6xl px-[5vw]">
+        <p className="font-grotesk text-[10px] font-semibold uppercase tracking-[0.3em] text-yellow">
+          {compact ? "Signature — click a side, the cat walks" : "the easter egg"}
+        </p>
+        {!compact && <h2 className="mt-2 font-condensed text-[clamp(2.5rem,9vw,6rem)] uppercase leading-none">Move the cat</h2>}
+        {stage}
         {!compact && (
           <div className="mt-4 flex gap-3 font-grotesk text-[10px] font-semibold uppercase tracking-[0.25em] text-bone/50">
             <button onClick={() => walk(-1)} className="border border-bone/20 px-3 py-1 hover:border-yellow hover:text-yellow">← left</button>

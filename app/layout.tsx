@@ -1,12 +1,12 @@
 import type { Metadata, Viewport } from "next";
-import { Fraunces, Bebas_Neue, Space_Grotesk, Space_Mono } from "next/font/google";
+import { Fraunces, Anton, Space_Grotesk, Space_Mono } from "next/font/google";
 import "./globals.css";
 import { StyledRegistry } from "@/components/styled-registry";
 import { SmoothScroll } from "@/components/smooth-scroll";
 import { SITE } from "@/lib/site";
 
 const serif = Fraunces({ variable: "--font-serif", subsets: ["latin"], display: "swap", axes: ["SOFT", "WONK", "opsz"] });
-const condensed = Bebas_Neue({ variable: "--font-condensed", weight: "400", subsets: ["latin"], display: "swap" });
+const condensed = Anton({ variable: "--font-condensed", weight: "400", subsets: ["latin"], display: "swap" });
 const grotesk = Space_Grotesk({ variable: "--font-grotesk", subsets: ["latin"], display: "swap" });
 const mono = Space_Mono({ variable: "--font-mono", weight: ["400", "700"], subsets: ["latin"], display: "swap" });
 

@@ -103,9 +103,9 @@ h1, h2, h3 { font-family: var(--font-condensed); letter-spacing: 0.005em; line-h
    Scoped so the rest of the portfolio keeps its own system.
 ------------------------------------------------------------------------- */
 .home {
-  --color-ink: #000000;
-  --color-void: #000000;
-  --color-bone: #f3f0e8;
+  --color-ink: #050505;
+  --color-void: #050505;
+  --color-bone: #f1ebdd;
   --color-bone-dim: #14121a;
   --color-iron: #0c0b10;
   --color-steel: #241f2e;
