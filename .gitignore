@@ -47,3 +47,5 @@ next-env.d.ts
 public/cat/cat walking_frames/
 assets-raw/cat-frames-src/
 assets-raw/pixelcat/
+.trash-*
+.next/

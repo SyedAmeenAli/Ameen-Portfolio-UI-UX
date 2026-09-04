@@ -36,7 +36,7 @@ export default async function CategoryPage({ params }: PageProps<"/work/[categor
   const next = CATEGORIES[(idx + 1) % CATEGORIES.length];
 
   return (
-    <main className="relative bg-bone">
+    <main className="relative bg-void">
       <WorkHero category={c} />
 
       {c.kind === "motion" ? (
@@ -45,9 +45,9 @@ export default async function CategoryPage({ params }: PageProps<"/work/[categor
         <Gallery pieces={DATA[category].pieces} tile={DATA[category].tile} fit={DATA[category].fit} />
       )}
 
-      <footer className="border-t border-ink/15 px-[4vw] py-[14vh] text-center">
-        <p className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink/50">next</p>
-        <Link href={next.href} className="mt-4 inline-block font-display text-[clamp(1.8rem,7vw,4.5rem)] uppercase text-ink hover:text-red">
+      <footer className="border-t border-purple/25 px-[4vw] py-[14vh] text-center">
+        <p className="font-mono text-[10px] uppercase tracking-[0.35em] text-bone/50">next</p>
+        <Link href={next.href} className="mt-4 inline-block font-display text-[clamp(1.8rem,7vw,4.5rem)] uppercase text-bone hover:text-red">
           {next.label} →
         </Link>
       </footer>

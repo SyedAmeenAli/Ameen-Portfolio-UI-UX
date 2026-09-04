@@ -2,12 +2,12 @@ import Link from "next/link";
 
 const LINKS = [
   { label: "Work", href: "/work", key: "work" },
-  { label: "Identity", href: "/work/branding", key: "branding" },
+  { label: "Identity", href: "/work/branding", key: "identity" },
   { label: "Illustration", href: "/work/illustration", key: "illustration" },
   { label: "Posters", href: "/work/posters", key: "posters" },
-  { label: "Experimental", href: "/work/colours", key: "experimental" },
-  { label: "About", href: "/#about", key: "about" },
-  { label: "Contact", href: "/#contact", key: "contact" },
+  { label: "Experimental", href: "/experimental", key: "experimental" },
+  { label: "About", href: "/about", key: "about" },
+  { label: "Contact", href: "/contact", key: "contact" },
 ];
 
 /** Compact editorial nav — metadata attached to the artwork, not a navbar. */

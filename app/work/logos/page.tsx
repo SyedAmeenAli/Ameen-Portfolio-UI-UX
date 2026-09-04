@@ -11,18 +11,18 @@ const CAT = CATEGORIES.find((c) => c.key === "logos")!;
 
 export default function LogosPage() {
   return (
-    <main className="relative bg-bone">
+    <main className="relative bg-void">
       <WorkHero category={CAT} />
 
       <LogoDome />
 
       <section className="mx-auto max-w-5xl px-[4vw] py-[12vh]">
         <h2 className="mb-8 font-mono text-xs uppercase tracking-[0.3em] text-red">Index</h2>
-        <ul className="divide-y divide-ink/12 border-y border-ink/15">
+        <ul className="divide-y divide-purple/20 border-y border-purple/25">
           {LOGOS.map((l) => (
             <li key={l.slug} className="flex items-baseline justify-between py-4">
               <span className="flex items-baseline gap-4">
-                <span className="font-mono text-[11px] tabular-nums text-ink/30">{String(l.n).padStart(2, "0")}</span>
+                <span className="font-mono text-[11px] tabular-nums text-bone/30">{String(l.n).padStart(2, "0")}</span>
                 <span className="font-display text-lg uppercase">{l.name}</span>
                 {l.kind === "todo" && <span className="font-mono text-[9px] uppercase tracking-widest text-yellow">soon</span>}
               </span>
@@ -32,9 +32,9 @@ export default function LogosPage() {
         </ul>
       </section>
 
-      <footer className="border-t border-ink/15 px-[4vw] py-[14vh] text-center">
-        <p className="font-mono text-[10px] uppercase tracking-[0.35em] text-ink/50">next</p>
-        <Link href="/work/branding" className="mt-4 inline-block font-display text-[clamp(1.8rem,7vw,4.5rem)] uppercase text-ink hover:text-red">
+      <footer className="border-t border-purple/25 px-[4vw] py-[14vh] text-center">
+        <p className="font-mono text-[10px] uppercase tracking-[0.35em] text-bone/50">next</p>
+        <Link href="/work/branding" className="mt-4 inline-block font-display text-[clamp(1.8rem,7vw,4.5rem)] uppercase text-bone hover:text-red">
           Branding →
         </Link>
       </footer>

@@ -66,7 +66,7 @@ const RULES = [
 
 export default function TypographyPage() {
   return (
-    <main className="relative bg-bone text-ink">
+    <main className="relative bg-void text-bone">
       <WorkHero category={CAT} />
 
       {/* TYPE HAS A VOICE */}
@@ -75,7 +75,7 @@ export default function TypographyPage() {
         <h2 className="mt-6 font-condensed text-[clamp(3rem,16vw,13rem)] uppercase leading-[0.82]">
           Type<br />has a<br /><span className="text-yellow">voice.</span>
         </h2>
-        <p className="mt-8 max-w-[40ch] font-serif text-[clamp(1.1rem,2vw,1.6rem)] leading-snug text-bone/70">
+        <p className="mt-8 max-w-[40ch] font-grotesk font-medium text-[clamp(1.1rem,2vw,1.6rem)] leading-snug text-bone/70">
           The right typeface doesn&apos;t just communicate words. It changes how those words are perceived.
         </p>
       </section>
@@ -83,18 +83,18 @@ export default function TypographyPage() {
       {/* THE TYPE ARCHIVE */}
       <section className="px-[5vw] py-[14vh]">
         <h2 className="font-condensed text-[clamp(2.4rem,8vw,5.5rem)] uppercase">The Type Archive</h2>
-        <p className="mt-3 max-w-[46ch] text-sm text-ink/60">
+        <p className="mt-3 max-w-[46ch] text-sm text-bone/60">
           Twelve families I reach for to build different visual personalities. Real fonts, really rendering.
         </p>
-        <div className="mt-12 grid gap-px border border-ink/15 bg-ink/15 md:grid-cols-2">
+        <div className="mt-12 grid gap-px border border-purple/25 bg-ink/15 md:grid-cols-2">
           {ARCHIVE.map((f) => (
-            <div key={f.name} className="bg-bone p-6">
+            <div key={f.name} className="bg-void p-6">
               <div className="flex items-baseline justify-between">
-                <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-ink/50">{f.name}</span>
+                <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-bone/50">{f.name}</span>
                 <span className="font-mono text-[9px] uppercase tracking-[0.15em] text-purple">{f.tags}</span>
               </div>
               <p className={`${f.cls} mt-3 text-6xl leading-none`}>Aa</p>
-              <p className={`${f.cls} mt-3 text-[13px] leading-tight text-ink/60`}>
+              <p className={`${f.cls} mt-3 text-[13px] leading-tight text-bone/60`}>
                 ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789
               </p>
               <p className={`${f.cls} mt-4 text-2xl leading-tight`}>Make something people remember.</p>
@@ -114,17 +114,17 @@ export default function TypographyPage() {
       {/* HIERARCHY */}
       <section className="px-[5vw] py-[14vh]">
         <h2 className="font-condensed text-[clamp(2.4rem,8vw,5.5rem)] uppercase">Hierarchy</h2>
-        <div className="mt-10 divide-y divide-ink/12 border-y border-ink/15">
+        <div className="mt-10 divide-y divide-purple/20 border-y border-purple/25">
           {[
             ["Display", "120 / Black", "Build better experiences.", "text-[clamp(2.4rem,8vw,6rem)] font-condensed"],
             ["H1", "72 / Bold", "Designing for humans", "text-[clamp(1.8rem,5vw,3.5rem)] font-condensed"],
             ["H2", "48 / Semibold", "Where strategy meets experience", "text-[clamp(1.4rem,3.5vw,2.4rem)] font-semibold"],
             ["H3", "32 / Medium", "A clearer way forward", "text-[clamp(1.1rem,2.4vw,1.7rem)] font-medium"],
-            ["Body", "18 / Regular / 150%", "Good typography creates structure, improves readability and guides people through an experience without demanding attention.", "text-[1.05rem] leading-[1.5] max-w-[54ch] text-ink/70"],
-            ["Caption", "12 / Medium / +8% tracking", "CASE STUDY — 2026", "font-mono text-xs uppercase tracking-[0.3em] text-ink/50"],
+            ["Body", "18 / Regular / 150%", "Good typography creates structure, improves readability and guides people through an experience without demanding attention.", "text-[1.05rem] leading-[1.5] max-w-[54ch] text-bone/70"],
+            ["Caption", "12 / Medium / +8% tracking", "CASE STUDY — 2026", "font-mono text-xs uppercase tracking-[0.3em] text-bone/50"],
           ].map(([role, spec, sample, cls]) => (
             <div key={role} className="grid gap-2 py-7 md:grid-cols-[140px_1fr]">
-              <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink/45">
+              <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-bone/45">
                 <p className="text-purple">{role}</p>
                 <p className="mt-1">{spec}</p>
               </div>
@@ -154,13 +154,13 @@ export default function TypographyPage() {
         <h2 className="font-condensed text-[clamp(2rem,7vw,4.5rem)] uppercase">Space matters.</h2>
         <div className="mt-10 space-y-4">
           {TRACKING.map((t) => (
-            <div key={t} className="flex items-baseline gap-6 border-b border-ink/12 pb-3">
-              <span className="w-16 font-mono text-[10px] text-ink/40">{t}</span>
+            <div key={t} className="flex items-baseline gap-6 border-b border-purple/25 pb-3">
+              <span className="w-16 font-mono text-[10px] text-bone/40">{t}</span>
               <span className="font-condensed text-[clamp(1.6rem,6vw,3.4rem)] uppercase" style={{ letterSpacing: t }}>Typography</span>
             </div>
           ))}
         </div>
-        <p className="mt-6 max-w-[44ch] text-sm text-ink/55">
+        <p className="mt-6 max-w-[44ch] text-sm text-bone/55">
           Tighter tracking creates density and impact. Looser tracking creates openness and elegance.
         </p>
       </section>
@@ -188,11 +188,11 @@ export default function TypographyPage() {
       {/* RULES */}
       <section className="px-[5vw] py-[14vh]">
         <h2 className="font-condensed text-[clamp(2rem,7vw,4.5rem)] uppercase">My type rules</h2>
-        <ol className="mt-10 divide-y divide-ink/12 border-y border-ink/15">
+        <ol className="mt-10 divide-y divide-purple/20 border-y border-purple/25">
           {RULES.map((r, i) => (
             <li key={r} className="flex items-baseline gap-6 py-6">
               <span className="font-mono text-sm text-purple">{String(i + 1).padStart(2, "0")}</span>
-              <span className="font-serif text-[clamp(1.2rem,3vw,2rem)] leading-snug">{r}</span>
+              <span className="font-grotesk font-medium text-[clamp(1.2rem,3vw,2rem)] leading-snug">{r}</span>
             </li>
           ))}
         </ol>
@@ -203,7 +203,7 @@ export default function TypographyPage() {
         <h2 className="font-condensed text-[clamp(2.4rem,10vw,8rem)] uppercase leading-[0.85] text-bone">
           Words are content.<br /><span className="text-yellow">Type is experience.</span>
         </h2>
-        <p className="mx-auto mt-8 max-w-[46ch] font-serif text-bone/60">
+        <p className="mx-auto mt-8 max-w-[46ch] font-grotesk font-medium text-bone/60">
           The typeface is never just what the words look like. It&apos;s how they feel before they&apos;re even read.
         </p>
         <Link href="/work/colours" className="mt-10 inline-block font-mono text-[11px] uppercase tracking-[0.3em] text-yellow">

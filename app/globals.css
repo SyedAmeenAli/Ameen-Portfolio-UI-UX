@@ -7,23 +7,25 @@
    type, asymmetric layout. Dark sections used deliberately.
 --------------------------------------------------------------------------- */
 @theme {
-  --color-bone: #f3f0e8;      /* warm off-white ground */
-  --color-bone-dim: #e2ded2;
-  --color-ink: #0a0a0b;       /* near-black */
-  --color-void: #050505;
-  --color-iron: #17171a;
-  --color-steel: #33333a;
-  --color-line: rgba(10, 10, 11, 0.16);   /* black hairline */
-  --color-line-soft: rgba(10, 10, 11, 0.08);
+  /* GLOBAL editorial system — black canvas, magenta grid, acid yellow, cream type */
+  --color-bone: #f2ebdd;      /* warm cream — primary type */
+  --color-bone-dim: #14121a;
+  --color-ink: #050505;       /* black — accent-on-light text chips */
+  --color-void: #050505;      /* black canvas */
+  --color-iron: #0c0b10;
+  --color-steel: #262130;
+  --color-line: rgba(176, 0, 255, 0.24);
+  --color-line-soft: rgba(176, 0, 255, 0.12);
 
-  --color-yellow: #ffd600;
-  --color-gold: #ffd600;
-  --color-purple: #7c3aed;
-  --color-violet: #7c3aed;
-  --color-red: #ff2d1a;
-  --color-ember: #ff2d1a;
-  --color-concrete: #6b6b63;
-  --color-concrete-dim: #8f8c82;
+  --color-yellow: #ffd900;
+  --color-gold: #ffd900;
+  --color-purple: #b000ff;    /* electric magenta */
+  --color-violet: #b000ff;
+  --color-cyan: #67d4e8;
+  --color-red: #ffd900;
+  --color-ember: #b000ff;
+  --color-concrete: #7a7684;
+  --color-concrete-dim: #8a8690;
   --color-jade: #2ec27e;
 
   --font-serif: var(--font-serif), Georgia, "Times New Roman", serif;
@@ -33,17 +35,18 @@
   --font-mono: var(--font-mono), ui-monospace, monospace;
 }
 
-:root { color-scheme: light; }
+:root { color-scheme: dark; }
 
 html {
-  background: var(--color-bone);
-  color: var(--color-ink);
+  background: #050505;
+  color: var(--color-bone);
   -webkit-font-smoothing: antialiased;
   overflow-x: clip;
 }
-body { font-family: var(--font-grotesk); background: var(--color-bone); overflow-x: clip; }
+body { font-family: var(--font-grotesk); background: #050505; overflow-x: clip; }
+main { background: #050505; color: var(--color-bone); }
 
-::selection { background: var(--color-purple); color: #fff; }
+::selection { background: var(--color-purple); color: #050505; }
 
 h1, h2, h3 { font-family: var(--font-condensed); letter-spacing: 0.005em; line-height: 0.86; }
 
@@ -98,42 +101,20 @@ h1, h2, h3 { font-family: var(--font-condensed); letter-spacing: 0.005em; line-h
 }
 .select-box-light::before, .select-box-light::after { --color-ink: var(--color-bone); }
 
-/* -------------------------------------------------------------------------
-   HOMEPAGE ONLY — strict poster palette: black / #800080 / #FFD600.
-   Scoped so the rest of the portfolio keeps its own system.
-------------------------------------------------------------------------- */
-.home {
-  --color-ink: #050505;
-  --color-void: #050505;
-  --color-bone: #f1ebdd;
-  --color-bone-dim: #14121a;
-  --color-iron: #0c0b10;
-  --color-steel: #241f2e;
-  --color-line: rgba(243, 240, 232, 0.14);
-  --color-line-soft: rgba(243, 240, 232, 0.07);
-  --color-purple: #800080;
-  --color-violet: #800080;
-  --color-yellow: #ffd600;
-  --color-gold: #ffd600;
-  --color-red: #ffd600;
-  --color-concrete-dim: #7a7684;
-  background: #000;
-  color: var(--color-bone);
-}
-.home .grid-lines {
+/* editorial grid — visible magenta construction lines (global) */
+.grid-lines, .home .grid-lines {
   background-image:
-    linear-gradient(rgba(243,240,232,0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(243,240,232,0.06) 1px, transparent 1px);
+    linear-gradient(var(--color-line-soft) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-line-soft) 1px, transparent 1px);
   background-size: 46px 46px;
 }
-.home ::selection { background: #800080; color: #fff; }
 
-/* purple screen-print duotone for editorial image crops (CSS only — file untouched) */
-.duo { position: relative; isolation: isolate; background: #000; }
+/* magenta screen-print duotone for editorial image crops (CSS only — file untouched) */
+.duo { position: relative; isolation: isolate; background: #050505; }
 .duo > img { display: block; width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.25) brightness(1.08); }
 .duo::after {
   content: ""; position: absolute; inset: 0; pointer-events: none;
-  background: #800080; mix-blend-mode: multiply;
+  background: #b000ff; mix-blend-mode: multiply;
 }
 .duo::before {
   content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;

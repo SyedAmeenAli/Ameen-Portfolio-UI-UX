@@ -3,7 +3,7 @@ export function LineStrip({
   text,
   speed = 26,
   reverse = false,
-  dark = false,
+  dark = true,
   className = "",
 }: {
   text: string;

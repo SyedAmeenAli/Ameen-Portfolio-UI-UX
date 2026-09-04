@@ -117,12 +117,12 @@ export default function PixelReveal() {
         <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-red">Pixelated me</p>
         <button
           onClick={() => setView((v) => (v + 1) % VIEWS.length)}
-          className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink/55 hover:text-red"
+          className="font-mono text-[10px] uppercase tracking-[0.2em] text-bone/55 hover:text-red"
         >
           rotate &#8635; {LABELS[view]}
         </button>
       </div>
-      <p className="mt-2 text-xs text-ink/50">Drag across the frame to rebuild the picture.</p>
+      <p className="mt-2 text-xs text-bone/50">Drag across the frame to rebuild the picture.</p>
 
       <div className="relative mx-auto mt-5 w-full" style={{ aspectRatio: `${W} / ${H}` }}>
         <span className="pointer-events-none absolute -inset-3 border border-red/50" />
@@ -142,11 +142,11 @@ export default function PixelReveal() {
             if (dragging.current || e.pointerType === "mouse") repairAt(e.clientX, e.clientY);
           }}
           onPointerUp={() => (dragging.current = false)}
-          className="h-full w-full touch-none bg-bone-dim"
+          className="h-full w-full touch-none bg-iron"
           style={{ imageRendering: "pixelated", cursor: "crosshair" }}
         />
         {!ready && (
-          <span className="absolute inset-0 grid place-items-center font-mono text-[10px] uppercase tracking-widest text-ink/40">
+          <span className="absolute inset-0 grid place-items-center font-mono text-[10px] uppercase tracking-widest text-bone/40">
             loading
           </span>
         )}
@@ -156,13 +156,13 @@ export default function PixelReveal() {
         <div className="h-1 flex-1 bg-ink/10">
           <div className="h-full bg-red transition-[width] duration-150" style={{ width: `${progress}%` }} />
         </div>
-        <span className="font-mono text-[11px] tabular-nums text-ink/50">{String(progress).padStart(3, " ")}%</span>
+        <span className="font-mono text-[11px] tabular-nums text-bone/50">{String(progress).padStart(3, " ")}%</span>
       </div>
       <div className="mt-3 flex gap-2">
         <button onClick={reveal} className="border border-red px-3 py-1 font-mono text-[10px] uppercase tracking-widest text-red hover:bg-red hover:text-white">
           reveal
         </button>
-        <button onClick={reset} className="border border-ink/30 px-3 py-1 font-mono text-[10px] uppercase tracking-widest text-ink/50 hover:border-ink hover:text-ink">
+        <button onClick={reset} className="border border-purple/25 px-3 py-1 font-mono text-[10px] uppercase tracking-widest text-bone/50 hover:border-ink hover:text-bone">
           reset
         </button>
       </div>

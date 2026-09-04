@@ -32,7 +32,7 @@ export function ColourLab() {
   return (
     <section className="px-[5vw] py-[14vh]">
       <h2 className="font-condensed text-[clamp(2.4rem,8vw,5.5rem)] uppercase">Colour Lab</h2>
-      <p className="mt-3 max-w-[46ch] text-sm text-ink/60">
+      <p className="mt-3 max-w-[46ch] text-sm text-bone/60">
         A palette isn&apos;t a set of hex codes. It defines how a product feels, behaves and communicates.
         Pick one — the whole interface below rebuilds in it.
       </p>
@@ -43,7 +43,7 @@ export function ColourLab() {
           <button
             key={pal.name}
             onClick={() => setI(idx)}
-            className={`group border p-3 text-left transition-colors ${idx === i ? "border-ink" : "border-ink/15 hover:border-ink/40"}`}
+            className={`group border p-3 text-left transition-colors ${idx === i ? "border-ink" : "border-purple/25 hover:border-purple/25"}`}
           >
             <div className="flex h-8 overflow-hidden">
               {[pal.bg, pal.surface, pal.primary, pal.accent, pal.text].map((c) => (
@@ -51,19 +51,19 @@ export function ColourLab() {
               ))}
             </div>
             <p className="mt-2 font-mono text-[10px] uppercase tracking-[0.15em]">{pal.name}</p>
-            <p className="font-mono text-[8px] uppercase tracking-[0.1em] text-ink/45">{pal.mood}</p>
+            <p className="font-mono text-[8px] uppercase tracking-[0.1em] text-bone/45">{pal.mood}</p>
           </button>
         ))}
       </div>
 
       <h3 className="mt-16 font-condensed text-[clamp(1.8rem,6vw,3.5rem)] uppercase">See it in use.</h3>
-      <p className="mt-2 max-w-[42ch] text-sm text-ink/55">
+      <p className="mt-2 max-w-[42ch] text-sm text-bone/55">
         The real test of a colour system isn&apos;t the swatch — it&apos;s what happens when the colours work together.
       </p>
 
       <div className="mt-8 grid gap-6 lg:grid-cols-[1.6fr_0.9fr]">
         {/* mini product UI */}
-        <div className="overflow-hidden border border-ink/15" style={{ background: p.bg, color: p.text }}>
+        <div className="overflow-hidden border border-purple/25" style={{ background: p.bg, color: p.text }}>
           <div className="flex items-center justify-between px-5 py-4" style={{ borderBottom: `1px solid ${p.surface}` }}>
             <span className="font-condensed text-lg uppercase tracking-wide" style={{ color: p.primary }}>Nova</span>
             <nav className="hidden gap-4 font-mono text-[10px] uppercase tracking-[0.15em] sm:flex" style={{ color: p.muted }}>
@@ -94,16 +94,16 @@ export function ColourLab() {
         </div>
 
         {/* roles panel */}
-        <div className="border border-ink/15 p-5">
-          <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-ink/50">Colour roles</p>
+        <div className="border border-purple/25 p-5">
+          <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-bone/50">Colour roles</p>
           <ul className="mt-4 space-y-3">
             {ROLES.map(([k, desc]) => (
               <li key={k} className="flex gap-3">
-                <span className="mt-0.5 h-8 w-8 shrink-0 border border-ink/15" style={{ background: p[k] as string }} />
+                <span className="mt-0.5 h-8 w-8 shrink-0 border border-purple/25" style={{ background: p[k] as string }} />
                 <span>
                   <span className="font-mono text-[11px] uppercase tracking-[0.15em]">{k}</span>
-                  <span className="ml-2 font-mono text-[10px] text-ink/45">{(p[k] as string).toUpperCase()}</span>
-                  <p className="text-[11px] leading-tight text-ink/55">{desc}</p>
+                  <span className="ml-2 font-mono text-[10px] text-bone/45">{(p[k] as string).toUpperCase()}</span>
+                  <p className="text-[11px] leading-tight text-bone/55">{desc}</p>
                 </span>
               </li>
             ))}
@@ -128,7 +128,7 @@ export function ColourLab() {
           </div>
         ))}
       </div>
-      <p className="mt-4 font-mono text-[10px] uppercase tracking-[0.3em] text-ink/40">
+      <p className="mt-4 font-mono text-[10px] uppercase tracking-[0.3em] text-bone/40">
         identical layout · only the colour system changes
       </p>
     </section>

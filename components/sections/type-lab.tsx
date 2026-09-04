@@ -17,7 +17,7 @@ export function TypeLab({ fonts, versions }: { fonts: Font[]; versions: Version[
           Same word. <span className="text-purple">Different voice.</span>
         </h2>
 
-        <div className="mt-14 grid min-h-[34vh] place-items-center border border-ink/15 bg-white p-8">
+        <div className="mt-14 grid min-h-[34vh] place-items-center border border-purple/25 bg-iron p-8">
           <span key={active} className={`${f.cls} text-[clamp(3rem,18vw,13rem)] leading-none`}>
             Create
           </span>
@@ -30,13 +30,13 @@ export function TypeLab({ fonts, versions }: { fonts: Font[]; versions: Version[
               onMouseEnter={() => setActive(i)}
               onFocus={() => setActive(i)}
               onClick={() => setActive(i)}
-              className={i === active ? "text-purple underline" : "text-ink/45 hover:text-ink"}
+              className={i === active ? "text-purple underline" : "text-bone/45 hover:text-bone"}
             >
               {x.name}
             </button>
           ))}
         </div>
-        <p className="mt-4 font-mono text-[10px] uppercase tracking-[0.3em] text-ink/40">
+        <p className="mt-4 font-mono text-[10px] uppercase tracking-[0.3em] text-bone/40">
           layout fixed · word fixed · only the typeface changes
         </p>
       </section>
@@ -45,7 +45,7 @@ export function TypeLab({ fonts, versions }: { fonts: Font[]; versions: Version[
         <h2 className="font-condensed text-[clamp(2rem,7vw,4.5rem)] uppercase text-bone">
           Design changes<br />when type changes.
         </h2>
-        <div className="mt-12 grid gap-px border border-bone/15 bg-bone/15 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid gap-px border border-bone/15 bg-void/15 md:grid-cols-2 lg:grid-cols-3">
           {versions.map((v, i) => (
             <div key={v.font} className="bg-ink p-6">
               <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-bone/40">
