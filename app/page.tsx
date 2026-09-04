@@ -18,7 +18,7 @@ export default function Home() {
       <section className="grid border-b border-purple/40 lg:grid-cols-[1.1fr_1.9fr]">
         <div className="relative min-h-[42vh] overflow-hidden border-purple/30 lg:border-r">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/posters/girl-half.webp" alt="A more honest version — poster fragment by Ameen Ali" className="h-full w-full object-cover object-left" />
+          <img src="/posters/panther-half.webp" alt="Reality is a distortion — poster fragment by Ameen Ali" className="h-full w-full object-cover object-left" />
           <span className="absolute bottom-3 left-3 z-10 bg-void/70 px-2 py-1 font-grotesk text-[9px] font-semibold uppercase tracking-[0.22em] text-bone">Visual archive — 001 · A more honest version</span>
         </div>
         <div className="flex flex-col justify-center px-[4vw] py-[8vh]">

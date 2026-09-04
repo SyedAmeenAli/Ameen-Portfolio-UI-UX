@@ -11,8 +11,8 @@ const P = "/posters/";
 const H = ["58vh", "44vh", "66vh", "50vh", "72vh", "46vh"];
 
 const NAMED: Record<string, { title: string; meta: string }> = {
-  "girl-distortion": { title: "Beauty in Distortion", meta: "Screen-print / portrait" },
-  "girl-half": { title: "A More Honest Version", meta: "Torn collage / portrait" },
+  "panther-full": { title: "Beauty in Chaos", meta: "Screen-print / panther" },
+  "panther-half": { title: "Reality Is a Distortion", meta: "Half-tone collage / panther" },
   "electronic-music-poster-afterlight": { title: "Afterlight", meta: "Electronic music" },
   "human-hand-touching-artificial-hand": { title: "Human / Machine", meta: "AI concept" },
   "brutalist-architecture-poster-vo": { title: "Void / Form", meta: "Brutalist architecture" },
@@ -45,7 +45,7 @@ const cap = (s: string) => s.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUppe
 // every file in /public/posters, ordered so named/strong pieces lead
 const ORDER = Object.keys(NAMED);
 const POSTERS: Poster[] = ORDER.map((slug, i) => {
-  const ext = slug.startsWith("girl-") ? ".webp" : ".jpg";
+  const ext = slug.startsWith("panther-") ? ".webp" : ".jpg";
   const n = NAMED[slug] ?? { title: cap(slug), meta: "Poster" };
   return { title: n.title, meta: n.meta, src: P + slug + ext, h: H[i % H.length] };
 });
