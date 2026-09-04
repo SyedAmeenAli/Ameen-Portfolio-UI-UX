@@ -9,10 +9,10 @@ export const SITE = {
   thesis: "I just want my design to live out there instead of only in my head.",
 
   manifesto: [
-    "Design because it's art. It speaks to me.",
-    "Bad design frustrates me. Good design makes me happy.",
-    "I'm after the thing beyond the obvious — a touch neither of us knows yet.",
-    "Creativity can't be bought.",
+    "I design because, to me, design is a form of art — something I feel before I explain.",
+    "Bad design gets in the way. Good design makes things feel effortless.",
+    "I'm always looking beyond the obvious, searching for the idea neither of us has seen yet.",
+    "Creativity isn't something you buy. It's something you discover, build, and protect.",
   ],
   against: ["Generic design", "Sloppy work", "No thinking"],
 

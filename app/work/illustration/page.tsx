@@ -33,6 +33,16 @@ const PIECES: Piece[] = [
   { n: "13", title: "Pasta Woman", type: "Fashion figure", tags: "Play / Couture", blurb: "A little absurd, entirely committed.", src: P + "pasta-woman-fashion-illustration.png", bg: bgs.cream, ink: "#111", span: "", textPos: "over" },
   { n: "14", title: "Retired Boxer", type: "Character study", tags: "History / Weight", blurb: "A body that remembers every round.", src: P + "retired-boxer-in-relaxed-stance.png", bg: bgs.grey, ink: "#eee", span: "md:col-span-2", textPos: "side" },
   { n: "15", title: "Fish Chef", type: "Concept", tags: "Anthropomorphic / Humour", blurb: "The chef, and the catch.", src: P + "anthropomorphic-fish-chef-holdin.png", bg: bgs.purple, ink: "#fff", span: "", textPos: "over" },
+  { n: "16", title: "Cake Lady", type: "Fashion figure", tags: "Couture / Play", blurb: "Dressed for an occasion that doesn't exist yet.", src: P + "elegant-cake-lady-posing.png", bg: bgs.cream, ink: "#111", span: "", textPos: "over" },
+  { n: "17", title: "The Fisherman", type: "Character study", tags: "Work / Texture", blurb: "Hands that know the rope.", src: P + "fisherman-carrying-net-drawing.png", bg: bgs.grey, ink: "#eee", span: "", textPos: "over" },
+  { n: "18", title: "Lemon Woman", type: "Fashion figure", tags: "Concept / Couture", blurb: "Sharp, bright, a little sour.", src: P + "lemon-woman-posing-in-couture.png", bg: bgs.cream, ink: "#111", span: "", textPos: "over" },
+  { n: "19", title: "Bag Strap", type: "Figure", tags: "Gesture / Line", blurb: "The whole pose lives in one shoulder.", src: P + "man-holding-bag-strap.png", bg: bgs.charcoal, ink: "#eee", span: "", textPos: "over" },
+  { n: "20", title: "Document Folder", type: "Figure", tags: "Everyday / Character", blurb: "Somewhere to be, papers in hand.", src: P + "man-holding-document-folder.png", bg: bgs.grey, ink: "#eee", span: "", textPos: "over" },
+  { n: "21", title: "The Fork", type: "Concept", tags: "Object / Character", blurb: "A man and his single utensil.", src: P + "man-holding-fork-illustration.png", bg: bgs.magenta, ink: "#fff", span: "md:col-span-2", textPos: "side" },
+  { n: "22", title: "Spoon & Newspaper", type: "Concept", tags: "Ritual / Morning", blurb: "Breakfast as a still life.", src: P + "man-holding-spoon-and-newspaper.png", bg: bgs.cream, ink: "#111", span: "", textPos: "over" },
+  { n: "23", title: "Pizza Slice", type: "Character", tags: "Humour / Form", blurb: "Confident, folded, ready.", src: P + "pizza-slice-standing-confidently.png", bg: bgs.purple, ink: "#fff", span: "", textPos: "over" },
+  { n: "24", title: "Black Suit", type: "Figure study", tags: "Silhouette / Restraint", blurb: "Ink at its most economical.", src: P + "stylish-man-in-black-suit.png", bg: bgs.grey, ink: "#eee", span: "", textPos: "over" },
+  { n: "25", title: "Walking Forward", type: "Figure study", tags: "Motion / Line", blurb: "A step, drawn mid-stride.", src: P + "young-woman-walking-forward-illu.png", bg: bgs.cream, ink: "#111", span: "md:col-span-2", textPos: "side" },
 ];
 
 function Meta({ p, cls = "" }: { p: Piece; cls?: string }) {
@@ -47,7 +57,7 @@ function Meta({ p, cls = "" }: { p: Piece; cls?: string }) {
 }
 
 export default function IllustrationPage() {
-  const arts = PIECES.map((p): Art => ({ src: p.src, title: `${p.n} — ${p.title}`, meta: p.type }));
+  const arts = PIECES.map((p): Art => ({ src: p.src, title: `${p.n} — ${p.title}`, meta: p.type, bg: p.bg }));
   const { open, view } = useArtLightbox(arts);
 
   return (

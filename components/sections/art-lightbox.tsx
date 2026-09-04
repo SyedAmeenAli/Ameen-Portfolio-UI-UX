@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 
-export type Art = { src: string; title: string; meta?: string };
+export type Art = { src: string; title: string; meta?: string; bg?: string };
 
 /** Editorial artwork viewer — click a piece, ESC / ← → to navigate. */
 export function useArtLightbox(items: Art[]) {
@@ -34,13 +34,18 @@ export function useArtLightbox(items: Art[]) {
         <span>{String(i + 1).padStart(2, "0")} / {String(items.length).padStart(2, "0")}</span>
       </div>
       <div className="flex min-h-0 flex-1 items-center justify-center overflow-hidden pb-6" onClick={(e) => e.stopPropagation()}>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={items[i].src}
-          alt={items[i].title}
-          className="h-auto w-auto object-contain"
-          style={{ maxHeight: "86dvh", maxWidth: "94vw" }}
-        />
+        <span
+          className="flex items-center justify-center border border-purple/30 p-3 sm:p-4"
+          style={{ background: items[i].bg ?? "#0b0a10", maxHeight: "88dvh", maxWidth: "94vw" }}
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={items[i].src}
+            alt={items[i].title}
+            className="h-auto w-auto object-contain"
+            style={{ maxHeight: "82dvh", maxWidth: "88vw" }}
+          />
+        </span>
       </div>
       <button onClick={(e) => { e.stopPropagation(); prev(); }} aria-label="Previous"
         className="absolute left-1 top-1/2 -translate-y-1/2 font-condensed text-3xl text-bone/60 hover:text-yellow sm:left-[2vw] sm:text-4xl">←</button>

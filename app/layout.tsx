@@ -14,12 +14,12 @@ const description =
   "Ameen Ali — UI/UX designer & illustrator. I just want my design to live out there instead of only in my head.";
 
 export const metadata: Metadata = {
-  title: { default: `${SITE.name} — ${SITE.role}`, template: `%s — ${SITE.name}` },
+  title: { default: "Ameen Portfolio", template: "%s — Ameen Portfolio" },
   description,
-  openGraph: { title: `${SITE.name} — ${SITE.role}`, description, type: "website" },
+  openGraph: { title: "Ameen Portfolio", description, type: "website" },
 };
 
-export const viewport: Viewport = { themeColor: "#ece9e1", colorScheme: "light" };
+export const viewport: Viewport = { themeColor: "#050505", colorScheme: "dark" };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
