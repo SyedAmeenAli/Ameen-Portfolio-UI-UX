@@ -118,6 +118,15 @@ export default function AboutPage() {
         ))}
       </section>
 
+      {/* SIGNATURE */}
+      <section className="flex flex-col items-center gap-4 border-b border-purple/40 px-[4vw] py-[10vh] text-center">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/brand/logo-mark.png" alt="Ameen Ali mark" className="h-20 w-auto opacity-90" />
+        <p className="font-grotesk text-[10px] font-semibold uppercase tracking-[0.3em] text-bone/45">
+          Ameen Ali — designed, not templated.
+        </p>
+      </section>
+
       <WorkBand />
       <SiteFooter />
     </main>

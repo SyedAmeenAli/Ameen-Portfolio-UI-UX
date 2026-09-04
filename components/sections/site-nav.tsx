@@ -30,7 +30,7 @@ export function SiteNav({ active, label = "Portfolio" }: { active?: string; labe
       <nav className="flex items-center justify-between border-b border-purple/40 bg-void/70 px-[4vw] py-4 font-grotesk text-[10px] font-semibold uppercase tracking-[0.22em] text-bone backdrop-blur">
         <Link href="/" className="flex items-center gap-2">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/brand/logo-mark.png" alt="Ameen Ali" className="h-10 w-auto sm:h-12" />
+          <img src="/brand/logo-mark.png" alt="Ameen Ali" className="h-14 w-auto sm:h-16" />
           <span className="text-purple">/ {label}</span>
         </Link>
 
