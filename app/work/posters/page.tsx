@@ -58,7 +58,7 @@ export default function PostersPage() {
 
       <PosterRail posters={POSTERS} />
 
-      <WorkBand />
+      <WorkBand quote={"Beauty exists · in distortion."} />
       <SiteFooter />
     </main>
   );

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { PageShell } from "@/components/sections/page-shell";
 import { MOTION } from "@/lib/work";
 
-export const metadata: Metadata = { title: "3D Motion" };
+export const metadata: Metadata = { title: "3D Animations" };
 
 const LABELS = ["Impossible Geometry", "Material Study", "Cosmic Object"];
 const clips = MOTION.filter((m) => m.slug.startsWith("3d"));
@@ -11,8 +11,8 @@ const clips = MOTION.filter((m) => m.slug.startsWith("3d"));
 export default function Motion3DPage() {
   return (
     <PageShell
-      active="work" label="3D Motion"
-      header={{ num: "09 / B", line1: "3D", line2: "Motion", sub: ["Objects", "Environments", "Material studies"], copy: "Cinematic 3D — surreal geometry, materials and light that behave wrong on purpose." }}
+      active="work" label="3D Animations"
+      header={{ num: "09 / B", line1: "3D", line2: "Animations", sub: ["Objects", "Environments", "Material studies"], copy: "Cinematic 3D — surreal geometry, materials and light that behave wrong on purpose." }}
     >
       <section className="divide-y divide-purple/30 border-b border-purple/40">
         {clips.map((m, i) => (
@@ -27,7 +27,7 @@ export default function Motion3DPage() {
         ))}
       </section>
       <div className="px-[4vw] py-[6vh]">
-        <Link href="/work/motion/2d" className="inline-flex items-center gap-2 font-grotesk text-[10px] font-semibold uppercase tracking-[0.22em] text-yellow">[ 2D Motion ] ↗</Link>
+        <Link href="/work/motion/2d" className="inline-flex items-center gap-2 font-grotesk text-[10px] font-semibold uppercase tracking-[0.22em] text-yellow">[ 2D Animations ] ↗</Link>
       </div>
     </PageShell>
   );

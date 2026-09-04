@@ -14,11 +14,11 @@ type Card = { num: string; name: string; cat: string; year: string; copy: string
 export const CARDS: Card[] = [
   ...["nexora", "verdant", "auria", "terralis", "vayora"].map((slug, i): Card => {
     const b = BRANDS.find((x) => x.slug === slug)!;
-    return { num: String(i + 1).padStart(2, "0"), name: b.name, cat: "Brand Identity", year: "2026", copy: BRAND_COPY[slug], img: b.board, href: "/work/branding", color: b.color };
+    return { num: String(i + 1).padStart(2, "0"), name: b.name, cat: "Brand Identity", year: "2026", copy: BRAND_COPY[slug], img: b.board, href: `/work/branding/${slug}`, color: b.color };
   }),
-  { num: "06", name: "Poster Collection", cat: "Poster Design", year: "2026", copy: "A running series of experimental compositions — music, architecture, glitch, memory.", img: "/posters/electronic-music-poster-afterlight.jpg", href: "/work/posters" },
-  { num: "07", name: "Illustration Collection", cat: "Illustration", year: "2026", copy: "Character work in black ink with restrained colour — food people, fashion figures, the odd bird man.", img: "/illustration/apple-princess-in-fashion-pose.png", href: "/work/illustration" },
-  { num: "08", name: "Logo Collection", cat: "Logo Design", year: "2026", copy: "Twenty-one marks — emblem, monogram, negative space, heritage.", img: "/logos/altivia.jpg", href: "/work/logos" },
+  { num: "06", name: "Poster Collection", cat: "Posters", year: "2026", copy: "A running series of experimental compositions — music, architecture, glitch, memory.", img: "/posters/electronic-music-poster-afterlight.jpg", href: "/work/posters" },
+  { num: "07", name: "Illustration Collection", cat: "Illustrations", year: "2026", copy: "Character work in black ink with restrained colour — food people, fashion figures, the odd bird man.", img: "/illustration/apple-princess-in-fashion-pose.png", href: "/work/illustration" },
+  { num: "08", name: "Logo Collection", cat: "Logos", year: "2026", copy: "Twenty-one marks — emblem, monogram, negative space, heritage.", img: "/logos/altivia.jpg", href: "/work/logos" },
 ];
 
 /** Featured project card grid. `limit` trims it for the homepage teaser. */

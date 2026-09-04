@@ -17,7 +17,7 @@ export default function LogoGalleryPage() {
   const live = LOGOS.filter((l) => l.kind !== "todo");
   return (
     <main className="home grid-lines relative min-h-screen bg-void text-bone">
-      <SiteNav active="identity" label="Logo Design" />
+      <SiteNav active="logos" label="Logos" />
 
       {/* ============ HEADER + DOME ============ */}
       <section className="grid border-b border-purple/40 lg:grid-cols-[1fr_2fr_0.7fr]">
@@ -78,8 +78,8 @@ export default function LogoGalleryPage() {
         ))}
       </section>
 
-      <WorkBand />
-      <SiteFooter mid="Ideas live longer ↓" />
+      <WorkBand quote={"Marks that · mean more."} />
+      <SiteFooter />
     </main>
   );
 }

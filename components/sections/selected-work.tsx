@@ -5,9 +5,9 @@ type Row = { kind: string; title: string; meta: string; href: string; img: strin
 const ROWS: Row[] = [
   { kind: "Brand Identity", title: "Auria · Nexora · Terralis · Vayora · Verdant", meta: "Identity systems / art direction", href: "/work/branding", img: "/brands/nexora-brand-visualisation.jpg" },
   { kind: "Posters", title: "Poster Archive", meta: "25 pieces / concept image-making", href: "/work/posters", img: "/posters/electronic-music-poster-afterlight.jpg" },
-  { kind: "Illustration", title: "Ink & Character", meta: "25 pieces / black ink, controlled colour", href: "/work/illustration", img: "/illustration/citrus-woman-fashion-illustration.png" },
-  { kind: "Logos & Marks", title: "Marks", meta: "21 marks / emblem to monogram", href: "/work/logos", img: "/logos/altivia.jpg" },
-  { kind: "2D / 3D Motion", title: "Motion Studies", meta: "07 studies / type in space", href: "/work/motion", img: "/posters/abstract-wave-floating-in-void.jpg" },
+  { kind: "Illustrations", title: "Ink & Character", meta: "25 pieces / black ink, controlled colour", href: "/work/illustration", img: "/illustration/citrus-woman-fashion-illustration.png" },
+  { kind: "Logos", title: "Marks", meta: "21 marks / emblem to monogram", href: "/work/logos", img: "/logos/altivia.jpg" },
+  { kind: "2D / 3D Animations", title: "Motion Studies", meta: "07 studies / type in space", href: "/work/motion", img: "/posters/abstract-wave-floating-in-void.jpg" },
   { kind: "Typography", title: "Type Has A Voice", meta: "Experiment / interactive", href: "/work/typography", img: "/posters/minimalist-art-poster-the-unseen.jpg", tag: "Experiment" },
   { kind: "Colour", title: "Colour Is A Decision", meta: "Experiment / live palettes", href: "/work/colours", img: "/posters/synesthesia-visual-music-poster.jpg", tag: "Experiment" },
 ];

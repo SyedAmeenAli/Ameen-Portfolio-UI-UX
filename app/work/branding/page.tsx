@@ -100,7 +100,7 @@ export default function BrandIdentityPage() {
         <p className="border-t border-purple/25 px-[3vw] py-3 font-grotesk text-[10px] tracking-[0.1em] text-bone/35 lg:col-span-2">{GLYPHS}</p>
       </section>
 
-      <WorkBand />
+      <WorkBand quote={"Ideas shape · identity."} />
       <SiteFooter mid="Ideas live longer ↓" />
     </main>
   );

@@ -52,7 +52,7 @@ export default function IllustrationPage() {
 
   return (
     <main className="home grid-lines relative min-h-screen bg-void text-bone">
-      <SiteNav active="illustration" label="Illustration" />
+      <SiteNav active="illustration" label="Illustrations" />
 
       {/* HEADER */}
       <section className="border-b border-purple/40 px-[3vw] pb-[5vh] pt-[13vh]">
@@ -107,7 +107,7 @@ export default function IllustrationPage() {
       </section>
 
       {view}
-      <WorkBand />
+      <WorkBand quote={"Art lives · in details."} />
       <SiteFooter />
     </main>
   );

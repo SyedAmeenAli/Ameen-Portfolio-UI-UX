@@ -5,11 +5,11 @@ import Link from "next/link";
 
 const LINKS = [
   { label: "Work", href: "/work", key: "work" },
-  { label: "Identity", href: "/work/branding", key: "identity" },
+  { label: "Brand Identity", href: "/work/branding", key: "identity" },
   { label: "Logos", href: "/work/logos", key: "logos" },
   { label: "Posters", href: "/work/posters", key: "posters" },
-  { label: "Illustration", href: "/work/illustration", key: "illustration" },
-  { label: "Motion", href: "/work/motion", key: "motion" },
+  { label: "Illustrations", href: "/work/illustration", key: "illustration" },
+  { label: "Animations", href: "/work/motion", key: "motion" },
   { label: "About", href: "/about", key: "about" },
   { label: "Contact", href: "/contact", key: "contact" },
 ];
@@ -33,7 +33,7 @@ export function SiteNav({ active, label = "Portfolio" }: { active?: string; labe
           <span className="text-purple">/ {label}</span>
         </Link>
 
-        <ul className="hidden gap-4 md:flex">
+        <ul className="hidden gap-3 md:flex">
           {LINKS.map((l) => (
             <li key={l.key}>
               <Link

@@ -24,7 +24,7 @@ export default function Home() {
         <div className="flex flex-col justify-center px-[4vw] py-[8vh]">
           <p className="font-grotesk text-[10px] font-semibold uppercase tracking-[0.3em] text-purple">What I make</p>
           <ul className="mt-4 grid grid-cols-2 gap-x-6 gap-y-1 sm:grid-cols-3">
-            {["Digital Designer", "UI / UX", "Visual Identity", "Branding", "Illustration", "2D / 3D Motion", "Typography", "Colour"].map((d) => (
+            {["Digital Designer", "Brand Identity", "Logos", "Posters", "Illustrations", "YouTube Thumbnails", "2D / 3D Animations", "Typography", "Colours"].map((d) => (
               <li key={d} className="border-t border-purple/25 pt-1.5 font-condensed text-[clamp(0.95rem,2vw,1.4rem)] uppercase leading-tight text-bone">{d}</li>
             ))}
           </ul>
@@ -60,7 +60,7 @@ export default function Home() {
         </div>
       </section>
 
-      <WorkBand />
+      <WorkBand quote={"Same human · different ideas."} />
       <SiteFooter mid="Scroll for more ↓" />
     </main>
   );

@@ -4,7 +4,7 @@ import { WorkHero } from "@/components/sections/work-hero";
 import { ColourLab } from "@/components/sections/colour-lab";
 import { CATEGORIES } from "@/lib/site";
 
-export const metadata: Metadata = { title: "Colour" };
+export const metadata: Metadata = { title: "Colours" };
 const CAT = CATEGORIES.find((c) => c.key === "colours")!;
 
 export default function ColoursPage() {

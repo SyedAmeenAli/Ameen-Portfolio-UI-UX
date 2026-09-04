@@ -102,7 +102,7 @@ export default async function BrandCaseStudy({ params }: PageProps<"/work/brandi
         </Link>
       </section>
 
-      <WorkBand />
+      <WorkBand quote={"Sketch · system · identity."} />
       <SiteFooter />
     </main>
   );

@@ -2,13 +2,13 @@ import Link from "next/link";
 
 const CATS = [
   { n: "01", t: "Brand Identity", d: "Identity systems, sketch to application", href: "/work/branding" },
-  { n: "02", t: "Logo Design", d: "Marks, symbols & identity studies", href: "/work/logos" },
+  { n: "02", t: "Logos", d: "Marks, symbols & identity studies", href: "/work/logos" },
   { n: "03", t: "Posters", d: "Experimental graphic compositions", href: "/work/posters" },
-  { n: "04", t: "Illustration", d: "Characters, concepts & visual explorations", href: "/work/illustration" },
-  { n: "05", t: "Youtube Thumbnails", d: "Fast visual communication", href: "/work/thumbnails" },
-  { n: "06", t: "2D / 3D Motion", d: "Kinetic type, loops, material studies", href: "/work/motion" },
+  { n: "04", t: "Illustrations", d: "Characters, concepts & visual explorations", href: "/work/illustration" },
+  { n: "05", t: "YouTube Thumbnails", d: "Fast visual communication", href: "/work/thumbnails" },
+  { n: "06", t: "2D / 3D Animations", d: "Kinetic type, loops, material studies", href: "/work/motion" },
   { n: "07", t: "Typography", d: "Type as a discipline — voice, pairing, system", href: "/work/typography" },
-  { n: "08", t: "Colour", d: "Colour as a design decision", href: "/work/colours" },
+  { n: "08", t: "Colours", d: "Colour as a design decision", href: "/work/colours" },
 ];
 
 /** The editorial category grid, shared by home + /work. Eight real disciplines. */

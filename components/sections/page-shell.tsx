@@ -9,11 +9,13 @@ export function PageShell({
   active,
   label,
   header,
+  quote,
   children,
 }: {
   active?: string;
   label?: string;
   header: Parameters<typeof PageHeader>[0];
+  quote?: string;
   children: ReactNode;
 }) {
   return (
@@ -21,7 +23,7 @@ export function PageShell({
       <SiteNav active={active} label={label} />
       <PageHeader {...header} />
       {children}
-      <WorkBand />
+      <WorkBand quote={quote} />
       <SiteFooter />
     </main>
   );
