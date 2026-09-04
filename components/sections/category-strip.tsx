@@ -1,25 +1,27 @@
 import Link from "next/link";
 
 const CATS = [
-  { n: "01", t: "Brand Identity", d: "Visual systems, identities & campaigns", href: "/work/branding" },
-  { n: "02", t: "Logo Design", d: "Marks, symbols & identity systems", href: "/work/logos" },
+  { n: "01", t: "Brand Identity", d: "Identity systems, sketch to application", href: "/work/branding" },
+  { n: "02", t: "Logo Design", d: "Marks, symbols & identity studies", href: "/work/logos" },
   { n: "03", t: "Posters", d: "Experimental graphic compositions", href: "/work/posters" },
-  { n: "04", t: "Illustration", d: "Characters, concepts & visual art", href: "/work/illustration" },
-  { n: "05", t: "UI / UX", d: "Digital experiences & interfaces", href: "/work/typography" },
-  { n: "06", t: "Experimental", d: "Play, research & creative experiments", href: "/work/colours" },
+  { n: "04", t: "Illustration", d: "Characters, concepts & visual explorations", href: "/work/illustration" },
+  { n: "05", t: "Youtube Thumbnails", d: "Fast visual communication", href: "/work/thumbnails" },
+  { n: "06", t: "2D / 3D Motion", d: "Kinetic type, loops, material studies", href: "/work/motion" },
+  { n: "07", t: "Typography", d: "Type as a discipline — voice, pairing, system", href: "/work/typography" },
+  { n: "08", t: "Colour", d: "Colour as a design decision", href: "/work/colours" },
 ];
 
-/** The six-column editorial category grid, shared by home + /work. */
+/** The editorial category grid, shared by home + /work. Eight real disciplines. */
 export function CategoryStrip() {
   return (
-    <section className="grid border-y border-purple/40 sm:grid-cols-2 lg:grid-cols-6">
+    <section className="grid border-y border-purple/40 sm:grid-cols-2 lg:grid-cols-4">
       {CATS.map((c, i) => (
         <Link
           key={c.n}
           href={c.href}
           className={`group flex flex-col justify-between gap-6 px-5 py-8 transition-colors hover:bg-purple/10 ${
-            i ? "border-t border-purple/25 lg:border-l lg:border-t-0" : ""
-          }`}
+            i % 4 !== 0 ? "lg:border-l lg:border-purple/25" : ""
+          } ${i >= 4 ? "border-t border-purple/25 lg:border-t" : ""} ${i > 0 && i < 4 ? "border-t border-purple/25 sm:border-t-0 lg:border-t-0" : ""}`}
         >
           <div>
             <span className="block font-condensed text-[clamp(2.4rem,4vw,3.4rem)] leading-none text-purple transition-colors group-hover:text-yellow">

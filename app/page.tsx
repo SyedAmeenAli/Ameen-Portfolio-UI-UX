@@ -14,6 +14,26 @@ export default function Home() {
       {/* 01 — poster hero: name, PORTFOLI[O], who am I */}
       <Hero />
 
+      {/* 01b — editorial band: cropped visual + disciplines */}
+      <section className="grid border-b border-purple/40 lg:grid-cols-[1.1fr_1.9fr]">
+        <div className="duo relative min-h-[38vh] border-purple/30 lg:border-r">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/posters/synesthesia-visual-music-poster.jpg" alt="Editorial fragment" />
+          <span className="absolute bottom-3 left-3 z-10 font-grotesk text-[9px] font-semibold uppercase tracking-[0.22em] text-bone">Visual archive — 001</span>
+        </div>
+        <div className="flex flex-col justify-center px-[4vw] py-[8vh]">
+          <p className="font-grotesk text-[10px] font-semibold uppercase tracking-[0.3em] text-purple">What I make</p>
+          <ul className="mt-4 grid grid-cols-2 gap-x-6 gap-y-1 sm:grid-cols-3">
+            {["Digital Designer", "UI / UX", "Visual Identity", "Branding", "Illustration", "2D / 3D Motion", "Typography", "Colour"].map((d) => (
+              <li key={d} className="border-t border-purple/25 pt-1.5 font-condensed text-[clamp(0.95rem,2vw,1.4rem)] uppercase leading-tight text-bone">{d}</li>
+            ))}
+          </ul>
+          <p className="mt-6 max-w-[44ch] font-grotesk text-sm leading-relaxed text-bone/60">
+            Systems, identities, graphics, motion and visual experiments — one point of view across every surface.
+          </p>
+        </div>
+      </section>
+
       {/* 02 — selected work / categories */}
       <section id="work" className="flex flex-wrap items-end justify-between gap-4 px-[4vw] pb-[4vh] pt-[9vh]">
         <p className="font-grotesk text-[10px] font-semibold tracking-[0.3em] text-bone/50">[ 02 ]</p>

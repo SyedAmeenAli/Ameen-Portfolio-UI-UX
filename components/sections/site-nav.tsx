@@ -6,9 +6,10 @@ import Link from "next/link";
 const LINKS = [
   { label: "Work", href: "/work", key: "work" },
   { label: "Identity", href: "/work/branding", key: "identity" },
-  { label: "Illustration", href: "/work/illustration", key: "illustration" },
+  { label: "Logos", href: "/work/logos", key: "logos" },
   { label: "Posters", href: "/work/posters", key: "posters" },
-  { label: "Experimental", href: "/experimental", key: "experimental" },
+  { label: "Illustration", href: "/work/illustration", key: "illustration" },
+  { label: "Motion", href: "/work/motion", key: "motion" },
   { label: "About", href: "/about", key: "about" },
   { label: "Contact", href: "/contact", key: "contact" },
 ];

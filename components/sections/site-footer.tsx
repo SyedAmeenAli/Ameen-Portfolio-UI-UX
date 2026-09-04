@@ -3,13 +3,14 @@ import Link from "next/link";
 const CONTACT = "amelio123ali@gmail.com";
 
 const NAV = [
-  { label: "Work", href: "/work" },
-  { label: "Identity", href: "/work/branding" },
-  { label: "Illustration", href: "/work/illustration" },
+  { label: "Logos", href: "/work/logos" },
+  { label: "Brand Identity", href: "/work/branding" },
   { label: "Posters", href: "/work/posters" },
+  { label: "Illustration", href: "/work/illustration" },
+  { label: "Thumbnails", href: "/work/thumbnails" },
+  { label: "2D / 3D Motion", href: "/work/motion" },
   { label: "Typography", href: "/work/typography" },
   { label: "Colour", href: "/work/colours" },
-  { label: "Experimental", href: "/experimental" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];

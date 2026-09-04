@@ -68,7 +68,7 @@ export function Hero() {
         <figure className="relative" style={step(6)}>
           <div className="duo aspect-[3/4] w-full border border-purple/50">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/posters/surreal-desert-landscape-art-poster.jpg" alt="Editorial visual — Ameen Ali" />
+            <img src="/posters/giant-eye-floating-above-city.jpg" alt="Editorial visual — Ameen Ali" />
           </div>
           <figcaption className="mt-3 flex items-center justify-between font-grotesk text-[9px] font-semibold uppercase tracking-[0.24em] text-bone/45">
             <span>Scroll to explore</span>
