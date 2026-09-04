@@ -19,10 +19,10 @@ export default function ContactPage() {
     <main className="home grid-lines relative flex min-h-screen flex-col bg-void text-bone">
       <SiteNav active="contact" label="Contact" />
 
-      <section className="flex flex-1 flex-col justify-center border-b border-purple/40 px-[4vw] pb-[8vh] pt-[16vh]">
+      <section className="flex flex-1 flex-col border-b border-purple/40 px-[4vw] pb-[8vh] pt-[16vh]">
         <p className="font-grotesk text-[10px] font-semibold tracking-[0.3em] text-bone/50">[ 16 ]</p>
 
-        <div className="mt-2 grid gap-x-[3vw] gap-y-[5vh] lg:grid-cols-[1.5fr_1fr] lg:items-end">
+        <div className="mt-2 grid gap-x-[3vw] gap-y-[5vh] xl:grid-cols-[1.5fr_1fr] xl:items-end">
           <h1 className="font-condensed uppercase leading-[0.7] tracking-[0.005em]">
             <span className="block text-[clamp(3.4rem,17vw,14rem)] text-bone">Let&apos;s</span>
             <span className="block text-[clamp(3.4rem,17vw,14rem)] text-bone">Make</span>

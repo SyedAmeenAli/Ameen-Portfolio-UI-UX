@@ -106,11 +106,8 @@ export function Cat({ compact = false, bare = false }: { compact?: boolean; bare
               loading frames…
             </span>
           )}
-          <span className={`pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 font-grotesk text-[10px] font-semibold uppercase tracking-[0.3em] transition-opacity ${hint === "left" ? "opacity-100 text-yellow" : "opacity-30 text-bone"}`}>
-            ← walk left
-          </span>
-          <span className={`pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 font-grotesk text-[10px] font-semibold uppercase tracking-[0.3em] transition-opacity ${hint === "right" ? "opacity-100 text-yellow" : "opacity-30 text-bone"}`}>
-            walk right →
+          <span className={`pointer-events-none absolute bottom-4 left-1/2 -translate-x-1/2 font-grotesk text-[10px] font-semibold uppercase tracking-[0.3em] transition-opacity ${hint ? "opacity-100 text-yellow" : "opacity-30 text-bone"}`}>
+            walk
           </span>
     </div>
   );

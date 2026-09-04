@@ -4,13 +4,11 @@ import {
   Inter, Manrope, Space_Grotesk, DM_Sans, Sora, Syne, Bebas_Neue,
   IBM_Plex_Sans, Playfair_Display, Cormorant_Garamond, Fraunces, Archivo,
 } from "next/font/google";
-import { WorkHero } from "@/components/sections/work-hero";
+import { PageShell } from "@/components/sections/page-shell";
 import { LineStrip } from "@/components/ui/line-strip";
 import { TypeLab } from "@/components/sections/type-lab";
-import { CATEGORIES } from "@/lib/site";
 
 export const metadata: Metadata = { title: "Typography" };
-const CAT = CATEGORIES.find((c) => c.key === "typography")!;
 
 const inter = Inter({ subsets: ["latin"] });
 const manrope = Manrope({ subsets: ["latin"] });
@@ -66,9 +64,18 @@ const RULES = [
 
 export default function TypographyPage() {
   return (
-    <main className="relative bg-void text-bone">
-      <WorkHero category={CAT} />
-
+    <PageShell
+      active="work"
+      label="Typography"
+      quote={"Type has · a voice."}
+      header={{
+        num: "10",
+        line1: "Type",
+        line2: "System",
+        sub: ["Voice", "Pairing", "Hierarchy", "Twelve families, really rendering"],
+        copy: "Not a list of fonts. Font choice through to application.",
+      }}
+    >
       {/* TYPE HAS A VOICE */}
       <section className="on-dark grid-lines-dark border-y border-bone/10 px-[5vw] py-[16vh]">
         <p className="font-mono text-[10px] uppercase tracking-[0.4em] text-purple">02 — Typography</p>
@@ -210,6 +217,6 @@ export default function TypographyPage() {
           Colour →
         </Link>
       </section>
-    </main>
+    </PageShell>
   );
 }

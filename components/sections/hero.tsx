@@ -50,6 +50,22 @@ export function Hero() {
         {/* info column */}
         <div className="flex flex-col gap-5 self-stretch border-l border-purple/25 pl-4" style={step(5)}>
           <Globe />
+
+          <div>
+            <p className="font-grotesk text-[9px] font-semibold uppercase tracking-[0.24em] text-bone/45">Tools I use</p>
+            <ul className="mt-3 flex flex-wrap gap-2">
+              {["Figma", "Photoshop", "Illustrator", "After Effects"].map((t) => (
+                <li
+                  key={t}
+                  title={t}
+                  className="grid h-11 w-11 place-items-center border border-purple/40 font-condensed text-sm uppercase text-bone/80 transition-colors hover:border-yellow hover:text-yellow"
+                >
+                  {t.split(" ").map((w) => w[0]).join("")}
+                </li>
+              ))}
+            </ul>
+          </div>
+
           <dl className="space-y-3">
             {META.map(([k, v]) => (
               <div key={k} className="border-t border-purple/50 pt-1.5">

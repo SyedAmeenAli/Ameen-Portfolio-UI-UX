@@ -1,17 +1,24 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { WorkHero } from "@/components/sections/work-hero";
+import { PageShell } from "@/components/sections/page-shell";
 import { ColourLab } from "@/components/sections/colour-lab";
-import { CATEGORIES } from "@/lib/site";
 
 export const metadata: Metadata = { title: "Colours" };
-const CAT = CATEGORIES.find((c) => c.key === "colours")!;
 
 export default function ColoursPage() {
   return (
-    <main className="relative bg-void text-bone">
-      <WorkHero category={CAT} />
-
+    <PageShell
+      active="work"
+      label="Colours"
+      quote={"Palette · with a purpose."}
+      header={{
+        num: "11",
+        line1: "Colour",
+        line2: "System",
+        sub: ["Hierarchy", "Emotion", "Attention", "Six palettes, live-switched"],
+        copy: "Not a colour picker. Every colour on the page has a job.",
+      }}
+    >
       {/* intro — dark */}
       <section className="on-dark grid-lines-dark border-y border-bone/10 px-[5vw] py-[16vh]">
         <p className="font-mono text-[10px] uppercase tracking-[0.4em] text-yellow">01 — Colour</p>
@@ -49,6 +56,6 @@ export default function ColoursPage() {
           Typography →
         </Link>
       </section>
-    </main>
+    </PageShell>
   );
 }

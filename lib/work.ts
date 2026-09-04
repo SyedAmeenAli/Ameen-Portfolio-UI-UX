@@ -28,7 +28,9 @@ export const POSTERS = toPieces(POSTER_FILES, {
   "minimalist-art-poster-the-unseen": "The Unseen",
 });
 
-export const SOCIAL = toPieces(SOCIAL_FILES);
+// dropped: read as too obviously AI-generated for the archive
+const SOCIAL_EXCLUDE = new Set(["continuous-table-passing-through", "koro-coffee-machine-design-concept"]);
+export const SOCIAL = toPieces(SOCIAL_FILES.filter((m) => !SOCIAL_EXCLUDE.has(m.slug)));
 export const THUMBS = toPieces(THUMB_FILES);
 export const ILLOS = toPieces(ILLO_FILES);
 export const MOTION = MOTION_FILES.map((m) => ({ slug: m.slug, file: m.file, title: titleFrom(m.slug) }));

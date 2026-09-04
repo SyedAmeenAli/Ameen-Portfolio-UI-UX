@@ -37,6 +37,21 @@ export default function SocialPage() {
         line2: "Systems",
         sub: ["Campaigns", "Post systems", "Ad creative", "One idea across a feed"],
         copy: "Concept campaigns — a single visual language stretched across a feed.",
+        children: (
+          <div className="border border-purple/40 p-4">
+            <p className="font-grotesk text-[9px] font-semibold uppercase tracking-[0.24em] text-purple">Campaigns</p>
+            <ul className="mt-3 space-y-2.5">
+              {sections.map(({ c, items }) => (
+                <li key={c.key} className="flex items-baseline justify-between gap-3 border-t border-purple/20 pt-2 first:border-t-0 first:pt-0">
+                  <span className="font-condensed text-lg uppercase leading-none text-bone">{c.name}</span>
+                  <span className="font-grotesk text-[10px] font-semibold text-yellow">{items.length}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-4 font-grotesk text-[9px] font-semibold uppercase tracking-[0.24em] text-purple">Total pieces</p>
+            <p className="mt-1 font-condensed text-3xl uppercase text-yellow">{SOCIAL.filter((s) => !s.slug.includes("logo")).length}</p>
+          </div>
+        ),
       }}
     >
       {sections.map(({ c, items }, ci) => (

@@ -67,7 +67,7 @@ export const CATEGORIES: Category[] = [
     blurb: "Full identity systems. The exploration sketch first, then the finished world with the reasoning." },
   { key: "posters", label: "Posters", href: "/work/posters", tag: "POSTER", count: "25", accent: "red", kind: "grid",
     blurb: "Surreal, brutalist, editorial. Concept-led image-making with type doing half the work." },
-  { key: "social", label: "Social Media", href: "/work/social", tag: "SOCIAL", count: "28", accent: "yellow", kind: "grid",
+  { key: "social", label: "Social Media", href: "/work/social", tag: "SOCIAL", count: "26", accent: "yellow", kind: "grid",
     blurb: "Campaign frames and concept ads — AUREN, KORO, Orbital House, VELORA. One idea stretched across a feed." },
   { key: "thumbnails", label: "YouTube Thumbnails", href: "/work/thumbnails", tag: "THUMBNAIL", count: "05", accent: "red", kind: "grid",
     blurb: "Stop-the-scroll thumbnails — contrast, one face, one promise." },
