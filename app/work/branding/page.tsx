@@ -79,7 +79,7 @@ export default function BrandVisualizationPage() {
           <ul className="mt-6 space-y-1 font-grotesk text-[10px] font-semibold uppercase tracking-[0.16em] text-bone/60">
             {featured.deliverables.map((d) => <li key={d}>{d}</li>)}
           </ul>
-          <Link href="/work" className="mt-6 inline-flex items-center gap-2 font-grotesk text-[10px] font-semibold uppercase tracking-[0.2em] text-yellow">
+          <Link href={`/work/branding/${featured.slug}`} className="mt-6 inline-flex items-center gap-2 font-grotesk text-[10px] font-semibold uppercase tracking-[0.2em] text-yellow">
             [ View full project ] <span>↗</span>
           </Link>
         </div>
@@ -157,7 +157,7 @@ export default function BrandVisualizationPage() {
           {MORE_BRANDS.map((b, i) => (
             <Link
               key={b.name}
-              href={b.slug ? "/work/branding" : "/work/branding"}
+              href={b.slug ? `/work/branding/${b.slug}` : "/work/branding"}
               className={`group flex flex-col justify-between gap-3 p-4 transition-colors hover:bg-purple/10 ${i ? "border-l border-purple/25" : ""}`}
             >
               <span className="h-6 w-6" style={{ background: b.color }} />

@@ -7,7 +7,7 @@ import { WorkHero } from "@/components/sections/work-hero";
 import { Gallery } from "@/components/sections/gallery";
 import { MotionGallery } from "@/components/sections/motion-gallery";
 
-const OWN_ROUTE = new Set(["logos", "branding", "typography", "colours", "illustration"]);
+const OWN_ROUTE = new Set(["logos", "branding", "typography", "colours", "illustration", "motion", "social", "thumbnails"]);
 const SET = CATEGORIES.filter((c) => !OWN_ROUTE.has(c.key));
 
 const DATA: Record<string, { pieces: typeof POSTERS; tile: "ink" | "paper"; fit: "cover" | "contain" }> = {

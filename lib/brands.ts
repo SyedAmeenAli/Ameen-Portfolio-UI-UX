@@ -17,6 +17,21 @@ export type BrandVis = {
 
 const DELIVERABLES = ["Logo Design", "Visual Identity", "Brand Guidelines", "Digital Applications"];
 
+const SECTOR_LINE: Record<string, string> = {
+  auria: "Immersive audio",
+  nexora: "AI infrastructure",
+  terralis: "Earthy lifestyle / home",
+  vayora: "Experimental technology",
+  verdant: "Plant technology",
+};
+const CONCEPT: Record<string, string> = {
+  auria: "The mark is a live equaliser frozen mid-beat — sound before it reads as a letter.",
+  nexora: "An arch and a rising stair: climb, threshold, the ordinary left behind. Beyond the ordinary.",
+  terralis: "A leaf inside an arched doorway, one weight, so it stamps clean on a jar or a shipping box.",
+  vayora: "A hidden V and a star of forward motion — geometric, minimal, one accent colour.",
+  verdant: "Two leaves resolve into a V. Green-forward, applied across dashboards and environments.",
+};
+
 const APP_IMAGES = [
   "/social/auren-brand-logo-design.png",
   "/social/koro-brand-logo-display.png",
@@ -24,11 +39,13 @@ const APP_IMAGES = [
   "/social/velora-brand-logo-design.png",
 ];
 
-export const BRAND_VIS: BrandVis[] = BASE.map((b) => ({
+export const BRAND_VIS: (BrandVis & { sectorLine: string; concept: string })[] = BASE.map((b) => ({
   slug: b.slug,
   name: b.name,
   tagline: b.tagline,
   sector: b.sector,
+  sectorLine: SECTOR_LINE[b.slug] ?? b.sector,
+  concept: CONCEPT[b.slug] ?? b.blurb,
   color: b.color,
   palette: b.palette,
   board: b.board,

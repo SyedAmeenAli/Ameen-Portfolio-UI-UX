@@ -1,31 +1,21 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
-import ShimmerLoader from "@/components/ui/shimmer-loader";
 
-/** Brief shimmer curtain on every route change (skips the first paint). */
+/** Fast editorial route transition — scroll reset + content clip/fade-up (~380ms). */
 export default function Template({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
-  const first = useRef(pathname);
-  const [loading, setLoading] = useState(false);
+  const first = useRef(true);
 
   useEffect(() => {
-    if (first.current === pathname) return;
-    first.current = pathname;
-    setLoading(true);
-    const t = setTimeout(() => setLoading(false), 620);
-    return () => clearTimeout(t);
+    if (first.current) { first.current = false; return; }
+    window.scrollTo(0, 0);
   }, [pathname]);
 
   return (
-    <>
-      {loading && (
-        <div className="fixed inset-0 z-[90] grid place-items-center bg-void">
-          <ShimmerLoader labels={["Loading", "Compositing", "Rendering", "Ready"]} duration={600} tokenTarget={1} className="w-56" />
-        </div>
-      )}
+    <div key={pathname} className="animate-[route-in_0.42s_cubic-bezier(0.16,1,0.3,1)_both] motion-reduce:animate-none">
       {children}
-    </>
+    </div>
   );
 }
