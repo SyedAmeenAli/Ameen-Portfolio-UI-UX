@@ -8,7 +8,10 @@ import { SITE } from "@/lib/site";
 export const metadata: Metadata = { title: "About" };
 
 const ROLES = ["A UI/UX Designer", "A Visual Designer", "A Product Designer", "A Digital Creative"];
-const TOOLS = ["Figma", "Photoshop", "Illustrator", "After Effects", "Blender", "Spline", "Framer", "Canva"];
+const TOOLS = [
+  ["Figma", "figma"], ["Photoshop", "photoshop"], ["Illustrator", "illustrator"], ["After Effects", "aftereffects"],
+  ["Blender", "blender"], ["Spline", "spline"], ["Framer", "framer"], ["Canva", "canva"],
+] as const;
 const CAPABILITIES = ["Brand identity systems", "UI / UX & product design", "Visual & editorial design", "Illustration", "Motion — 2D / 3D", "Type & colour systems"];
 
 export default function AboutPage() {
@@ -94,9 +97,11 @@ export default function AboutPage() {
         </div>
         <div>
           <p className="font-grotesk text-[10px] font-semibold uppercase tracking-[0.3em] text-purple">[ Tools ]</p>
-          <div className="mt-6 flex flex-wrap gap-2">
-            {TOOLS.map((t) => (
-              <span key={t} className="border border-purple/30 px-3 py-1.5 font-grotesk text-[10px] font-semibold uppercase tracking-[0.16em] text-bone/70">
+          <div className="mt-6 flex flex-wrap gap-3">
+            {TOOLS.map(([t, icon]) => (
+              <span key={t} title={t} className="flex items-center gap-2 border border-purple/30 py-1.5 pl-1.5 pr-3 font-grotesk text-[10px] font-semibold uppercase tracking-[0.16em] text-bone/70">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={`/tools/${icon}.png`} alt="" className="h-5 w-5 object-contain" />
                 {t}
               </span>
             ))}

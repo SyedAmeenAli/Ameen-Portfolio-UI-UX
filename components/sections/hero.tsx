@@ -54,13 +54,16 @@ export function Hero() {
           <div>
             <p className="font-grotesk text-[9px] font-semibold uppercase tracking-[0.24em] text-bone/45">Tools I use</p>
             <ul className="mt-3 flex flex-wrap gap-2">
-              {["Figma", "Photoshop", "Illustrator", "After Effects"].map((t) => (
+              {[
+                ["Figma", "figma"], ["Photoshop", "photoshop"], ["Illustrator", "illustrator"], ["After Effects", "aftereffects"],
+              ].map(([t, icon]) => (
                 <li
                   key={t}
                   title={t}
-                  className="grid h-11 w-11 place-items-center border border-purple/40 font-condensed text-sm uppercase text-bone/80 transition-colors hover:border-yellow hover:text-yellow"
+                  className="grid h-11 w-11 place-items-center border border-purple/40 p-2 transition-colors hover:border-yellow"
                 >
-                  {t.split(" ").map((w) => w[0]).join("")}
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={`/tools/${icon}.png`} alt={t} className="h-full w-full object-contain" />
                 </li>
               ))}
             </ul>
