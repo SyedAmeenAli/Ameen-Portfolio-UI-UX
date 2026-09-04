@@ -14,12 +14,12 @@ export default function Home() {
       {/* 01 — poster hero: name, PORTFOLI[O], who am I */}
       <Hero />
 
-      {/* 01b — editorial band: cropped visual + disciplines */}
+      {/* 01b — editorial band: half-girl visual + disciplines */}
       <section className="grid border-b border-purple/40 lg:grid-cols-[1.1fr_1.9fr]">
-        <div className="duo relative min-h-[38vh] border-purple/30 lg:border-r">
+        <div className="relative min-h-[42vh] overflow-hidden border-purple/30 lg:border-r">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/posters/synesthesia-visual-music-poster.jpg" alt="Editorial fragment" />
-          <span className="absolute bottom-3 left-3 z-10 font-grotesk text-[9px] font-semibold uppercase tracking-[0.22em] text-bone">Visual archive — 001</span>
+          <img src="/posters/girl-half.webp" alt="A more honest version — poster fragment by Ameen Ali" className="h-full w-full object-cover object-left" />
+          <span className="absolute bottom-3 left-3 z-10 bg-void/70 px-2 py-1 font-grotesk text-[9px] font-semibold uppercase tracking-[0.22em] text-bone">Visual archive — 001 · A more honest version</span>
         </div>
         <div className="flex flex-col justify-center px-[4vw] py-[8vh]">
           <p className="font-grotesk text-[10px] font-semibold uppercase tracking-[0.3em] text-purple">What I make</p>

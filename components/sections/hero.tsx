@@ -64,15 +64,15 @@ export function Hero() {
           <Hatch />
         </div>
 
-        {/* duotone panel */}
+        {/* girl poster — main visual */}
         <figure className="relative" style={step(6)}>
-          <div className="duo aspect-[3/4] w-full border border-purple/50">
+          <div className="aspect-[2/3] w-full overflow-hidden border border-purple/50">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/posters/giant-eye-floating-above-city.jpg" alt="Editorial visual — Ameen Ali" />
+            <img src="/posters/girl-distortion.webp" alt="Beauty exists in distortion — poster by Ameen Ali" className="h-full w-full object-cover" />
           </div>
           <figcaption className="mt-3 flex items-center justify-between font-grotesk text-[9px] font-semibold uppercase tracking-[0.24em] text-bone/45">
-            <span>Scroll to explore</span>
-            <span className="text-yellow">↓</span>
+            <span className="text-purple">Beauty exists in distortion</span>
+            <span className="text-yellow">Scroll ↓</span>
           </figcaption>
         </figure>
       </div>

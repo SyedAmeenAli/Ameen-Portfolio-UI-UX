@@ -4,17 +4,11 @@ import { LogoDome } from "@/components/sections/logo-dome";
 import { WorkBand } from "@/components/sections/work-band";
 import { SiteFooter } from "@/components/sections/site-footer";
 import { Hatch, Globe } from "@/components/sections/editorial-bits";
-import { LOGOS } from "@/lib/logos";
+import { LogoSheet } from "@/components/sections/logo-sheet";
 
 export const metadata: Metadata = { title: "Logo Gallery" };
 
-const FILTERS = ["All", "Tech", "Nature", "Lifestyle", "Food", "Experimental", "Lettermarks", "Monograms"];
-
-const mark = (l: (typeof LOGOS)[number]) =>
-  l.file ?? (l.kind === "image" ? `/logos/${l.slug}.webp` : `/logos/${l.slug}.jpg`);
-
 export default function LogoGalleryPage() {
-  const live = LOGOS.filter((l) => l.kind !== "todo");
   return (
     <main className="home grid-lines relative min-h-screen bg-void text-bone">
       <SiteNav active="logos" label="Logos" />
@@ -54,29 +48,7 @@ export default function LogoGalleryPage() {
         </div>
       </section>
 
-      {/* ============ FILTER BAR ============ */}
-      <section className="flex flex-wrap items-center gap-x-6 gap-y-2 border-b border-purple/40 px-[3vw] py-3 font-grotesk text-[10px] font-semibold uppercase tracking-[0.16em]">
-        <span className="text-bone/40">[ All Logos ]</span>
-        {FILTERS.map((f, i) => (
-          <span key={f} className={i === 0 ? "bg-yellow px-2 py-0.5 text-black" : "text-bone/55"}>{f}</span>
-        ))}
-        <span className="ml-auto flex items-center gap-3 text-bone/40">[ {live.length} ] <span>‹ ›</span></span>
-      </section>
-
-      {/* ============ CONTACT SHEET ============ */}
-      <section className="grid grid-cols-3 border-b border-purple/40 sm:grid-cols-4 lg:grid-cols-7 xl:grid-cols-12">
-        {live.map((l, i) => (
-          <div key={l.slug} className={`group flex flex-col items-center gap-2 p-4 transition-colors hover:bg-purple/10 ${i ? "border-l border-purple/20" : ""}`}>
-            <div className="grid aspect-square w-full place-items-center border border-purple/20 bg-iron p-3">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={mark(l)} alt={l.name} className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-110" />
-            </div>
-            <span className="text-center font-condensed text-sm uppercase leading-none text-bone">{l.name}</span>
-            <span className="text-center font-grotesk text-[8px] font-semibold uppercase tracking-[0.1em] text-purple">{l.type}</span>
-            <span className="font-grotesk text-[8px] text-bone/35">2026</span>
-          </div>
-        ))}
-      </section>
+      <LogoSheet />
 
       <WorkBand quote={"Marks that · mean more."} />
       <SiteFooter />

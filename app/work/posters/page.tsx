@@ -11,6 +11,8 @@ const P = "/posters/";
 const H = ["58vh", "44vh", "66vh", "50vh", "72vh", "46vh"];
 
 const POSTERS: Poster[] = [
+  { title: "Beauty in Distortion", meta: "Screen-print / portrait", src: P + "girl-distortion.webp" },
+  { title: "A More Honest Version", meta: "Torn collage / portrait", src: P + "girl-half.webp" },
   { title: "Afterlight", meta: "Electronic music", src: P + "electronic-music-poster-afterlight.jpg" },
   { title: "Human / Machine", meta: "AI concept", src: P + "human-hand-touching-artificial-hand.jpg" },
   { title: "Void / Form", meta: "Brutalist architecture", src: P + "brutalist-architecture-poster-vo.jpg" },
@@ -51,7 +53,7 @@ export default function PostersPage() {
               Surreal /<br />Brutalist /<br />Editorial /<br />Experimental.
             </p>
             <div className="mt-4 flex items-center gap-3"><Globe /><Hatch /></div>
-            <p className="mt-4 font-grotesk text-[9px] font-semibold uppercase tracking-[0.24em] text-yellow">15 pieces · scroll sideways →</p>
+            <p className="mt-4 font-grotesk text-[9px] font-semibold uppercase tracking-[0.24em] text-yellow">17 pieces · scroll sideways →</p>
           </div>
         </div>
       </section>
