@@ -70,8 +70,15 @@ export default function WorkPage() {
 
           <figure className="relative">
             <div className="duo aspect-[3/4] w-full border border-purple/50">
+              {/* full poster is a tall portrait with the title running the whole left
+                  edge (ECHOES OF TOMORROW) — object-fit:cover from .duo would crop
+                  into the title, so this one instance stays object-contain */}
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/posters/giant-eye-floating-above-city.jpg" alt="Editorial visual — Ameen Ali" />
+              <img
+                src="/posters/giant-eye-floating-above-city.jpg"
+                alt="Echoes of Tomorrow — poster by Ameen Ali"
+                style={{ objectFit: "contain" }}
+              />
             </div>
             <figcaption className="mt-3 flex items-center justify-between font-grotesk text-[9px] font-semibold uppercase tracking-[0.24em] text-bone/45">
               <span>Scroll for more</span>
