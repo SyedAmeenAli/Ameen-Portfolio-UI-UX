@@ -41,10 +41,13 @@ html {
   background: #050505;
   color: var(--color-bone);
   -webkit-font-smoothing: antialiased;
-  overflow-x: clip;
+  overflow-x: hidden;          /* NOT clip — clip forces overflow-y:clip too and kills scroll */
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
 }
-body { font-family: var(--font-grotesk); background: #050505; overflow-x: clip; }
-main { background: #050505; color: var(--color-bone); }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { font-family: var(--font-grotesk); background: #050505; overflow-x: hidden; }
+main { display: block; background: #050505; color: var(--color-bone); }
 
 ::selection { background: var(--color-purple); color: #050505; }
 

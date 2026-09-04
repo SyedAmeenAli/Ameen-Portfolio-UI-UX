@@ -31,7 +31,33 @@ export default function AboutPage() {
         </div>
       </PageHeader>
 
-      {/* INTRO + PHILOSOPHY */}
+      {/* PIXEL SELF + STATEMENT */}
+      <section className="grid border-b border-purple/40 lg:grid-cols-[0.8fr_1.2fr]">
+        <div className="relative border-purple/30 p-[3vw] lg:border-r">
+          <span className="font-grotesk text-[10px] font-semibold tracking-[0.3em] text-purple">[ 01 ] The pixel self</span>
+          <div className="relative mt-4 border-2 border-purple/50 p-2" style={{ backgroundImage: "repeating-linear-gradient(0deg,rgba(176,0,255,0.08) 0 1px,transparent 1px 8px),repeating-linear-gradient(90deg,rgba(176,0,255,0.08) 0 1px,transparent 1px 8px)" }}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/me/front.png" alt="Ameen, pixelated" className="mx-auto max-h-[62vh] w-auto object-contain" style={{ imageRendering: "pixelated" }} />
+            <span className="absolute -right-3 -top-3 bg-yellow px-2 py-0.5 font-grotesk text-[9px] font-bold text-black">01</span>
+          </div>
+          <p className="mt-3 font-grotesk text-[9px] font-semibold uppercase tracking-[0.2em] text-bone/45">
+            The face stays a mark, not a photo.
+          </p>
+        </div>
+        <div className="flex flex-col justify-center p-[3vw]">
+          <h2 className="font-condensed text-[clamp(2.4rem,8vw,6.5rem)] uppercase leading-[0.82] text-bone">
+            I design how<br /><span className="text-yellow">things feel.</span>
+          </h2>
+          <p className="mt-6 max-w-[42ch] font-grotesk text-sm leading-relaxed text-bone/70">{SITE.bio[1]}</p>
+          <div className="mt-8 grid grid-cols-2 gap-x-6 gap-y-2 sm:grid-cols-3">
+            {["UI / UX", "Product Design", "Branding", "Visual Design", "Interaction", "Prototyping"].map((d) => (
+              <span key={d} className="border-t border-purple/25 pt-1.5 font-grotesk text-[10px] font-semibold uppercase tracking-[0.16em] text-bone/60">{d}</span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* PHILOSOPHY */}
       <section className="grid gap-[6vh] border-b border-purple/40 px-[4vw] py-[10vh] lg:grid-cols-2">
         <div>
           <p className="font-grotesk text-[10px] font-semibold uppercase tracking-[0.3em] text-purple">[ How I think ]</p>

@@ -23,8 +23,8 @@ export const viewport: Viewport = { themeColor: "#ece9e1", colorScheme: "light" 
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${serif.variable} ${condensed.variable} ${grotesk.variable} ${mono.variable} h-full`}>
-      <body className="grain min-h-full bg-bone text-ink">
+    <html lang="en" className={`${serif.variable} ${condensed.variable} ${grotesk.variable} ${mono.variable}`}>
+      <body className="grain bg-void text-bone">
         <StyledRegistry>
           <SmoothScroll>
             <div className="relative z-10">{children}</div>
