@@ -42,7 +42,7 @@ export function SiteFooter({ mid = "Ideas live longer ↓" }: { mid?: string }) 
         <div className="flex flex-col items-start justify-between gap-4 sm:items-end">
           <Link href="/" aria-label="Home">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/brand/logo-mark.png" alt="Ameen Ali" className="h-10 w-auto" />
+            <img src="/brand/logo-mark.png" alt="Ameen Ali" className="h-16 w-auto" />
           </Link>
           <span className="font-grotesk text-[9px] font-semibold uppercase tracking-[0.24em] text-bone/40 sm:text-right">
             © 2026 Ameen Ali · All rights reserved.<br />{mid}

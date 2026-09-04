@@ -3,12 +3,12 @@ import Link from "next/link";
 import { SiteNav } from "@/components/sections/site-nav";
 import { WorkBand } from "@/components/sections/work-band";
 import { SiteFooter } from "@/components/sections/site-footer";
-import { Hatch, Globe } from "@/components/sections/editorial-bits";
+import { Globe } from "@/components/sections/editorial-bits";
+import { IdentityHero } from "@/components/sections/identity-hero";
 import { BRAND_VIS } from "@/lib/brands";
 
 export const metadata: Metadata = { title: "Brand Identity" };
 
-const featured = BRAND_VIS[0];
 const GLYPHS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ · 0123456789";
 
 export default function BrandIdentityPage() {
@@ -16,42 +16,7 @@ export default function BrandIdentityPage() {
     <main className="home grid-lines relative min-h-screen bg-void text-bone">
       <SiteNav active="identity" label="Brand Identity" />
 
-      <section className="grid border-b border-purple/40 lg:grid-cols-[1.4fr_2fr_0.85fr]">
-        <div className="border-purple/30 px-[3vw] pb-[5vh] pt-[13vh] lg:border-r">
-          <p className="font-grotesk text-[10px] font-semibold tracking-[0.3em] text-bone/50">[ 01 ]</p>
-          <h1 className="mt-2 font-condensed uppercase leading-[0.72] tracking-[0.005em]">
-            <span className="block text-[clamp(2.6rem,8vw,6rem)] text-bone">Brand</span>
-            <span className="block text-[clamp(2.6rem,8vw,6rem)] text-yellow">
-              Identity <span className="align-top text-[0.3em] text-purple">↘</span>
-            </span>
-          </h1>
-          <p className="mt-5 font-grotesk text-[11px] font-semibold uppercase leading-relaxed tracking-[0.16em] text-bone/55">
-            Identities /<br />Systems /<br />Visual worlds /<br />Real impact.
-          </p>
-          <p className="mt-4 max-w-[34ch] font-grotesk text-[11px] leading-relaxed text-bone/45">
-            Logo systems, typography, colour, art direction and applications — from the first sketch to the final identity.
-          </p>
-        </div>
-
-        <div className="relative flex items-center justify-center border-purple/30 bg-[#0b0a10] p-4 lg:border-r">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={featured.board} alt="Nexora identity board" className="max-h-[62vh] w-full object-contain" />
-          <span className="pointer-events-none absolute left-4 top-4 font-grotesk text-[9px] font-semibold uppercase tracking-[0.2em] text-bone/60">Featured — {featured.name}</span>
-        </div>
-
-        <div className="flex flex-col justify-between gap-6 px-[3vw] py-[7vh]">
-          <div>
-            <p className="font-grotesk text-[10px] font-semibold uppercase leading-relaxed tracking-[0.14em] text-bone/55">
-              More<br />than<br />just<br />a logo.
-            </p>
-            <div className="mt-4 flex items-center gap-3"><Globe /><Hatch /></div>
-          </div>
-          <p className="font-grotesk text-[10px] font-semibold uppercase leading-relaxed tracking-[0.14em] text-purple">
-            Idea /<br />Strategy /<br />Design /<br />System.
-          </p>
-          <p className="font-grotesk text-[9px] font-semibold uppercase tracking-[0.24em] text-yellow">Scroll to explore ↓</p>
-        </div>
-      </section>
+      <IdentityHero brands={BRAND_VIS} />
 
       <section className="border-b border-purple/40">
         <p className="px-[3vw] py-3 font-grotesk text-[10px] font-semibold tracking-[0.3em] text-bone/50">[ 02 ] Five identity systems</p>
