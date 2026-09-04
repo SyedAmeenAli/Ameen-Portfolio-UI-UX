@@ -1,37 +1,41 @@
 import Link from "next/link";
-import { SITE } from "@/lib/site";
 
 const LINKS = [
-  { label: "Work", href: "#work" },
-  { label: "About", href: "#about" },
-  { label: "Experiments", href: "#experiments" },
-  { label: "Contact", href: "#contact" },
+  { label: "Work", href: "/work", key: "work" },
+  { label: "Identity", href: "/work/branding", key: "branding" },
+  { label: "Illustration", href: "/work/illustration", key: "illustration" },
+  { label: "Posters", href: "/work/posters", key: "posters" },
+  { label: "About", href: "/#about", key: "about" },
+  { label: "Contact", href: "/#contact", key: "contact" },
 ];
 
 /** Compact editorial nav — metadata attached to the artwork, not a navbar. */
-export function SiteNav() {
+export function SiteNav({ active }: { active?: string }) {
   return (
     <header className="absolute inset-x-0 top-0 z-50">
-      <nav className="flex items-start justify-between px-[4vw] py-4 font-grotesk text-[10px] font-semibold uppercase tracking-[0.24em] text-bone">
-        <Link href="/" className="leading-tight">
-          {SITE.name}
-          <span className="block text-bone/45">Digital / Visual Designer</span>
+      <nav className="flex items-center justify-between border-b border-purple/40 px-[4vw] py-4 font-grotesk text-[10px] font-semibold uppercase tracking-[0.24em] text-bone">
+        <Link href="/" className="flex items-baseline gap-2">
+          <span className="text-yellow">AM</span>
+          <span className="text-bone/45">/ Portfolio</span>
         </Link>
 
-        <ul className="hidden gap-6 sm:flex">
+        <ul className="hidden gap-5 sm:flex">
           {LINKS.map((l) => (
-            <li key={l.label}>
-              <a href={l.href} className="group inline-flex items-center gap-1 text-bone/55 transition-transform hover:translate-x-0.5 hover:text-yellow">
+            <li key={l.key}>
+              <a
+                href={l.href}
+                className={`group inline-flex items-center gap-1 transition-transform hover:translate-x-0.5 ${
+                  active === l.key ? "text-yellow" : "text-bone/55 hover:text-bone"
+                }`}
+              >
+                {active === l.key && <span className="h-1.5 w-1.5 bg-purple" />}
                 {l.label}
-                <span className="text-purple opacity-0 transition-opacity group-hover:opacity-100">↗</span>
               </a>
             </li>
           ))}
         </ul>
 
-        <a href="#index" className="inline-flex items-center gap-1 text-bone/55 hover:translate-x-0.5 hover:text-yellow">
-          Index <span className="text-yellow">↗</span>
-        </a>
+        <span className="text-yellow">+</span>
       </nav>
     </header>
   );

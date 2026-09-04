@@ -46,3 +46,4 @@ next-env.d.ts
 /tools/*.exe
 public/cat/cat walking_frames/
 assets-raw/cat-frames-src/
+assets-raw/pixelcat/

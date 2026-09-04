@@ -4,8 +4,8 @@
 // No video, no CSS fake, no crossfade. Click left / right half to walk that way.
 import { useEffect, useRef, useState } from "react";
 
-const COUNT = 304;
-const FPS = 24;
+const COUNT = 49;
+const FPS = 5;
 const src = (i: number) => `/cat/f/${String(i).padStart(4, "0")}.webp`;
 
 export function Cat({ compact = false }: { compact?: boolean }) {
@@ -41,6 +41,7 @@ export function Cat({ compact = false }: { compact?: boolean }) {
       const img = frames.current[cur.current];
       if (c && img && img.complete && img.naturalWidth) {
         const ctx = c.getContext("2d")!;
+        ctx.imageSmoothingEnabled = false;
         const cw = c.width, ch = c.height;
         const s = Math.min(cw / img.naturalWidth, ch / img.naturalHeight);
         const w = img.naturalWidth * s, h = img.naturalHeight * s;
@@ -55,9 +56,7 @@ export function Cat({ compact = false }: { compact?: boolean }) {
       if (t - last < step) return;
       last = t;
       if (walking.current) {
-        cur.current += dir.current;
-        if (cur.current <= 0) { cur.current = 0; walking.current = false; }
-        else if (cur.current >= COUNT - 1) { cur.current = COUNT - 1; walking.current = false; }
+        cur.current = (cur.current + dir.current + COUNT) % COUNT; // seamless loop
         draw();
       }
     };
@@ -80,9 +79,12 @@ export function Cat({ compact = false }: { compact?: boolean }) {
     return () => { alive = false; cancelAnimationFrame(raf); window.removeEventListener("resize", onResize); };
   }, []);
 
+  const stopT = useRef<ReturnType<typeof setTimeout> | null>(null);
   const walk = (d: 1 | -1) => {
     dir.current = d;
     walking.current = true;
+    if (stopT.current) clearTimeout(stopT.current);
+    stopT.current = setTimeout(() => { walking.current = false; }, 2800);
   };
 
   return (
@@ -105,7 +107,7 @@ export function Cat({ compact = false }: { compact?: boolean }) {
             walk(e.clientX - r.left < r.width / 2 ? -1 : 1);
           }}
         >
-          <canvas ref={canvasRef} className="h-full w-full" />
+          <canvas ref={canvasRef} className="h-full w-full" style={{ imageRendering: "pixelated" }} />
           {!ready && (
             <span className="absolute inset-0 grid place-items-center font-grotesk text-[10px] font-semibold uppercase tracking-[0.3em] text-bone/40">
               loading frames…
