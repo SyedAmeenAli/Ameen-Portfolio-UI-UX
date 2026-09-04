@@ -136,7 +136,9 @@ h1, h2, h3 { font-family: var(--font-condensed); letter-spacing: 0.005em; line-h
 @keyframes shimmer { to { background-position: -200% 0; } }
 @keyframes marquee-x { to { transform: translateX(-50%); } }
 @keyframes load-bar { from { width: 0; } to { width: 100%; } }
-@keyframes route-in { from { opacity: 0; transform: translateY(1.2rem); clip-path: inset(0 0 6% 0); } to { opacity: 1; transform: translateY(0); clip-path: inset(0 0 -2% 0); } }
+/* NOTE: `to` must end with transform:none / clip-path:none so the wrapper stops
+   being a containing block/clip for position:fixed children (lightbox overlay). */
+@keyframes route-in { from { opacity: 0; transform: translateY(1.2rem); clip-path: inset(0 0 6% 0); } to { opacity: 1; transform: none; clip-path: none; } }
 @keyframes float-idle { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-1.2%); } }
 
 /* cinematic hero reveal — clip + blur + opacity, staggered by --i */
