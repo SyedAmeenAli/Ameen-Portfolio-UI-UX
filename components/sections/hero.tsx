@@ -63,7 +63,7 @@ export function Hero() {
                   className="grid h-16 w-16 place-items-center border border-purple/40 p-2.5 transition-colors hover:border-yellow sm:h-20 sm:w-20"
                 >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={`/tools/${icon}.png`} alt={t} className="h-full w-full object-contain" />
+                  <img src={`/tools/${icon}.png`} alt={t} className={`h-full w-full object-contain ${icon === "figma" ? "scale-75" : ""}`} />
                 </li>
               ))}
             </ul>

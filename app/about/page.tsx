@@ -101,7 +101,7 @@ export default function AboutPage() {
             {TOOLS.map(([t, icon]) => (
               <span key={t} title={t} className="flex items-center gap-2 border border-purple/30 py-1.5 pl-1.5 pr-3 font-grotesk text-[10px] font-semibold uppercase tracking-[0.16em] text-bone/70">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={`/tools/${icon}.png`} alt="" className="h-5 w-5 object-contain" />
+                <img src={`/tools/${icon}.png`} alt="" className={`h-5 w-5 object-contain ${icon === "figma" ? "scale-75" : ""}`} />
                 {t}
               </span>
             ))}
