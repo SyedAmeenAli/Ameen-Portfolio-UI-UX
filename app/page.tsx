@@ -1,57 +1,47 @@
+import Link from "next/link";
 import { SiteNav } from "@/components/sections/site-nav";
 import { Hero } from "@/components/sections/hero";
-import { SelectedWork } from "@/components/sections/selected-work";
-import { NameCubes } from "@/components/sections/name-cubes";
-import { MindMap } from "@/components/sections/mind-map";
-import { Cat } from "@/components/sections/cat";
-import { LineStrip } from "@/components/ui/line-strip";
-import { SITE } from "@/lib/site";
-
-const CONTACT = "amelio123ali@gmail.com";
+import { CategoryStrip } from "@/components/sections/category-strip";
+import { FeaturedCards } from "@/components/sections/featured-cards";
+import { WorkBand } from "@/components/sections/work-band";
+import { SiteFooter } from "@/components/sections/site-footer";
 
 export default function Home() {
   return (
-    <main className="home relative bg-black text-bone">
-      <SiteNav />
+    <main className="home grid-lines relative min-h-screen bg-[#050505] text-bone">
+      <SiteNav label="Portfolio" />
 
-      {/* 01–03 — poster hero: name, PORTFOLI[O], who am I */}
+      {/* 01 — poster hero: name, PORTFOLI[O], who am I */}
       <Hero />
 
-      {/* signature — the cat walks the rule into the archive */}
-      <Cat compact />
-
-      <LineStrip dark text="UI/UX · VISUAL SYSTEMS · BRAND IDENTITY · ART DIRECTION" speed={36} />
-
-      {/* 04 — selected work */}
-      <SelectedWork />
-
-      {/* 05 — what I make */}
-      <MindMap />
-
-      {/* personality beat */}
-      <NameCubes />
-
-      {/* 07 — final CTA, as a poster */}
-      <section id="contact" className="grid-lines border-t border-bone/15 px-[4vw] py-[18vh]">
-        <p className="font-condensed text-[clamp(3rem,17vw,14rem)] uppercase leading-[0.8] text-bone">
-          Let&apos;s make<br />something<br /><span className="text-yellow">memorable.</span>
-        </p>
-        <div className="mt-12 flex flex-wrap items-end justify-between gap-8">
-          <p className="flex items-center gap-4 font-condensed text-[clamp(1.1rem,3vw,2rem)] uppercase leading-tight text-bone/70">
-            <span className="h-4 w-4 shrink-0 bg-purple" />
-            Am I the designer you were looking for?
-          </p>
-          <a
-            href={`mailto:${CONTACT}`}
-            className="inline-flex items-center gap-3 border border-bone/30 px-6 py-3 font-grotesk text-[11px] font-semibold uppercase tracking-[0.25em] text-bone transition-colors hover:bg-yellow hover:text-black"
-          >
-            Contact me <span className="text-2xl leading-none text-yellow group-hover:text-black">↗</span>
-          </a>
-        </div>
-        <p className="mt-16 font-grotesk text-[9px] font-semibold uppercase tracking-[0.3em] text-bone/40">
-          {SITE.name} · Portfolio / 2026 · Hyderabad, India
-        </p>
+      {/* 02 — selected work / categories */}
+      <section id="work" className="flex flex-wrap items-end justify-between gap-4 px-[4vw] pb-[4vh] pt-[9vh]">
+        <p className="font-grotesk text-[10px] font-semibold tracking-[0.3em] text-bone/50">[ 02 ]</p>
+        <Link href="/work" className="group flex items-baseline gap-3">
+          <h2 className="font-condensed text-[clamp(2.4rem,10vw,7rem)] uppercase leading-[0.78] text-bone group-hover:text-yellow">
+            Selected Work
+          </h2>
+          <span className="font-condensed text-[clamp(1.4rem,5vw,3rem)] text-yellow transition-transform group-hover:translate-x-1">↗</span>
+        </Link>
       </section>
+      <CategoryStrip />
+
+      {/* 03 — featured */}
+      <section id="experiments" className="border-b border-purple/40 px-[4vw] pb-[6vh] pt-[9vh]">
+        <p className="font-grotesk text-[10px] font-semibold tracking-[0.3em] text-bone/50">[ 03 ]</p>
+        <div className="mt-2 flex flex-wrap items-end justify-between gap-x-8 gap-y-4">
+          <h2 className="font-condensed text-[clamp(2.4rem,10vw,7rem)] uppercase leading-[0.78] text-yellow">Featured Projects</h2>
+          <Link href="/work" className="flex items-center gap-3 font-grotesk text-[10px] font-semibold uppercase tracking-[0.14em] text-bone/50 hover:text-yellow">
+            <span className="h-px w-10 bg-purple" /> View the full archive ↗
+          </Link>
+        </div>
+        <div className="mt-10">
+          <FeaturedCards limit={4} />
+        </div>
+      </section>
+
+      <WorkBand />
+      <SiteFooter mid="Scroll for more ↓" />
     </main>
   );
 }

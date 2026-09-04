@@ -1,5 +1,6 @@
 import type { CSSProperties } from "react";
 import { WhoAmI } from "@/components/sections/who-am-i";
+import { Hatch, Globe } from "@/components/sections/editorial-bits";
 
 const step = (i: number): CSSProperties => ({ ["--i" as string]: i } as CSSProperties);
 
@@ -9,31 +10,23 @@ const META: [string, string][] = [
   ["Available", "Select projects"],
 ];
 
-/** Dense editorial poster. Name is the hero; the O of PORTFOLIO frames the pixel head. */
+/** Dense editorial poster hero. Name is the hero; the O of PORTFOLIO frames the pixel head. */
 export function Hero() {
   return (
-    <section className="grid-lines relative min-h-screen overflow-hidden border-b border-bone/15 px-[4vw] pb-[5vh] pt-[10vh]">
-      {/* top meta line */}
-      <div className="reveal flex items-center justify-between font-grotesk text-[10px] font-semibold uppercase tracking-[0.28em] text-bone/50">
-        <span style={step(0)}>01 / Home</span>
-        <span className="text-yellow" style={step(0)}>2026</span>
-      </div>
+    <section className="relative overflow-hidden border-b border-purple/40 px-[4vw] pb-[5vh] pt-[13vh]">
+      <p className="reveal font-grotesk text-[10px] font-semibold tracking-[0.3em] text-bone/50">[ 01 ]</p>
 
-      <div className="mt-[2vh] grid gap-x-[3vw] gap-y-[3vh] lg:grid-cols-[1fr_auto]">
+      <div className="reveal mt-2 grid gap-x-[3vw] gap-y-[4vh] lg:grid-cols-[1.4fr_0.55fr_0.85fr] lg:items-start">
         {/* NAME + PORTFOLIO */}
-        <div className="reveal min-w-0">
-          <h1 className="font-condensed uppercase leading-[0.74] tracking-[-0.01em] text-bone">
-            <span className="block text-[clamp(3rem,15.5vw,12rem)]" style={step(1)}>Ameen</span>
-            <span className="block text-[clamp(3rem,15.5vw,12rem)] text-yellow" style={step(2)}>Ali</span>
+        <div className="min-w-0">
+          <h1 className="font-condensed uppercase leading-[0.7] tracking-[0.005em]">
+            <span className="block text-[clamp(3rem,15vw,12rem)] text-bone" style={step(1)}>Ameen</span>
+            <span className="block text-[clamp(3rem,15vw,12rem)] text-yellow" style={step(2)}>Ali</span>
           </h1>
 
-          {/* PORTFOLI[O = pixel head portal] */}
-          <div className="mt-[2.5vh] flex flex-nowrap items-center font-condensed text-[clamp(2rem,9vw,7rem)] uppercase leading-none text-bone" style={step(3)}>
-            <span className="tracking-[-0.02em]">Portfoli</span>
-            <span
-              className="relative ml-[0.04em] inline-block aspect-square h-[0.92em] shrink-0 overflow-hidden rounded-full border-[0.06em] border-purple bg-black"
-              aria-hidden
-            >
+          <div className="mt-[2vh] flex flex-nowrap items-center font-condensed text-[clamp(1.8rem,8vw,6.5rem)] uppercase leading-none text-bone" style={step(3)}>
+            <span>Portfoli</span>
+            <span className="relative ml-[0.04em] inline-block aspect-square h-[0.92em] shrink-0 overflow-hidden rounded-full border-[0.055em] border-purple bg-black" aria-hidden>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/me/head.webp"
@@ -43,35 +36,50 @@ export function Hero() {
               />
             </span>
           </div>
+
+          <div className="mt-6 flex items-start gap-8" style={step(4)}>
+            <p className="font-grotesk text-[11px] font-semibold uppercase leading-relaxed tracking-[0.16em] text-bone/55">
+              Digital<br />designer<br />/ visual<br />systems
+            </p>
+            <p className="flex items-center gap-3 self-end font-grotesk text-[10px] font-semibold uppercase tracking-[0.2em] text-bone/45">
+              Design beyond the obvious <span className="h-px w-16 bg-purple" />
+            </p>
+          </div>
         </div>
 
-        {/* META COLUMN */}
-        <aside className="reveal relative z-10 self-end lg:-ml-[8vw] lg:max-w-[16rem]">
-          <p className="font-grotesk text-[10px] font-semibold uppercase tracking-[0.24em] text-purple" style={step(4)}>
-            Ameen Ali — Digital Designer
-          </p>
-          <dl className="mt-4 space-y-3" style={step(5)}>
+        {/* info column */}
+        <div className="flex flex-col gap-5 self-stretch border-l border-purple/25 pl-4" style={step(5)}>
+          <Globe />
+          <dl className="space-y-3">
             {META.map(([k, v]) => (
-              <div key={k} className="border-t border-purple/60 pt-1.5">
+              <div key={k} className="border-t border-purple/50 pt-1.5">
                 <dt className="font-grotesk text-[9px] font-semibold uppercase tracking-[0.24em] text-bone/45">{k}</dt>
                 <dd className="font-grotesk text-sm font-semibold uppercase tracking-wide text-bone/85">{v}</dd>
               </div>
             ))}
           </dl>
-          <p className="mt-5 max-w-[22ch] font-grotesk text-[13px] font-medium leading-snug text-bone/70" style={step(6)}>
-            I design digital experiences, visual systems and identities.
+          <p className="max-w-[24ch] font-grotesk text-[11px] font-medium leading-snug text-bone/60">
+            I build experiences, identities and visual systems meant to be remembered.
           </p>
-        </aside>
+          <Hatch />
+        </div>
+
+        {/* duotone panel */}
+        <figure className="relative" style={step(6)}>
+          <div className="duo aspect-[3/4] w-full border border-purple/50">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/posters/surreal-desert-landscape-art-poster.jpg" alt="Editorial visual — Ameen Ali" />
+          </div>
+          <figcaption className="mt-3 flex items-center justify-between font-grotesk text-[9px] font-semibold uppercase tracking-[0.24em] text-bone/45">
+            <span>Scroll to explore</span>
+            <span className="text-yellow">↓</span>
+          </figcaption>
+        </figure>
       </div>
 
-      {/* lower band */}
-      <div className="reveal mt-[4vh] flex flex-wrap items-end justify-between gap-[4vh]">
-        <div style={step(7)}><WhoAmI /></div>
-        <div className="flex items-center gap-3 font-grotesk text-[10px] font-semibold uppercase tracking-[0.3em] text-bone/50" style={step(7)}>
-          <span className="h-3 w-3 bg-purple" />
-          Scroll to explore
-          <span className="text-yellow">↓</span>
-        </div>
+      {/* WHO AM I — lower band */}
+      <div className="reveal mt-[6vh] border-t border-purple/25 pt-[5vh]" style={step(7)}>
+        <WhoAmI />
       </div>
     </section>
   );
