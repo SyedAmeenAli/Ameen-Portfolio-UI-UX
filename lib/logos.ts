@@ -38,5 +38,5 @@ export const LOGOS: Logo[] = [
   { n: 18, slug: "modulis", name: "Modulis", type: "Modular Symbol", kind: "todo" },
   { n: 19, slug: "mark-19", name: "Raven & Co.", type: "Heritage Emblem", kind: "image", line: "Crafted goods · est. 1991" },
   { n: 20, slug: "leaf-l", name: "Levaré", type: "Minimal Luxury", kind: "video" },
-  { n: 21, slug: "zayka", name: "Zayka", type: "Monogram", kind: "image", file: "/logos/zayka.png", line: "Taste, set in type" },
+  { n: 21, slug: "zayka", name: "Zayka", type: "Monogram", kind: "image", file: "/logos/zayka.svg", line: "Taste, set in type" },
 ];
