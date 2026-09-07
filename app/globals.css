@@ -53,11 +53,11 @@
   --color-line: rgba(128, 0, 128, 0.22);
   --color-line-soft: rgba(128, 0, 128, 0.10);
 
-  --color-yellow: #ffd400;
-  --color-gold: #ffd400;
+  --color-yellow: #b8860b;
+  --color-gold: #b8860b;
   --color-purple: #800080;
   --color-violet: #800080;
-  --color-red: #ffd400;
+  --color-red: #b8860b;
   --color-ember: #800080;
   --color-concrete: #555555;
   --color-concrete-dim: #6b6b6b;
@@ -86,8 +86,23 @@ main { display: block; background: var(--color-void); color: var(--color-bone); 
 
 h1, h2, h3 { font-family: var(--font-condensed); letter-spacing: 0.005em; line-height: 0.86; }
 
-/* deliberate dark contrast band — stays dark in both themes by design */
-.on-dark { background: #0c0b10; color: #f2ebdd; }
+/* deliberate dark contrast band — stays dark in BOTH themes. Re-point the
+   colour tokens locally so every `text-bone`, `bg-void`, `text-yellow` inside
+   resolves to its dark-section value regardless of the page theme. */
+.on-dark {
+  background: #0c0b10;
+  color: #f2ebdd;
+  --color-bone: #f2ebdd;
+  --color-void: #0c0b10;
+  --color-ink: #0c0b10;
+  --color-iron: #0c0b10;
+  --color-yellow: #ffd900;
+  --color-gold: #ffd900;
+  --color-red: #ffd900;
+  --color-purple: #b000ff;
+  --color-violet: #b000ff;
+  --color-concrete: #7a7684;
+}
 .on-dark ::selection { background: #ffd900; color: #0c0b10; }
 
 /* --- thin BLACK grid ---------------------------------------------------- */
