@@ -16,11 +16,12 @@ export type BrandVis = {
 };
 
 const cap = (s: string) => s.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+// 03/04/06/08/14/15 dropped — carry a faint Gemini sparkle baked into the art
 const bluemeterDeck = [
-  "01-cover", "02-the-question", "03-the-idea", "04-visual-research", "05-strategy-vocabulary",
-  "06-logo-exploration", "07-five-ways-into-the-mark", "08-not-every-idea-survives", "09-the-ones-that-stayed",
-  "10-three-directions", "11-one-direction", "12-logo-construction", "13-final-mark", "14-logo-system",
-  "15-wordmark", "16-type-as-infrastructure", "17-blue-as-infrastructure-not-water", "18-a-system-not-a-symbol",
+  "01-cover", "02-the-question", "05-strategy-vocabulary",
+  "07-five-ways-into-the-mark", "09-the-ones-that-stayed",
+  "10-three-directions", "11-one-direction", "12-logo-construction", "13-final-mark",
+  "16-type-as-infrastructure", "17-blue-as-infrastructure-not-water", "18-a-system-not-a-symbol",
   "19-pattern-system", "20-graphic-elements", "21-iconography", "22-data-information-graphics",
   "23-layout-grid-system", "24-photography-direction", "25-art-direction", "26-stationery-system",
   "27-business-documents", "28-technical-documentation", "29-report-presentation-system", "30-social-media-system",
