@@ -5,6 +5,7 @@ import { SiteNav } from "@/components/sections/site-nav";
 import { WorkBand } from "@/components/sections/work-band";
 import { SiteFooter } from "@/components/sections/site-footer";
 import { Globe } from "@/components/sections/editorial-bits";
+import { BrandDeck } from "@/components/sections/brand-deck";
 import { BRAND_VIS } from "@/lib/brands";
 
 export function generateStaticParams() {
@@ -93,9 +94,12 @@ export default async function BrandCaseStudy({ params }: PageProps<"/work/brandi
         </div>
       </section>
 
+      {/* FULL DECK — only for brands that have one */}
+      {b.deck && <BrandDeck slides={b.deck} />}
+
       {/* FINAL */}
       <section className="border-b border-purple/40 px-[4vw] py-[12vh] text-center">
-        <p className="font-grotesk text-[10px] font-semibold tracking-[0.3em] text-bone/50">[ 07 ] Final identity</p>
+        <p className="font-grotesk text-[10px] font-semibold tracking-[0.3em] text-bone/50">[ {b.deck ? "08" : "07"} ] Final identity</p>
         <h2 className="mt-4 font-condensed text-[clamp(2rem,8vw,6rem)] uppercase leading-[0.85]" style={{ color: b.accent }}>{b.tagline}</h2>
         <Link href={`/work/branding/${next.slug}`} className="mt-8 inline-flex items-center gap-2 font-grotesk text-[11px] font-semibold uppercase tracking-[0.24em] text-yellow">
           Next — {next.name} ↗

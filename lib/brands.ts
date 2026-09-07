@@ -12,7 +12,22 @@ export type BrandVis = {
   palette: string[];   // this brand's own colour system
   board: string;       // full identity board (show contained, never cropped)
   sketch: string;      // exploration sheet
+  deck?: { src: string; title: string }[]; // optional full case-study deck
 };
+
+const cap = (s: string) => s.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+const bluemeterDeck = [
+  "01-cover", "02-the-question", "03-the-idea", "04-visual-research", "05-strategy-vocabulary",
+  "06-logo-exploration", "07-five-ways-into-the-mark", "08-not-every-idea-survives", "09-the-ones-that-stayed",
+  "10-three-directions", "11-one-direction", "12-logo-construction", "13-final-mark", "14-logo-system",
+  "15-wordmark", "16-type-as-infrastructure", "17-blue-as-infrastructure-not-water", "18-a-system-not-a-symbol",
+  "19-pattern-system", "20-graphic-elements", "21-iconography", "22-data-information-graphics",
+  "23-layout-grid-system", "24-photography-direction", "25-art-direction", "26-stationery-system",
+  "27-business-documents", "28-technical-documentation", "29-report-presentation-system", "30-social-media-system",
+  "31-social-media-templates", "32-social-media-campaign", "33-digital-experience", "34-ui-design-system",
+  "35-data-information-graphics-2", "36-identity-in-the-field", "37-identity-in-use", "38-environmental-applications",
+  "39-identity-in-motion", "40-final-brand-world",
+].map((s) => ({ src: `/brands/bluemeter/${s}.jpg`, title: cap(s.replace(/^\d+-/, "")) }));
 
 export const BRAND_VIS: BrandVis[] = [
   {
@@ -80,5 +95,6 @@ export const BRAND_VIS: BrandVis[] = [
     palette: ["#0a1a2f", "#0057ff", "#00b4ff", "#8a94a6", "#e6f4ff"],
     board: "/brands/bluemeter-brand-visualisation.jpg",
     sketch: "/brands/bluemeter-sketch.jpg",
+    deck: bluemeterDeck,
   },
 ];
