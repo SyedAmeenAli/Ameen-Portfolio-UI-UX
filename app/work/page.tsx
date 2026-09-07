@@ -32,7 +32,7 @@ const ILLOS = [
 
 export default function WorkPage() {
   return (
-    <main className="home grid-lines relative min-h-screen bg-[#050505] text-bone">
+    <main className="home grid-lines relative min-h-screen bg-void text-bone">
       <SiteNav active="work" label="Selected Work" />
 
       {/* ============ HERO ============ */}
@@ -115,7 +115,7 @@ export default function WorkPage() {
             <Link key={p.t} href="/work/posters" className={`group relative block overflow-hidden border border-bone/12 transition-colors hover:border-purple ${p.span}`}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={p.f} alt={p.t} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.05]" />
-              <span className="absolute bottom-1 left-1 bg-black/80 px-1.5 py-0.5 font-grotesk text-[8px] font-semibold uppercase tracking-[0.12em] text-bone opacity-0 transition-opacity group-hover:opacity-100">
+              <span className="absolute bottom-1 left-1 bg-void/80 px-1.5 py-0.5 font-grotesk text-[8px] font-semibold uppercase tracking-[0.12em] text-bone opacity-0 transition-opacity group-hover:opacity-100">
                 {String(i + 1).padStart(2, "0")} · {p.t}
               </span>
             </Link>
@@ -131,7 +131,7 @@ export default function WorkPage() {
         </div>
         <div className="mt-8 grid grid-cols-2 gap-2 md:grid-cols-5">
           {ILLOS.map((il, i) => (
-            <Link key={il.t} href="/work/illustration" className={`group relative flex items-end justify-center border border-bone/12 bg-[#0c0b10] transition-colors hover:border-purple ${i === 0 ? "col-span-2 row-span-2 md:col-span-2 md:row-span-2" : ""}`}>
+            <Link key={il.t} href="/work/illustration" className={`group relative flex items-end justify-center border border-bone/12 bg-iron transition-colors hover:border-purple ${i === 0 ? "col-span-2 row-span-2 md:col-span-2 md:row-span-2" : ""}`}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={il.f} alt={il.t} className={`w-auto object-contain p-4 transition-transform duration-500 group-hover:scale-[1.03] ${i === 0 ? "max-h-[52vh]" : "max-h-[26vh]"}`} />
               <span className="absolute bottom-2 left-2 font-condensed text-sm uppercase leading-none text-bone">{il.t}</span>

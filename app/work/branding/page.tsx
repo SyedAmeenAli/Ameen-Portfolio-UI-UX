@@ -38,7 +38,7 @@ export default function BrandIdentityPage() {
                 <span className="ml-auto font-grotesk text-[10px] font-semibold uppercase tracking-[0.2em] text-yellow group-hover:translate-x-1">View project ↗</span>
               </div>
             </div>
-            <div className="flex items-center justify-center bg-[#0b0a10] p-4 lg:border-l lg:border-purple/25">
+            <div className="flex items-center justify-center bg-iron p-4 lg:border-l lg:border-purple/25">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={b.board} alt={`${b.name} identity`} className="max-h-[54vh] w-full object-contain transition-transform duration-500 group-hover:scale-[1.02]" />
             </div>

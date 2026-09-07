@@ -8,7 +8,7 @@ import { SiteFooter } from "@/components/sections/site-footer";
 
 export default function Home() {
   return (
-    <main className="home grid-lines relative min-h-screen bg-[#050505] text-bone">
+    <main className="home grid-lines relative min-h-screen bg-void text-bone">
       <SiteNav label="Portfolio" />
 
       {/* 01 — poster hero: name, PORTFOLI[O], who am I */}

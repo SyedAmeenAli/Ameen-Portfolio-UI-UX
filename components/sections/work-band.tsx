@@ -5,7 +5,7 @@ export function WorkBand({ quote = "Same human · different ideas." }: { quote?:
   const [a, b] = quote.split(" · ");
   return (
     <section className="grid border-y border-purple/40 lg:grid-cols-[0.85fr_0.95fr_1.4fr_0.7fr]">
-      <div className="relative min-h-[22vh] border-purple/25 bg-[#0a0a0d] lg:border-r">
+      <div className="relative min-h-[22vh] border-purple/25 bg-void lg:border-r">
         <span className="absolute left-2 top-2 z-10 font-grotesk text-[9px] text-purple">/\|/\</span>
         <Cat bare />
       </div>

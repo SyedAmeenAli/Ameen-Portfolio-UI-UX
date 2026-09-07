@@ -30,7 +30,7 @@ export function FeaturedCards({ limit }: { limit?: number }) {
       {list.map((p) => (
         <Link key={p.num} href={p.href} className="group flex flex-col border border-bone/15 transition-colors hover:border-purple">
           <div className="relative overflow-hidden">
-            <span className="absolute left-0 top-0 z-10 bg-bone px-2 py-1 font-grotesk text-[10px] font-bold text-black">{p.num}</span>
+            <span className="absolute left-0 top-0 z-10 bg-bone px-2 py-1 font-grotesk text-[10px] font-bold text-void">{p.num}</span>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={p.img} alt={p.name} className="aspect-[4/5] w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]" />
             <span className="pointer-events-none absolute inset-0 bg-purple/0 transition-colors duration-500 group-hover:bg-purple/15" />

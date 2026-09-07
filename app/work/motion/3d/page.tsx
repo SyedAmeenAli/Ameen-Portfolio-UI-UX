@@ -30,7 +30,7 @@ export default function Motion3DPage() {
               className="group relative aspect-video w-full cursor-zoom-in overflow-hidden border border-purple/25"
             >
               <video src={m.file} muted loop autoPlay playsInline preload="metadata" className="h-full w-full object-cover" />
-              <span className="pointer-events-none absolute right-3 top-3 bg-bone px-1.5 py-0.5 font-grotesk text-[9px] font-bold text-black opacity-0 transition-opacity group-hover:opacity-100">▶ Expand</span>
+              <span className="pointer-events-none absolute right-3 top-3 bg-bone px-1.5 py-0.5 font-grotesk text-[9px] font-bold text-void opacity-0 transition-opacity group-hover:opacity-100">▶ Expand</span>
             </button>
           </figure>
         ))}

@@ -26,7 +26,7 @@ export function IdentityHero({ brands }: { brands: BrandVis[] }) {
       </div>
 
       <div
-        className="relative flex items-center justify-center border-purple/30 bg-[#0b0a10] p-4 lg:border-r"
+        className="relative flex items-center justify-center border-purple/30 bg-iron p-4 lg:border-r"
         onMouseLeave={() => setHover(null)}
       >
         <IdentitySystemVisual active={hover} />

@@ -36,7 +36,7 @@ export function useArtLightbox(items: Art[]) {
       <div className="flex min-h-0 flex-1 items-center justify-center overflow-hidden pb-6" onClick={(e) => e.stopPropagation()}>
         <span
           className="flex items-center justify-center border border-purple/30 p-3 sm:p-4"
-          style={{ background: items[i].bg ?? "#0b0a10", maxHeight: "88dvh", maxWidth: "94vw" }}
+          style={{ background: items[i].bg ?? "var(--color-iron)", maxHeight: "88dvh", maxWidth: "94vw" }}
         >
           {items[i].video ? (
             <video

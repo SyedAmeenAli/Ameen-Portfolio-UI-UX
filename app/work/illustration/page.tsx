@@ -100,7 +100,7 @@ export default function IllustrationPage() {
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={p.src} alt={p.title} loading="lazy" className="absolute inset-0 h-full w-full object-contain p-3 transition-transform duration-500 group-hover:scale-[1.03]" />
-              <span className="absolute left-2 top-2 bg-bone px-1.5 py-0.5 font-grotesk text-[9px] font-bold text-black">{p.n}</span>
+              <span className="absolute left-2 top-2 bg-bone px-1.5 py-0.5 font-grotesk text-[9px] font-bold text-void">{p.n}</span>
               {p.textPos === "over" && (
                 <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/95 to-transparent p-3 pt-10 text-left">
                   <Meta p={p} />

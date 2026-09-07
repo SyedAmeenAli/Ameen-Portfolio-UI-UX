@@ -45,7 +45,7 @@ export default async function BrandCaseStudy({ params }: PageProps<"/work/brandi
       </section>
 
       {/* IDENTITY BOARD — full, contained */}
-      <section className="border-b border-purple/40 bg-[#0b0a10] p-[3vw]">
+      <section className="border-b border-purple/40 bg-iron p-[3vw]">
         <p className="mb-4 font-grotesk text-[10px] font-semibold tracking-[0.3em] text-bone/50">[ 02 ] Visual system</p>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={b.board} alt={`${b.name} identity board`} className="mx-auto max-h-[90vh] w-auto max-w-full object-contain" />
@@ -62,7 +62,7 @@ export default async function BrandCaseStudy({ params }: PageProps<"/work/brandi
             <span className="font-grotesk text-[10px] font-semibold uppercase tracking-[0.2em] text-purple">Idea → sketch → system</span>
           </div>
         </div>
-        <div className="bg-[#0b0a10] p-4">
+        <div className="bg-iron p-4">
           <p className="mb-3 font-grotesk text-[10px] font-semibold tracking-[0.3em] text-bone/50">[ 04 ] Sketch &amp; exploration</p>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={b.sketch} alt={`${b.name} exploration sheet`} className="mx-auto max-h-[80vh] w-auto max-w-full object-contain" />

@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
 
 const LINKS = [
   { label: "Work", href: "/work", key: "work" },
@@ -50,14 +51,17 @@ export function SiteNav({ active, label = "Portfolio" }: { active?: string; labe
           ))}
         </ul>
 
-        <button
-          onClick={() => setOpen((v) => !v)}
-          aria-label={open ? "Close menu" : "Open menu"}
-          aria-expanded={open}
-          className="font-condensed text-xl leading-none text-yellow md:pointer-events-none"
-        >
-          {open ? "✕" : "+"}
-        </button>
+        <div className="flex items-center gap-4">
+          <ThemeToggle />
+          <button
+            onClick={() => setOpen((v) => !v)}
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
+            className="font-condensed text-xl leading-none text-yellow md:pointer-events-none"
+          >
+            {open ? "✕" : "+"}
+          </button>
+        </div>
       </nav>
 
       {open && (

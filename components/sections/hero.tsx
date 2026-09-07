@@ -26,7 +26,7 @@ export function Hero() {
 
           <div className="mt-[2vh] flex flex-nowrap items-center font-condensed text-[clamp(1.8rem,8vw,6.5rem)] uppercase leading-none text-bone" style={step(3)}>
             <span>Portfoli</span>
-            <span className="relative ml-[0.04em] inline-block aspect-square h-[0.92em] shrink-0 overflow-hidden rounded-full border-[0.055em] border-purple bg-black" aria-hidden>
+            <span className="relative ml-[0.04em] inline-block aspect-square h-[0.92em] shrink-0 overflow-hidden rounded-full border-[0.055em] border-purple bg-void" aria-hidden>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/me/head.webp"

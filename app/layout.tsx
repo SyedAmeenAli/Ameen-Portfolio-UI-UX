@@ -20,11 +20,21 @@ export const metadata: Metadata = {
   openGraph: { title: "Ameen Portfolio", description, type: "website" },
 };
 
-export const viewport: Viewport = { themeColor: "#050505", colorScheme: "dark" };
+export const viewport: Viewport = { themeColor: "#050505", colorScheme: "dark light" };
+
+// Applies the saved theme before first paint (no white flash, no hydration
+// mismatch — a plain <script> is not hydrated). No saved value = dark.
+const THEME_INIT =
+  "try{if(localStorage.getItem('portfolio-theme')==='light')" +
+  "document.documentElement.setAttribute('data-theme','light')}catch(e){}";
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${serif.variable} ${condensed.variable} ${grotesk.variable} ${mono.variable}`}>
+    <html lang="en" suppressHydrationWarning className={`${serif.variable} ${condensed.variable} ${grotesk.variable} ${mono.variable}`}>
+      <head>
+        {/* eslint-disable-next-line @next/next/no-sync-scripts */}
+        <script>{THEME_INIT}</script>
+      </head>
       <body className="grain bg-void text-bone">
         <PortfolioIntro />
         <StyledRegistry>
