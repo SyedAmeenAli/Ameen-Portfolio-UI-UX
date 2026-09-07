@@ -33,7 +33,7 @@ export default async function BrandCaseStudy({ params }: PageProps<"/work/brandi
 
       {/* HERO */}
       <section className="border-b border-purple/40 px-[4vw] pb-[6vh] pt-[13vh]">
-        <Link href="/work/branding" className="font-grotesk text-[10px] font-semibold uppercase tracking-[0.24em] text-bone/45 hover:text-yellow">← All five brands</Link>
+        <Link href="/work/branding" className="font-grotesk text-[10px] font-semibold uppercase tracking-[0.24em] text-bone/45 hover:text-yellow">← All brands</Link>
         <p className="mt-6 font-grotesk text-[10px] font-semibold tracking-[0.3em] text-bone/50">[ {b.order} ] Overview</p>
         <h1 className="mt-2 font-condensed text-[clamp(3.4rem,16vw,13rem)] uppercase leading-[0.74]" style={{ color: b.accent }}>{b.name}</h1>
         <div className="mt-3 flex flex-wrap gap-x-8 gap-y-2 font-grotesk text-[11px] font-semibold uppercase tracking-[0.18em] text-bone/60">

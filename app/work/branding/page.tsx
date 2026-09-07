@@ -19,7 +19,7 @@ export default function BrandIdentityPage() {
       <IdentityHero brands={BRAND_VIS} />
 
       <section className="border-b border-purple/40">
-        <p className="px-[3vw] py-3 font-grotesk text-[10px] font-semibold tracking-[0.3em] text-bone/50">[ 02 ] Five identity systems</p>
+        <p className="px-[3vw] py-3 font-grotesk text-[10px] font-semibold tracking-[0.3em] text-bone/50">[ 02 ] Six identity systems</p>
         {BRAND_VIS.map((b) => (
           <Link
             key={b.slug}

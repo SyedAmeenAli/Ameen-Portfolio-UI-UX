@@ -1,4 +1,4 @@
-/** Brand-identity dataset — EXACTLY five brands. Swap board/sketch + copy when real work lands. */
+/** Brand-identity dataset. Swap board/sketch + copy when real work lands. */
 
 export type BrandVis = {
   slug: string;
@@ -69,5 +69,16 @@ export const BRAND_VIS: BrandVis[] = [
     palette: ["#07131f", "#0b3a53", "#087ea4", "#67d4e8", "#e4ecef"],
     board: "/brands/vayora-brand-visualisation.jpg",
     sketch: "/brands/vayora-sketch.jpg",
+  },
+  {
+    slug: "bluemeter", name: "Blue Meter", order: "06",
+    tagline: "Make water visible",
+    sectorLine: "Water access / civic infrastructure",
+    concept: "An angular B built from stacked meter bars — infrastructure you can read at a glance. Blue as a system, not as water.",
+    blurb: "A civic water-access identity turning invisible infrastructure into visible information. Deep-navy structure, electric-blue signal, carried from field meters to the monitoring app and city-scale data.",
+    accent: "#2f9bff",
+    palette: ["#0a1a2f", "#0057ff", "#00b4ff", "#8a94a6", "#e6f4ff"],
+    board: "/brands/bluemeter-brand-visualisation.jpg",
+    sketch: "/brands/bluemeter-sketch.jpg",
   },
 ];

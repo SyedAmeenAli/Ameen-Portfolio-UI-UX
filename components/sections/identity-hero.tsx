@@ -44,7 +44,7 @@ export function IdentityHero({ brands }: { brands: BrandVis[] }) {
         </div>
 
         <div>
-          <p className="font-condensed text-4xl uppercase leading-none text-yellow">05</p>
+          <p className="font-condensed text-4xl uppercase leading-none text-yellow">{String(brands.length).padStart(2, "0")}</p>
           <p className="mt-1 font-grotesk text-[9px] font-semibold uppercase tracking-[0.24em] text-bone/45">Identity systems</p>
           <ul className="mt-4 space-y-1.5">
             {brands.map((b) => (

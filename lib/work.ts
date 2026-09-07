@@ -78,4 +78,11 @@ export const BRANDS: Brand[] = [
     palette: ["#2ec27e", "#1c7a4f", "#a7e3c4", "#12211a", "#eef6f1"],
     blurb: "Plant-tech that grows a better world. Two leaves resolve into a V. Green-forward, applied across app dashboards, environment graphics and merch.",
   },
+  {
+    slug: "bluemeter", name: "Blue Meter", tagline: "Make water visible", sector: "Water access / civic infrastructure",
+    color: "#2f9bff",
+    board: "/brands/bluemeter-brand-visualisation.jpg", sketch: "/brands/bluemeter-sketch.jpg",
+    palette: ["#0a1a2f", "#0057ff", "#00b4ff", "#8a94a6", "#e6f4ff"],
+    blurb: "A civic water-access identity turning invisible infrastructure into visible information. An angular B built from stacked meter bars; deep-navy structure with an electric-blue signal, from field meters to the monitoring app.",
+  },
 ];

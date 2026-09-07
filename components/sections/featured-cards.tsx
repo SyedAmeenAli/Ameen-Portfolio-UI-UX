@@ -7,18 +7,19 @@ const BRAND_COPY: Record<string, string> = {
   auria: "An immersive audio identity exploring sound, atmosphere and sensory experience.",
   terralis: "An earthy lifestyle identity combining tactile materials, natural forms and contemporary design.",
   vayora: "An experimental brand identity built around a distinctive visual language and unconventional form.",
+  bluemeter: "A civic water-access identity turning invisible infrastructure into visible information — deep navy structure, electric-blue signal.",
 };
 
 type Card = { num: string; name: string; cat: string; year: string; copy: string; img: string; href: string; color?: string };
 
 export const CARDS: Card[] = [
-  ...["nexora", "verdant", "auria", "terralis", "vayora"].map((slug, i): Card => {
+  ...["nexora", "verdant", "auria", "terralis", "vayora", "bluemeter"].map((slug, i): Card => {
     const b = BRANDS.find((x) => x.slug === slug)!;
     return { num: String(i + 1).padStart(2, "0"), name: b.name, cat: "Brand Identity", year: "2026", copy: BRAND_COPY[slug], img: b.board, href: `/work/branding/${slug}`, color: b.color };
   }),
-  { num: "06", name: "Poster Collection", cat: "Posters", year: "2026", copy: "A running series of experimental compositions — music, architecture, glitch, memory.", img: "/posters/electronic-music-poster-afterlight.jpg", href: "/work/posters" },
-  { num: "07", name: "Illustration Collection", cat: "Illustrations", year: "2026", copy: "Character work in black ink with restrained colour — food people, fashion figures, the odd bird man.", img: "/illustration/apple-princess-in-fashion-pose.png", href: "/work/illustration" },
-  { num: "08", name: "Logo Collection", cat: "Logos", year: "2026", copy: "Twenty-one marks — emblem, monogram, negative space, heritage.", img: "/logos/altivia.jpg", href: "/work/logos" },
+  { num: "07", name: "Poster Collection", cat: "Posters", year: "2026", copy: "A running series of experimental compositions — music, architecture, glitch, memory.", img: "/posters/electronic-music-poster-afterlight.jpg", href: "/work/posters" },
+  { num: "08", name: "Illustration Collection", cat: "Illustrations", year: "2026", copy: "Character work in black ink with restrained colour — food people, fashion figures, the odd bird man.", img: "/illustration/apple-princess-in-fashion-pose.png", href: "/work/illustration" },
+  { num: "09", name: "Logo Collection", cat: "Logos", year: "2026", copy: "Twenty-one marks — emblem, monogram, negative space, heritage.", img: "/logos/altivia.jpg", href: "/work/logos" },
 ];
 
 /** Featured project card grid. `limit` trims it for the homepage teaser. */

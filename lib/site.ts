@@ -63,7 +63,7 @@ export type Category = {
 export const CATEGORIES: Category[] = [
   { key: "logos", label: "Logos & Marks", href: "/work/logos", tag: "LOGOS & MARKS", count: "21", accent: "red", kind: "dome",
     blurb: "Marks built from an idea first — emblem, monogram, negative space, heritage. A few were handed to Gemini for motion; the design is mine." },
-  { key: "branding", label: "Branding", href: "/work/branding", tag: "BRANDING", count: "05", accent: "purple", kind: "sketch",
+  { key: "branding", label: "Branding", href: "/work/branding", tag: "BRANDING", count: "06", accent: "purple", kind: "sketch",
     blurb: "Full identity systems. The exploration sketch first, then the finished world with the reasoning." },
   { key: "posters", label: "Posters", href: "/work/posters", tag: "POSTER", count: "25", accent: "red", kind: "grid",
     blurb: "Surreal, brutalist, editorial. Concept-led image-making with type doing half the work." },
