@@ -13,7 +13,7 @@ const BRAND_COPY: Record<string, string> = {
 type Card = { num: string; name: string; cat: string; year: string; copy: string; img: string; href: string; color?: string };
 
 export const CARDS: Card[] = [
-  ...["nexora", "verdant", "auria", "terralis", "vayora", "bluemeter"].map((slug, i): Card => {
+  ...["bluemeter", "nexora", "verdant", "auria", "terralis", "vayora"].map((slug, i): Card => {
     const b = BRANDS.find((x) => x.slug === slug)!;
     return { num: String(i + 1).padStart(2, "0"), name: b.name, cat: "Brand Identity", year: "2026", copy: BRAND_COPY[slug], img: b.board, href: `/work/branding/${slug}`, color: b.color };
   }),

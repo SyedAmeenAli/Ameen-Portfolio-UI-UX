@@ -31,7 +31,19 @@ const bluemeterDeck = [
 
 export const BRAND_VIS: BrandVis[] = [
   {
-    slug: "nexora", name: "Nexora", order: "01",
+    slug: "bluemeter", name: "Blue Meter", order: "01",
+    tagline: "Make water visible",
+    sectorLine: "Water access / civic infrastructure",
+    concept: "An angular B built from stacked meter bars — infrastructure you can read at a glance. Blue as a system, not as water.",
+    blurb: "A civic water-access identity turning invisible infrastructure into visible information. Deep-navy structure, electric-blue signal, carried from field meters to the monitoring app and city-scale data.",
+    accent: "#2f9bff",
+    palette: ["#0a1a2f", "#0057ff", "#00b4ff", "#8a94a6", "#e6f4ff"],
+    board: "/brands/bluemeter-brand-visualisation.jpg",
+    sketch: "/brands/bluemeter-sketch.jpg",
+    deck: bluemeterDeck,
+  },
+  {
+    slug: "nexora", name: "Nexora", order: "02",
     tagline: "Beyond the ordinary",
     sectorLine: "Technology / AI infrastructure",
     concept: "An arch and a rising stair — climb, threshold, the ordinary left behind. A four-point star of forward motion.",
@@ -42,7 +54,7 @@ export const BRAND_VIS: BrandVis[] = [
     sketch: "/brands/nexora-sketch.jpg",
   },
   {
-    slug: "verdant", name: "Verdant", order: "02",
+    slug: "verdant", name: "Verdant", order: "03",
     tagline: "Technology that grows a better world",
     sectorLine: "Plant technology",
     concept: "Two leaves resolve into a V. Nature and technology drawn with a single weight.",
@@ -53,7 +65,7 @@ export const BRAND_VIS: BrandVis[] = [
     sketch: "/brands/verdant-sketch.jpg",
   },
   {
-    slug: "terralis", name: "Terralis", order: "03",
+    slug: "terralis", name: "Terralis", order: "04",
     tagline: "Earth. Craft. Home.",
     sectorLine: "Earthy lifestyle / home",
     concept: "A leaf inside an arched doorway, one weight, so it stamps clean on a candle jar or a shipping box.",
@@ -64,7 +76,7 @@ export const BRAND_VIS: BrandVis[] = [
     sketch: "/brands/terralis-sketch.jpg",
   },
   {
-    slug: "auria", name: "Auria", order: "04",
+    slug: "auria", name: "Auria", order: "05",
     tagline: "Feel every frequency",
     sectorLine: "Immersive audio",
     concept: "The mark is a live equaliser frozen mid-beat — it reads as sound before it reads as a letter.",
@@ -75,7 +87,7 @@ export const BRAND_VIS: BrandVis[] = [
     sketch: "/brands/auria-sketch.jpg",
   },
   {
-    slug: "vayora", name: "Vayora", order: "05",
+    slug: "vayora", name: "Vayora", order: "06",
     tagline: "Quicken forward",
     sectorLine: "Experimental / distinctive identity",
     concept: "A hidden V and a star of forward motion — geometric, minimal, one accent colour, built for a favicon and a billboard.",
@@ -84,17 +96,5 @@ export const BRAND_VIS: BrandVis[] = [
     palette: ["#07131f", "#0b3a53", "#087ea4", "#67d4e8", "#e4ecef"],
     board: "/brands/vayora-brand-visualisation.jpg",
     sketch: "/brands/vayora-sketch.jpg",
-  },
-  {
-    slug: "bluemeter", name: "Blue Meter", order: "06",
-    tagline: "Make water visible",
-    sectorLine: "Water access / civic infrastructure",
-    concept: "An angular B built from stacked meter bars — infrastructure you can read at a glance. Blue as a system, not as water.",
-    blurb: "A civic water-access identity turning invisible infrastructure into visible information. Deep-navy structure, electric-blue signal, carried from field meters to the monitoring app and city-scale data.",
-    accent: "#2f9bff",
-    palette: ["#0a1a2f", "#0057ff", "#00b4ff", "#8a94a6", "#e6f4ff"],
-    board: "/brands/bluemeter-brand-visualisation.jpg",
-    sketch: "/brands/bluemeter-sketch.jpg",
-    deck: bluemeterDeck,
   },
 ];
