@@ -85,4 +85,18 @@ export const BRANDS: Brand[] = [
     palette: ["#0a1a2f", "#0057ff", "#00b4ff", "#8a94a6", "#e6f4ff"],
     blurb: "A civic water-access identity turning invisible infrastructure into visible information. An angular B built from stacked meter bars; deep-navy structure with an electric-blue signal, from field meters to the monitoring app.",
   },
+  {
+    slug: "laundrygo", name: "LaundryGo", tagline: "Fresh Laundry, Brighter Days", sector: "On-demand laundry",
+    color: "#c62828",
+    board: "/brands/laundrygo/board.svg", sketch: "/brands/laundrygo/01-onboarding-fresh.jpg",
+    palette: ["#c62828", "#1d7a3c", "#17140f", "#78705f", "#f4efe4"],
+    blurb: "A pickup-and-delivery laundry app for Oman, designed and shipped end to end in Flutter. A spiralling red-and-green mark carried from onboarding through live order tracking.",
+  },
+  {
+    slug: "aqarati", name: "Aqarati", tagline: "Property, without the guesswork.", sector: "Proptech",
+    color: "#b5452f",
+    board: "/brands/aqarati/board.svg", sketch: "/brands/aqarati/03-app-home.webp",
+    palette: ["#b5452f", "#1c1a17", "#8a7f6c", "#d8c9ae", "#f3efe8"],
+    blurb: "Oman's property ecosystem — a bilingual marketing site paired with a consumer app. An arched doorway mark, carried from the homepage to verified listings and professionals.",
+  },
 ];

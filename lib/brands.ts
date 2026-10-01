@@ -30,6 +30,24 @@ const bluemeterDeck = [
   "39-identity-in-motion", "40-final-brand-world",
 ].map((s) => ({ src: `/brands/bluemeter/${s}.jpg`, title: cap(s.replace(/^\d+-/, "")) }));
 
+const laundrygoDeck = [
+  "01-onboarding-fresh", "02-onboarding-fabric", "03-home", "04-services",
+  "05-schedule-pickup", "06-partners", "07-login",
+].map((s) => ({ src: `/brands/laundrygo/${s}.jpg`, title: cap(s.replace(/^\d+-/, "")) }));
+
+const aqaratiDeck = [
+  { src: "/brands/aqarati/01-website-hero.jpg", title: "Website — Hero" },
+  { src: "/brands/aqarati/02-website-verification.jpg", title: "Website — Verification" },
+  { src: "/brands/aqarati/03-app-home.webp", title: "App — Home" },
+  { src: "/brands/aqarati/04-app-explore.webp", title: "App — Explore" },
+  { src: "/brands/aqarati/05-app-property.webp", title: "App — Property" },
+  { src: "/brands/aqarati/06-app-search.webp", title: "App — Search" },
+  { src: "/brands/aqarati/07-app-map.webp", title: "App — Map" },
+  { src: "/brands/aqarati/08-app-business.webp", title: "App — Business" },
+  { src: "/brands/aqarati/09-app-saved.webp", title: "App — Saved" },
+  { src: "/brands/aqarati/10-app-verification.webp", title: "App — Verification" },
+];
+
 export const BRAND_VIS: BrandVis[] = [
   {
     slug: "bluemeter", name: "Blue Meter", order: "01",
@@ -97,5 +115,29 @@ export const BRAND_VIS: BrandVis[] = [
     palette: ["#07131f", "#0b3a53", "#087ea4", "#67d4e8", "#e4ecef"],
     board: "/brands/vayora-brand-visualisation.jpg",
     sketch: "/brands/vayora-sketch.jpg",
+  },
+  {
+    slug: "laundrygo", name: "LaundryGo", order: "07",
+    tagline: "Fresh Laundry, Brighter Days",
+    sectorLine: "On-demand laundry / consumer app",
+    concept: "A spiralling mark built from two interlocking fabric folds — red and green turning into one another, caught mid-wash.",
+    blurb: "A pickup-and-delivery laundry app for Oman, designed and shipped end to end in Flutter — onboarding, partner discovery, scheduled pickup and live order tracking.",
+    accent: "#c62828",
+    palette: ["#17140f", "#c62828", "#1d7a3c", "#f4efe4", "#78705f"],
+    board: "/brands/laundrygo/board.svg",
+    sketch: "/brands/laundrygo/01-onboarding-fresh.jpg",
+    deck: laundrygoDeck,
+  },
+  {
+    slug: "aqarati", name: "Aqarati", order: "08",
+    tagline: "Property, without the guesswork.",
+    sectorLine: "Proptech / marketing site + app",
+    concept: "An arched doorway resolving into a rising roofline — threshold and shelter drawn as a single mark.",
+    blurb: "Oman's property ecosystem: a bilingual (EN/AR) marketing site paired with a consumer app for property discovery, verified professionals and the wider home journey.",
+    accent: "#b5452f",
+    palette: ["#1c1a17", "#b5452f", "#8a7f6c", "#d8c9ae", "#f3efe8"],
+    board: "/brands/aqarati/board.svg",
+    sketch: "/brands/aqarati/03-app-home.webp",
+    deck: aqaratiDeck,
   },
 ];
