@@ -18,7 +18,7 @@ export function WorkHero({ category }: { category: Category }) {
 
       <div className="grid-lines relative flex min-h-[70vh] flex-col justify-between border-b border-purple/25 bg-void px-[4vw] py-[5vh]">
         <div className="flex items-start justify-between font-mono text-[9px] uppercase leading-tight tracking-[0.22em] text-bone/60 sm:text-[10px]">
-          <Link href="/" className="hover:text-red">← Ameen Ali · Portfolio</Link>
+          <Link href="/" className="-m-2 inline-block p-2 hover:text-red">← Ameen Ali · Portfolio</Link>
           <span className="text-right">Ultimate<br />graphic design<br />work</span>
         </div>
 
