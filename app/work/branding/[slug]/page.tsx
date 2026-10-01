@@ -95,7 +95,7 @@ export default async function BrandCaseStudy({ params }: PageProps<"/work/brandi
       </section>
 
       {/* FULL DECK — only for brands that have one */}
-      {b.deck && <BrandDeck slides={b.deck} />}
+      {b.deck && <BrandDeck slides={b.deck} phone={b.deckPhone} accent={b.accent} />}
 
       {/* FINAL */}
       <section className="border-b border-purple/40 px-[4vw] py-[12vh] text-center">

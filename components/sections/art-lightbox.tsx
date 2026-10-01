@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 
-export type Art = { src: string; title: string; meta?: string; bg?: string; video?: boolean };
+export type Art = { src: string; title: string; meta?: string; caption?: string; bg?: string; video?: boolean; frame?: "phone" };
 
 /** Editorial artwork viewer — click a piece, ESC / ← → to navigate. */
 export function useArtLightbox(items: Art[]) {
@@ -33,12 +33,17 @@ export function useArtLightbox(items: Art[]) {
         <span>{items[i].title}{items[i].meta ? ` · ${items[i].meta}` : ""}</span>
         <span>{String(i + 1).padStart(2, "0")} / {String(items.length).padStart(2, "0")}</span>
       </div>
+      {items[i].caption && (
+        <p className="px-[4vw] pb-3 font-grotesk text-[12px] leading-relaxed text-bone/60" onClick={(e) => e.stopPropagation()}>
+          {items[i].caption}
+        </p>
+      )}
       <div className="flex min-h-0 flex-1 items-center justify-center overflow-hidden pb-6" onClick={(e) => e.stopPropagation()}>
-        <span
-          className="flex items-center justify-center border border-purple/30 p-3 sm:p-4"
-          style={{ background: items[i].bg ?? "var(--color-iron)", maxHeight: "88dvh", maxWidth: "94vw" }}
-        >
-          {items[i].video ? (
+        {items[i].video ? (
+          <span
+            className="flex items-center justify-center border border-purple/30 p-3 sm:p-4"
+            style={{ background: items[i].bg ?? "var(--color-iron)", maxHeight: "88dvh", maxWidth: "94vw" }}
+          >
             <video
               key={items[i].src}
               src={items[i].src}
@@ -49,16 +54,35 @@ export function useArtLightbox(items: Art[]) {
               className="h-auto w-auto object-contain"
               style={{ maxHeight: "82dvh", maxWidth: "88vw" }}
             />
-          ) : (
-            /* eslint-disable-next-line @next/next/no-img-element */
+          </span>
+        ) : items[i].frame === "phone" ? (
+          <span
+            className="relative rounded-[2.4rem] border-[10px] shadow-2xl"
+            style={{ borderColor: "#17140f", background: "#17140f", maxHeight: "82dvh" }}
+          >
+            <span className="absolute left-1/2 top-0 z-10 h-[16px] w-[86px] -translate-x-1/2 rounded-b-xl" style={{ background: "#17140f" }} />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={items[i].src}
+              alt={items[i].title}
+              className="block h-auto w-auto rounded-[1.6rem] object-cover"
+              style={{ maxHeight: "calc(82dvh - 20px)", maxWidth: "min(88vw, 420px)" }}
+            />
+          </span>
+        ) : (
+          <span
+            className="flex items-center justify-center border border-purple/30 p-3 sm:p-4"
+            style={{ background: items[i].bg ?? "var(--color-iron)", maxHeight: "88dvh", maxWidth: "94vw" }}
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={items[i].src}
               alt={items[i].title}
               className="h-auto w-auto object-contain"
               style={{ maxHeight: "82dvh", maxWidth: "88vw" }}
             />
-          )}
-        </span>
+          </span>
+        )}
       </div>
       <button onClick={(e) => { e.stopPropagation(); prev(); }} aria-label="Previous"
         className="absolute left-1 top-1/2 -translate-y-1/2 font-condensed text-3xl text-bone/60 hover:text-yellow sm:left-[2vw] sm:text-4xl">←</button>

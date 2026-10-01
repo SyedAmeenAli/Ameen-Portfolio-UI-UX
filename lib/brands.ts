@@ -12,7 +12,8 @@ export type BrandVis = {
   palette: string[];   // this brand's own colour system
   board: string;       // full identity board (show contained, never cropped)
   sketch: string;      // exploration sheet
-  deck?: { src: string; title: string }[]; // optional full case-study deck
+  deck?: { src: string; title: string; caption?: string }[]; // optional full case-study deck
+  deckPhone?: boolean; // show deck slides inside a phone-frame (real app/site screens)
 };
 
 const cap = (s: string) => s.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
@@ -31,21 +32,26 @@ const bluemeterDeck = [
 ].map((s) => ({ src: `/brands/bluemeter/${s}.jpg`, title: cap(s.replace(/^\d+-/, "")) }));
 
 const laundrygoDeck = [
-  "01-onboarding-fresh", "02-onboarding-fabric", "03-home", "04-services",
-  "05-schedule-pickup", "06-partners", "07-login",
-].map((s) => ({ src: `/brands/laundrygo/${s}.jpg`, title: cap(s.replace(/^\d+-/, "")) }));
+  { src: "/brands/laundrygo/01-onboarding-fresh.jpg", title: "Onboarding", caption: "First launch — introduces the core promise: pickup, care and delivery, made simple." },
+  { src: "/brands/laundrygo/02-home.jpg", title: "Home", caption: "Search, a featured offer, and the four core service categories — one tap from a new order." },
+  { src: "/brands/laundrygo/03-services.jpg", title: "Services", caption: "Wash & Fold, Dry Cleaning, Ironing, Special Care — every service a customer can book." },
+  { src: "/brands/laundrygo/04-schedule-pickup.jpg", title: "Schedule pickup", caption: "Booking flow — pick a verified partner, a pickup date, a time slot, review and confirm." },
+  { src: "/brands/laundrygo/05-partners.jpg", title: "Partners", caption: "Nearby laundry partners with rating, distance, services offered and open status." },
+  { src: "/brands/laundrygo/06-login.jpg", title: "Sign in", caption: "Email/password plus Apple, Google and phone sign-in." },
+  { src: "/brands/laundrygo/07-order-history.jpg", title: "Order history", caption: "Past orders with partner, status — completed or cancelled — and price." },
+];
 
 const aqaratiDeck = [
-  { src: "/brands/aqarati/01-website-hero.jpg", title: "Website — Hero" },
-  { src: "/brands/aqarati/02-website-verification.jpg", title: "Website — Verification" },
-  { src: "/brands/aqarati/03-app-home.webp", title: "App — Home" },
-  { src: "/brands/aqarati/04-app-explore.webp", title: "App — Explore" },
-  { src: "/brands/aqarati/05-app-property.webp", title: "App — Property" },
-  { src: "/brands/aqarati/06-app-search.webp", title: "App — Search" },
-  { src: "/brands/aqarati/07-app-map.webp", title: "App — Map" },
-  { src: "/brands/aqarati/08-app-business.webp", title: "App — Business" },
-  { src: "/brands/aqarati/09-app-saved.webp", title: "App — Saved" },
-  { src: "/brands/aqarati/10-app-verification.webp", title: "App — Verification" },
+  { src: "/brands/aqarati/01-website-hero.jpg", title: "Website — hero", caption: "Marketing site homepage, bilingual EN/AR, leading with the core promise." },
+  { src: "/brands/aqarati/02-website-verification.jpg", title: "Website — verification", caption: "Explains Aqarati's verification system for people, businesses and properties." },
+  { src: "/brands/aqarati/03-app-home.webp", title: "App — home", caption: "Buy / Rent / Lease toggle, picks in Muscat, and nearby verified professionals." },
+  { src: "/brands/aqarati/04-app-explore.webp", title: "App — explore", caption: "Browse by property type, then professionals and services, in one search surface." },
+  { src: "/brands/aqarati/05-app-property.webp", title: "App — property", caption: "Listing detail — gallery, price, specs, description, book a viewing or ask a question." },
+  { src: "/brands/aqarati/06-app-search.webp", title: "App — search", caption: "Filtered results list with verification badges, price and specs per card." },
+  { src: "/brands/aqarati/07-app-map.webp", title: "App — map", caption: "Map view of listings by price, with a quick-glance card for the selected pin." },
+  { src: "/brands/aqarati/08-app-business.webp", title: "App — business profile", caption: "A verified professional's profile — services, pricing, recent projects, book a call." },
+  { src: "/brands/aqarati/09-app-saved.webp", title: "App — saved", caption: "Saved properties, businesses, projects and searches in one tabbed view." },
+  { src: "/brands/aqarati/10-app-verification.webp", title: "App — verification centre", caption: "Account verification status — identity, property ownership, phone — tracked per item." },
 ];
 
 export const BRAND_VIS: BrandVis[] = [
@@ -127,6 +133,7 @@ export const BRAND_VIS: BrandVis[] = [
     board: "/brands/laundrygo/board.svg",
     sketch: "/brands/laundrygo/01-onboarding-fresh.jpg",
     deck: laundrygoDeck,
+    deckPhone: true,
   },
   {
     slug: "aqarati", name: "Aqarati", order: "08",
@@ -139,5 +146,6 @@ export const BRAND_VIS: BrandVis[] = [
     board: "/brands/aqarati/board.svg",
     sketch: "/brands/aqarati/03-app-home.webp",
     deck: aqaratiDeck,
+    deckPhone: true,
   },
 ];
