@@ -24,7 +24,7 @@ export default function Home() {
         <div className="flex flex-col justify-center px-[4vw] py-[8vh]">
           <p className="font-grotesk text-[10px] font-semibold uppercase tracking-[0.3em] text-purple">What I make</p>
           <ul className="mt-4 grid grid-cols-2 gap-x-6 gap-y-1 sm:grid-cols-3">
-            {["Digital Designer", "Brand Identity", "Logos", "Posters", "Illustrations", "YouTube Thumbnails", "2D / 3D Animations", "Typography", "Colours"].map((d) => (
+            {["Digital Designer", "Brand Identity", "Logos", "Posters", "Illustrations", "YouTube Thumbnails", "2D / 3D Animations", "Typography", "Colours", "Brand Experience"].map((d) => (
               <li key={d} className="border-t border-purple/25 pt-1.5 font-condensed text-[clamp(0.95rem,2vw,1.4rem)] uppercase leading-tight text-bone">{d}</li>
             ))}
           </ul>
@@ -33,6 +33,25 @@ export default function Home() {
           </p>
         </div>
       </section>
+
+      {/* NEW — Brand Experience: AQARATI's live brand book */}
+      <Link href="/work/brand-experience" className="group grid border-b border-purple/40 lg:grid-cols-[1.4fr_1fr]">
+        <div className="relative min-h-[40vh] overflow-hidden border-purple/30 lg:border-r">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/brands/aqarati-brand/hero.jpg" alt="AQARATI brand experience — live website" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
+          <span className="absolute left-3 top-3 z-10 bg-yellow px-2 py-1 font-grotesk text-[9px] font-bold uppercase tracking-[0.22em] text-void">New</span>
+        </div>
+        <div className="flex flex-col justify-center gap-4 px-[4vw] py-[8vh]">
+          <p className="font-grotesk text-[10px] font-semibold uppercase tracking-[0.3em] text-purple">Brand Experience · AQARATI</p>
+          <h2 className="font-condensed text-[clamp(2.4rem,7vw,5.5rem)] uppercase leading-[0.82] text-bone">
+            A brand book<br /><span className="text-yellow">you can walk through.</span>
+          </h2>
+          <p className="max-w-[44ch] font-grotesk text-sm leading-relaxed text-bone/60">
+            The live AQARATI brand site, running inside a browser window — switch chapters, resize from desktop to mobile.
+          </p>
+          <span className="font-grotesk text-[10px] font-semibold uppercase tracking-[0.2em] text-yellow">Open the window <span className="inline-block transition-transform group-hover:translate-x-1">↗</span></span>
+        </div>
+      </Link>
 
       {/* 02 — selected work / categories */}
       <section id="work" className="flex flex-wrap items-end justify-between gap-4 px-[4vw] pb-[4vh] pt-[9vh]">
