@@ -7,6 +7,7 @@ import { ThemeToggle } from "@/components/ui/theme-toggle";
 const LINKS = [
   { label: "Work", href: "/work", key: "work" },
   { label: "Brand Identity", href: "/work/branding", key: "identity" },
+  { label: "Brand Experience", href: "/work/brand-experience", key: "brandexp" },
   { label: "Logos", href: "/work/logos", key: "logos" },
   { label: "Posters", href: "/work/posters", key: "posters" },
   { label: "Illustrations", href: "/work/illustration", key: "illustration" },

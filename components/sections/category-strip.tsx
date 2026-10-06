@@ -10,9 +10,10 @@ const CATS = [
   { n: "07", t: "Typography", d: "Type as a discipline — voice, pairing, system", href: "/work/typography" },
   { n: "08", t: "Colours", d: "Colour as a design decision", href: "/work/colours" },
   { n: "09", t: "Social Media", d: "Campaign systems — one idea across a feed", href: "/work/social" },
+  { n: "10", t: "Brand Experience", d: "A brand book you can walk through — live, in a window", href: "/work/brand-experience" },
 ];
 
-/** The editorial category grid, shared by home + /work. Nine disciplines, 3×3. */
+/** The editorial category grid, shared by home + /work. Ten disciplines; the last spans the row. */
 export function CategoryStrip() {
   return (
     <section className="grid border-y border-purple/40 sm:grid-cols-2 lg:grid-cols-3">
@@ -24,7 +25,7 @@ export function CategoryStrip() {
             i % 3 !== 0 ? "lg:border-l" : ""
           } ${i % 2 !== 0 ? "sm:border-l" : ""} ${i >= 1 ? "border-t sm:border-t-0" : ""} ${
             i >= 2 ? "lg:border-t" : ""
-          } ${i >= 3 ? "sm:border-t" : ""}`}
+          } ${i >= 3 ? "sm:border-t" : ""} ${i === CATS.length - 1 && CATS.length % 3 === 1 ? "lg:col-span-3 lg:border-l-0" : ""}`}
         >
           <div>
             <span className="block font-condensed text-[clamp(2.4rem,4vw,3.4rem)] leading-none text-purple transition-colors group-hover:text-yellow">

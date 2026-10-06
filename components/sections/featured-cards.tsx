@@ -19,9 +19,10 @@ export const CARDS: Card[] = [
     const b = BRANDS.find((x) => x.slug === slug)!;
     return { num: String(i + 1).padStart(2, "0"), name: b.name, cat: "Brand Identity", year: "2026", copy: BRAND_COPY[slug], img: b.board, href: `/work/branding/${slug}`, color: b.color };
   }),
-  { num: "09", name: "Poster Collection", cat: "Posters", year: "2026", copy: "A running series of experimental compositions — music, architecture, glitch, memory.", img: "/posters/electronic-music-poster-afterlight.jpg", href: "/work/posters" },
-  { num: "10", name: "Illustration Collection", cat: "Illustrations", year: "2026", copy: "Character work in black ink with restrained colour — food people, fashion figures, the odd bird man.", img: "/illustration/apple-princess-in-fashion-pose.png", href: "/work/illustration" },
-  { num: "11", name: "Logo Collection", cat: "Logos", year: "2026", copy: "Twenty-one marks — emblem, monogram, negative space, heritage.", img: "/logos/altivia.jpg", href: "/work/logos" },
+  { num: "09", name: "AQARATI Brand Experience", cat: "Brand Experience", year: "2026", copy: "A brand book you can walk through — identity, type, colour and product as a live website, shown in a browser window.", img: "/brands/aqarati-brand/hero.jpg", href: "/work/brand-experience", color: "#b98a64" },
+  { num: "10", name: "Poster Collection", cat: "Posters", year: "2026", copy: "A running series of experimental compositions — music, architecture, glitch, memory.", img: "/posters/electronic-music-poster-afterlight.jpg", href: "/work/posters" },
+  { num: "11", name: "Illustration Collection", cat: "Illustrations", year: "2026", copy: "Character work in black ink with restrained colour — food people, fashion figures, the odd bird man.", img: "/illustration/apple-princess-in-fashion-pose.png", href: "/work/illustration" },
+  { num: "12", name: "Logo Collection", cat: "Logos", year: "2026", copy: "Twenty-one marks — emblem, monogram, negative space, heritage.", img: "/logos/altivia.jpg", href: "/work/logos" },
 ];
 
 /** Featured project card grid. `limit` trims it for the homepage teaser. */

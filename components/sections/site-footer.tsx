@@ -5,6 +5,7 @@ const CONTACT = "amelio123ali@gmail.com";
 const NAV = [
   { label: "Logos", href: "/work/logos" },
   { label: "Brand Identity", href: "/work/branding" },
+  { label: "Brand Experience", href: "/work/brand-experience" },
   { label: "Posters", href: "/work/posters" },
   { label: "Illustrations", href: "/work/illustration" },
   { label: "YouTube Thumbnails", href: "/work/thumbnails" },

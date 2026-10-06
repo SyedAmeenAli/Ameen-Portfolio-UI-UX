@@ -65,6 +65,8 @@ export const CATEGORIES: Category[] = [
     blurb: "Marks built from an idea first — emblem, monogram, negative space, heritage. A few were handed to Gemini for motion; the design is mine." },
   { key: "branding", label: "Branding", href: "/work/branding", tag: "BRANDING", count: "08", accent: "purple", kind: "sketch",
     blurb: "Full identity systems. The exploration sketch first, then the finished world with the reasoning." },
+  { key: "brandexperience", label: "Brand Experience", href: "/work/brand-experience", tag: "BRAND EXPERIENCE", count: "01", accent: "yellow", kind: "grid",
+    blurb: "A brand book you can walk through — AQARATI's identity, type, colour and product as a live website, shown in a browser window." },
   { key: "posters", label: "Posters", href: "/work/posters", tag: "POSTER", count: "25", accent: "red", kind: "grid",
     blurb: "Surreal, brutalist, editorial. Concept-led image-making with type doing half the work." },
   { key: "social", label: "Social Media", href: "/work/social", tag: "SOCIAL", count: "26", accent: "yellow", kind: "grid",
