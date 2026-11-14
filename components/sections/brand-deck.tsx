@@ -7,7 +7,7 @@ type Slide = { src: string; title: string; caption?: string };
 /** Full case-study deck for a brand — contained thumbnails, click to full-screen.
  *  `phone` renders each slide inside a phone bezel (real app/site screens) and
  *  always shows a one-line explanation under the thumbnail, not just on hover. */
-export function BrandDeck({ slides, phone, accent, bg }: { slides: Slide[]; phone?: boolean; accent?: string; bg?: string }) {
+export function BrandDeck({ slides, phone, accent, bg, label, num = "07" }: { slides: Slide[]; phone?: boolean; accent?: string; bg?: string; label?: string; num?: string }) {
   const arts: Art[] = slides.map((s, i) => ({
     src: s.src,
     title: s.title,
@@ -21,7 +21,7 @@ export function BrandDeck({ slides, phone, accent, bg }: { slides: Slide[]; phon
   return (
     <section className="border-b border-purple/40">
       <p className="px-[4vw] py-3 font-grotesk text-[10px] font-semibold tracking-[0.3em] text-bone/50">
-        [ 07 ] Full case study — {slides.length} slides
+        [ {num} ] {label ?? "Full case study"} — {slides.length} slides
       </p>
 
       {phone ? (

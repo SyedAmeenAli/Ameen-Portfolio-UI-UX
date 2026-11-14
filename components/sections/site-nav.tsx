@@ -8,6 +8,7 @@ const LINKS = [
   { label: "Work", href: "/work", key: "work" },
   { label: "Brand Identity", href: "/work/branding", key: "identity" },
   { label: "Brand Experience", href: "/work/brand-experience", key: "brandexp" },
+  { label: "Packaging", href: "/work/packaging", key: "packaging" },
   { label: "Logos", href: "/work/logos", key: "logos" },
   { label: "Posters", href: "/work/posters", key: "posters" },
   { label: "Illustrations", href: "/work/illustration", key: "illustration" },

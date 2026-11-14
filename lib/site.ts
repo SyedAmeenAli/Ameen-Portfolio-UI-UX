@@ -67,6 +67,8 @@ export const CATEGORIES: Category[] = [
     blurb: "Full identity systems. The exploration sketch first, then the finished world with the reasoning." },
   { key: "brandexperience", label: "Brand Experience", href: "/work/brand-experience", tag: "BRAND EXPERIENCE", count: "01", accent: "yellow", kind: "grid",
     blurb: "A brand book you can walk through — AQARATI's identity, type, colour and product as a live website, shown in a browser window." },
+  { key: "packaging", label: "Design Packaging", href: "/work/packaging", tag: "PACKAGING", count: "01", accent: "red", kind: "grid",
+    blurb: "Boxes, cups and bags designed as flat dielines first, then folded live in 3D. Mona's Baking, end to end." },
   { key: "posters", label: "Posters", href: "/work/posters", tag: "POSTER", count: "25", accent: "red", kind: "grid",
     blurb: "Surreal, brutalist, editorial. Concept-led image-making with type doing half the work." },
   { key: "social", label: "Social Media", href: "/work/social", tag: "SOCIAL", count: "26", accent: "yellow", kind: "grid",

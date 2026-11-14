@@ -90,6 +90,9 @@ const monasDeck = [
   { src: "/brands/monas/dieline-bag.jpg", title: "Dieline: paper bag", caption: "Gusseted bag with bottom flaps and a glue seam. Flat sheet 560 x 298 mm." },
 ];
 
+export const MONAS_RENDERS = monasDeck.filter((s) => !s.src.includes("dieline-"));
+export const MONAS_DIELINES = monasDeck.filter((s) => s.src.includes("dieline-"));
+
 export const BRAND_VIS: BrandVis[] = [
   {
     slug: "bluemeter", name: "Blue Meter", order: "01",
