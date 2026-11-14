@@ -7,13 +7,13 @@ type Slide = { src: string; title: string; caption?: string };
 /** Full case-study deck for a brand — contained thumbnails, click to full-screen.
  *  `phone` renders each slide inside a phone bezel (real app/site screens) and
  *  always shows a one-line explanation under the thumbnail, not just on hover. */
-export function BrandDeck({ slides, phone, accent }: { slides: Slide[]; phone?: boolean; accent?: string }) {
+export function BrandDeck({ slides, phone, accent, bg }: { slides: Slide[]; phone?: boolean; accent?: string; bg?: string }) {
   const arts: Art[] = slides.map((s, i) => ({
     src: s.src,
     title: s.title,
     caption: s.caption,
     meta: `${String(i + 1).padStart(2, "0")} / ${slides.length}`,
-    bg: phone ? "#0c0b10" : "#0a1a2f",
+    bg: phone ? "#0c0b10" : (bg ?? "#0a1a2f"),
     frame: phone ? "phone" : undefined,
   }));
   const { open, view } = useArtLightbox(arts);
@@ -59,7 +59,8 @@ export function BrandDeck({ slides, phone, accent }: { slides: Slide[]; phone?: 
             <button
               key={s.src}
               onClick={() => open(i)}
-              className="group relative cursor-zoom-in overflow-hidden border border-purple/25 bg-[#0a1a2f] transition-colors hover:border-yellow"
+              className="group relative flex cursor-zoom-in flex-col overflow-hidden border border-purple/25 transition-colors hover:border-yellow"
+              style={{ background: bg ?? "#0a1a2f" }}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
@@ -68,10 +69,19 @@ export function BrandDeck({ slides, phone, accent }: { slides: Slide[]; phone?: 
                 loading="lazy"
                 className="block h-auto w-full object-contain"
               />
-              <span className="pointer-events-none absolute inset-x-0 bottom-0 flex items-center justify-between bg-gradient-to-t from-black/85 to-transparent p-3 pt-8 font-grotesk text-[9px] font-semibold uppercase tracking-[0.16em] text-bone opacity-0 transition-opacity group-hover:opacity-100">
-                <span>{s.title}</span>
-                <span className="text-yellow">{String(i + 1).padStart(2, "0")} / {slides.length}</span>
-              </span>
+              {s.caption ? (
+                <span className="block bg-void p-3 text-left font-grotesk">
+                  <span className="flex items-center justify-between text-[10px] font-bold uppercase tracking-[0.14em]" style={{ color: accent ?? "var(--color-yellow)" }}>
+                    {s.title}<span className="text-bone/35">{String(i + 1).padStart(2, "0")}</span>
+                  </span>
+                  <span className="mt-1 block text-[10.5px] leading-snug text-bone/55">{s.caption}</span>
+                </span>
+              ) : (
+                <span className="pointer-events-none absolute inset-x-0 bottom-0 flex items-center justify-between bg-gradient-to-t from-black/85 to-transparent p-3 pt-8 font-grotesk text-[9px] font-semibold uppercase tracking-[0.16em] text-bone opacity-0 transition-opacity group-hover:opacity-100">
+                  <span>{s.title}</span>
+                  <span className="text-yellow">{String(i + 1).padStart(2, "0")} / {slides.length}</span>
+                </span>
+              )}
             </button>
           ))}
         </div>

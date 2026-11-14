@@ -9,20 +9,21 @@ const BRAND_COPY: Record<string, string> = {
   vayora: "An experimental brand identity built around a distinctive visual language and unconventional form.",
   bluemeter: "A civic water-access identity turning invisible infrastructure into visible information — deep navy structure, electric-blue signal.",
   laundrygo: "A pickup-and-delivery laundry app for Oman, designed and shipped end to end in Flutter — onboarding to live order tracking.",
+  "monas-baking": "A packaging system for a home bakery: handled cake box, brownie, cupcake, bento, dessert cup and bag, shown as 3D renders.",
   aqarati: "Oman's property ecosystem — a bilingual marketing site paired with a consumer app for discovery and verified professionals.",
 };
 
 type Card = { num: string; name: string; cat: string; year: string; copy: string; img: string; href: string; color?: string };
 
 export const CARDS: Card[] = [
-  ...["bluemeter", "nexora", "verdant", "auria", "terralis", "vayora", "laundrygo", "aqarati"].map((slug, i): Card => {
+  ...["bluemeter", "nexora", "verdant", "auria", "terralis", "vayora", "laundrygo", "aqarati", "monas-baking"].map((slug, i): Card => {
     const b = BRANDS.find((x) => x.slug === slug)!;
     return { num: String(i + 1).padStart(2, "0"), name: b.name, cat: "Brand Identity", year: "2026", copy: BRAND_COPY[slug], img: b.board, href: `/work/branding/${slug}`, color: b.color };
   }),
-  { num: "09", name: "AQARATI Brand Experience", cat: "Brand Experience", year: "2026", copy: "A brand book you can walk through — identity, type, colour and product as a live website, shown in a browser window.", img: "/brands/aqarati-brand/hero.jpg", href: "/work/brand-experience", color: "#b98a64" },
-  { num: "10", name: "Poster Collection", cat: "Posters", year: "2026", copy: "A running series of experimental compositions — music, architecture, glitch, memory.", img: "/posters/electronic-music-poster-afterlight.jpg", href: "/work/posters" },
-  { num: "11", name: "Illustration Collection", cat: "Illustrations", year: "2026", copy: "Character work in black ink with restrained colour — food people, fashion figures, the odd bird man.", img: "/illustration/apple-princess-in-fashion-pose.png", href: "/work/illustration" },
-  { num: "12", name: "Logo Collection", cat: "Logos", year: "2026", copy: "Twenty-one marks — emblem, monogram, negative space, heritage.", img: "/logos/altivia.jpg", href: "/work/logos" },
+  { num: "10", name: "AQARATI Brand Experience", cat: "Brand Experience", year: "2026", copy: "A brand book you can walk through — identity, type, colour and product as a live website, shown in a browser window.", img: "/brands/aqarati-brand/hero.jpg", href: "/work/brand-experience", color: "#b98a64" },
+  { num: "11", name: "Poster Collection", cat: "Posters", year: "2026", copy: "A running series of experimental compositions — music, architecture, glitch, memory.", img: "/posters/electronic-music-poster-afterlight.jpg", href: "/work/posters" },
+  { num: "12", name: "Illustration Collection", cat: "Illustrations", year: "2026", copy: "Character work in black ink with restrained colour — food people, fashion figures, the odd bird man.", img: "/illustration/apple-princess-in-fashion-pose.png", href: "/work/illustration" },
+  { num: "13", name: "Logo Collection", cat: "Logos", year: "2026", copy: "Twenty-one marks — emblem, monogram, negative space, heritage.", img: "/logos/altivia.jpg", href: "/work/logos" },
 ];
 
 /** Featured project card grid. `limit` trims it for the homepage teaser. */

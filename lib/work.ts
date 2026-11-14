@@ -99,4 +99,11 @@ export const BRANDS: Brand[] = [
     palette: ["#b5452f", "#1c1a17", "#8a7f6c", "#d8c9ae", "#f3efe8"],
     blurb: "Oman's property ecosystem — a bilingual marketing site paired with a consumer app. An arched doorway mark, carried from the homepage to verified listings and professionals.",
   },
+  {
+    slug: "monas-baking", name: "Mona's Baking", tagline: "Homemade bakes, made with love", sector: "Packaging system",
+    color: "#f08fab",
+    board: "/brands/monas/board.jpg", sketch: "/brands/monas/03-cake-box-open.jpg",
+    palette: ["#8B4A3A", "#F7B6C7", "#FFD9E4", "#FFF6F6", "#FDF1F1"],
+    blurb: "A packaging system for a home bakery: handled cake box, brownie and cupcake boxes, bento, dessert cup and paper bag, each as a 3D fold-up with its flat dieline.",
+  },
 ];

@@ -63,7 +63,7 @@ export type Category = {
 export const CATEGORIES: Category[] = [
   { key: "logos", label: "Logos & Marks", href: "/work/logos", tag: "LOGOS & MARKS", count: "21", accent: "red", kind: "dome",
     blurb: "Marks built from an idea first — emblem, monogram, negative space, heritage. A few were handed to Gemini for motion; the design is mine." },
-  { key: "branding", label: "Branding", href: "/work/branding", tag: "BRANDING", count: "08", accent: "purple", kind: "sketch",
+  { key: "branding", label: "Branding", href: "/work/branding", tag: "BRANDING", count: "09", accent: "purple", kind: "sketch",
     blurb: "Full identity systems. The exploration sketch first, then the finished world with the reasoning." },
   { key: "brandexperience", label: "Brand Experience", href: "/work/brand-experience", tag: "BRAND EXPERIENCE", count: "01", accent: "yellow", kind: "grid",
     blurb: "A brand book you can walk through — AQARATI's identity, type, colour and product as a live website, shown in a browser window." },

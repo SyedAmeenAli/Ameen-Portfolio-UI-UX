@@ -13,6 +13,7 @@ export type BrandVis = {
   board: string;       // full identity board (show contained, never cropped)
   sketch: string;      // exploration sheet
   deck?: { src: string; title: string; caption?: string }[]; // optional full case-study deck
+  deckBg?: string;     // tile/lightbox background for decks of light artwork
   deckPhone?: boolean; // show deck slides inside a phone-frame (real app/site screens)
 };
 
@@ -52,6 +53,23 @@ const aqaratiDeck = [
   { src: "/brands/aqarati/08-app-business.webp", title: "App — business profile", caption: "A verified professional's profile — services, pricing, recent projects, book a call." },
   { src: "/brands/aqarati/09-app-saved.webp", title: "App — saved", caption: "Saved properties, businesses, projects and searches in one tabbed view." },
   { src: "/brands/aqarati/10-app-verification.webp", title: "App — verification centre", caption: "Account verification status — identity, property ownership, phone — tracked per item." },
+];
+
+const monasDeck = [
+  { src: "/brands/monas/01-cake-box-front.jpg", title: "Handled cake box", caption: "4-inch cake box: carry handle, printed shopfront with striped awning, scalloped roof and heart seal." },
+  { src: "/brands/monas/02-cake-box-back.jpg", title: "Cake box, back", caption: "The back panel carries the menu: what's baking, framed in the same hand-inked border." },
+  { src: "/brands/monas/03-cake-box-open.jpg", title: "Cake box, open", caption: "Lids open: two half-lids, inside print, and the cross-layout tray that holds the cake." },
+  { src: "/brands/monas/04-brownie-box.jpg", title: "Brownie box", caption: "Tuck-style brownie box with a four-brownie awning window design." },
+  { src: "/brands/monas/05-brownie-box-side.jpg", title: "Brownie box, side", caption: "Gingham base band and a short promise: baked fresh, made with love." },
+  { src: "/brands/monas/06-brownie-box-open.jpg", title: "Brownie box, open", caption: "Hinged lid lifted to show the inside fit." },
+  { src: "/brands/monas/07-cupcake-box.jpg", title: "Cupcake window box", caption: "Four fresh cupcakes: a die-cut window under the awning shows the product." },
+  { src: "/brands/monas/08-cupcake-box-open.jpg", title: "Cupcake box, open", caption: "Lid open: the window panel, inside print and the space for the cupcake tray." },
+  { src: "/brands/monas/09-bento-box.jpg", title: "Bento box", caption: "A little lunch: a low, wide box with a window lid and the logo on the front." },
+  { src: "/brands/monas/10-bento-box-open.jpg", title: "Bento box, open", caption: "Lid lifted, showing the window cut-out and inside print." },
+  { src: "/brands/monas/11-dessert-cup.jpg", title: "Dessert cup", caption: "Striped cup with a dome lid and a candy-pink knob." },
+  { src: "/brands/monas/12-dessert-cup-back.jpg", title: "Dessert cup, side", caption: "Round logo label on the stripe; the cup is rolled from one flat fan-shaped blank." },
+  { src: "/brands/monas/13-paper-bag.jpg", title: "Paper bag", caption: "Gusseted bag with twisted-paper cords, bunting and the arched logo panel." },
+  { src: "/brands/monas/14-paper-bag-back.jpg", title: "Paper bag, back", caption: "Back panel: scattered berries and a thank-you seal." },
 ];
 
 export const BRAND_VIS: BrandVis[] = [
@@ -147,5 +165,18 @@ export const BRAND_VIS: BrandVis[] = [
     sketch: "/brands/aqarati/03-app-home.webp",
     deck: aqaratiDeck,
     deckPhone: true,
+  },
+  {
+    slug: "monas-baking", name: "Mona's Baking", order: "09",
+    tagline: "Homemade bakes, made with love",
+    sectorLine: "Bakery / packaging system",
+    concept: "A hand-inked pink shopfront (awning, gingham, scallops) wrapped around every box, cup and bag, so the packaging is the shop window.",
+    blurb: "A packaging system for a home bakery: handled cake box, brownie and cupcake boxes, bento, dessert cup and paper bag, each built as a live 3D fold-up with its flat dieline. Concept stage: sizes are design values, not yet reviewed by a manufacturer.",
+    accent: "#f08fab",
+    palette: ["#8B4A3A", "#F7B6C7", "#FFD9E4", "#FFF6F6", "#FDF1F1"],
+    board: "/brands/monas/board.jpg",
+    sketch: "/brands/monas/03-cake-box-open.jpg",
+    deck: monasDeck,
+    deckBg: "#fdf1f1",
   },
 ];
