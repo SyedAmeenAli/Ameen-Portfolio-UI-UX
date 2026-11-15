@@ -93,6 +93,48 @@ const monasDeck = [
 export const MONAS_RENDERS = monasDeck.filter((s) => !s.src.includes("dieline-"));
 export const MONAS_DIELINES = monasDeck.filter((s) => s.src.includes("dieline-"));
 
+const motifDeck = [
+  { src: "/brands/motif/01-family.jpg", title: "Four origins, one family", caption: "The four 250 g pouches side by side: Ethiopia cobalt, Colombia terracotta, Brazil sage, The Motif midnight. One bean-bloom shape, rotated and recoloured." },
+  { src: "/brands/motif/02-colour-story.jpg", title: "Colour story", caption: "Each origin owns one colour. The palette is the navigation: you can find your coffee from across a room." },
+  { src: "/brands/motif/03-sculptural.jpg", title: "Sculptural campaign", caption: "Pouches staged as objects on plinths for campaign use." },
+  { src: "/brands/motif/04-pouch-eth.jpg", title: "Pouch: Ethiopia", caption: "Stand-up pouch with side gussets, top seal and tear notch. Floral, citrus, jasmine." },
+  { src: "/brands/motif/05-pouch-col.jpg", title: "Pouch: Colombia", caption: "Caramel, red apple, cocoa. Same layout, new colour and a rotated pattern." },
+  { src: "/brands/motif/06-pouch-bra.jpg", title: "Pouch: Brazil", caption: "Chocolate, nuts, brown sugar. The pattern becomes a looping line." },
+  { src: "/brands/motif/07-pouch-hou.jpg", title: "Pouch: The Motif", caption: "The house blend in midnight, with the full repeating bloom." },
+  { src: "/brands/motif/08-pouch-back.jpg", title: "Pouch, back", caption: "Back panel: tasting story, origin table, brew recipe, barcode and QR placeholders." },
+  { src: "/brands/motif/09-pouch-macro.jpg", title: "Pouch, macro", caption: "Close-up of the print: matte film, spot gloss on the logo and pattern." },
+  { src: "/brands/motif/10-pouch-topseal.jpg", title: "Pouch, top seal", caption: "Heat-seal band, zip rail and tear notch." },
+  { src: "/brands/motif/11-tin-eth.jpg", title: "Tin: Ethiopia", caption: "500 g canister with a wrap label and a pressed lid." },
+  { src: "/brands/motif/12-tin-col.jpg", title: "Tin: Colombia", caption: "Same canister, terracotta." },
+  { src: "/brands/motif/13-tin-bra.jpg", title: "Tin: Brazil", caption: "Sage green, looping line pattern." },
+  { src: "/brands/motif/14-tin-hou.jpg", title: "Tin: The Motif", caption: "House blend tin in midnight." },
+  { src: "/brands/motif/15-tin-lid.jpg", title: "Tin lid", caption: "Lid artwork: the bloom as a single embossed mark." },
+  { src: "/brands/motif/16-box-closed.jpg", title: "Discovery box", caption: "Rigid two-piece box with a wrapped lid, holding four 100 g sample sachets." },
+  { src: "/brands/motif/17-box-open.jpg", title: "Discovery box, open", caption: "Lid off: sachets nested in a die-cut insert, with an origin card." },
+  { src: "/brands/motif/18-box-exploded.jpg", title: "Discovery box, exploded", caption: "Lid, insert card, sachets and base wrap pulled apart to show the build." },
+  { src: "/brands/motif/19-takeaway.jpg", title: "Takeaway set", caption: "Hot cup, sleeve, iced cup and pastry box in the same system." },
+  { src: "/brands/motif/20-unboxing.jpg", title: "Unboxing", caption: "Opening the discovery box on a table." },
+  { src: "/brands/motif/21-tote.jpg", title: "Tote", caption: "Cloth-simulated canvas tote with the pattern print." },
+  { src: "/brands/motif/22-apron.jpg", title: "Barista apron", caption: "Draped cloth simulation, logo on the chest." },
+  { src: "/brands/motif/23-cap.jpg", title: "Cap", caption: "Embroidered bloom on a six-panel cap." },
+  { src: "/brands/motif/24-merch.jpg", title: "Merch family", caption: "Tote, apron, cap and tee together." },
+  { src: "/brands/motif/25-drinkware.jpg", title: "Drinkware and pouch", caption: "Reusable cup, travel mug and accessory pouch." },
+  { src: "/brands/motif/26-tee.jpg", title: "T-shirt", caption: "Ghost-mannequin tee with the pattern print." },
+  { src: "/brands/motif/dieline-pouch-eth.jpg", title: "Print proof: Ethiopia pouch", caption: "Full artwork over the dieline: back, left gusset, front, right gusset. 390 x 210 mm with a 14 mm seal." },
+  { src: "/brands/motif/dieline-pouch-col.jpg", title: "Print proof: Colombia pouch", caption: "Same structure, terracotta artwork." },
+  { src: "/brands/motif/dieline-pouch-bra.jpg", title: "Print proof: Brazil pouch", caption: "Same structure, sage artwork." },
+  { src: "/brands/motif/dieline-pouch-hou.jpg", title: "Print proof: The Motif pouch", caption: "Same structure, midnight artwork." },
+  { src: "/brands/motif/dieline-pouch-blank.jpg", title: "Structural dieline: pouch", caption: "Cut, crease and gusset lines, seal area, spot UV window and tear notch, with dimensions." },
+  { src: "/brands/motif/dieline-tin-label.jpg", title: "Tin label wrap", caption: "Flat label for the 500 g canister." },
+  { src: "/brands/motif/dieline-box-base.jpg", title: "Discovery box: base wrap", caption: "Wrap paper for the rigid base with turn-ins." },
+  { src: "/brands/motif/dieline-box-lid.jpg", title: "Discovery box: lid wrap", caption: "Wrap paper for the lid. Board thickness and corner gap are assumptions until a rigid-box maker confirms." },
+  { src: "/brands/motif/dieline-cup.jpg", title: "Hot cup blank", caption: "12 oz cup fan from exact frustum geometry. Print pre-distortion is supplier-specific." },
+  { src: "/brands/motif/dieline-sleeve.jpg", title: "Cup sleeve", caption: "Flat sleeve blank." },
+];
+
+export const MOTIF_RENDERS = motifDeck.filter((s) => !s.src.includes("dieline-"));
+export const MOTIF_DIELINES = motifDeck.filter((s) => s.src.includes("dieline-"));
+
 export const BRAND_VIS: BrandVis[] = [
   {
     slug: "bluemeter", name: "Blue Meter", order: "01",

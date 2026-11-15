@@ -5,7 +5,7 @@ import { WorkBand } from "@/components/sections/work-band";
 import { SiteFooter } from "@/components/sections/site-footer";
 import { BrowserWindow } from "@/components/sections/browser-window";
 import { BrandDeck } from "@/components/sections/brand-deck";
-import { MONAS_RENDERS, MONAS_DIELINES } from "@/lib/brands";
+import { MONAS_RENDERS, MONAS_DIELINES, MOTIF_RENDERS, MOTIF_DIELINES } from "@/lib/brands";
 
 export const metadata: Metadata = { title: "Design Packaging" };
 
@@ -18,6 +18,14 @@ const CHAPTERS = [
   { label: "Cup", path: `${VIEWER}#cup` },
   { label: "Bag", path: `${VIEWER}#bag` },
   { label: "Stickers", path: `${VIEWER}#stickers` },
+];
+
+const MOTIF_SITE = "https://motif-design-theta.vercel.app";
+const MOTIF_CHAPTERS = [
+  { label: "Home", path: "/" },
+  { label: "Collection", path: "/collection.html" },
+  { label: "3D Explorer", path: "/explore.html" },
+  { label: "Case study", path: "/case-study.html" },
 ];
 
 const PRODUCTS = [
@@ -41,6 +49,7 @@ export default function PackagingPage() {
         <div className="mt-3 flex flex-wrap gap-x-8 gap-y-2 font-grotesk text-[11px] font-semibold uppercase tracking-[0.18em] text-bone/60">
           <span>Dieline / structure / print artwork</span>
           <span className="text-purple">Mona&apos;s Baking</span>
+          <span className="text-purple">Motif Coffee Works</span>
           <span>2026</span>
         </div>
         <p className="mt-6 max-w-[58ch] font-grotesk text-sm leading-relaxed text-bone/70">
@@ -51,12 +60,12 @@ export default function PackagingPage() {
       </section>
 
       <section className="border-b border-purple/40 bg-iron px-[3vw] py-[5vh]">
-        <p className="mb-4 font-grotesk text-[10px] font-semibold tracking-[0.3em] text-bone/50">[ 02 ] Live 3D, fold it yourself</p>
+        <p className="mb-4 font-grotesk text-[10px] font-semibold tracking-[0.3em] text-bone/50">[ 02 ] Mona&apos;s Baking: live 3D, fold it yourself</p>
         <BrowserWindow origin="" chapters={CHAPTERS} />
       </section>
 
       <section className="border-b border-purple/40">
-        <p className="px-[4vw] py-3 font-grotesk text-[10px] font-semibold tracking-[0.3em] text-bone/50">[ 03 ] The system, {PRODUCTS.length} products</p>
+        <p className="px-[4vw] py-3 font-grotesk text-[10px] font-semibold tracking-[0.3em] text-bone/50">[ 03 ] Mona&apos;s system, {PRODUCTS.length} products</p>
         <div className="grid gap-px border-t border-purple/25 bg-purple/20 sm:grid-cols-2 lg:grid-cols-3">
           {PRODUCTS.map(([n, s, d], i) => (
             <div key={n} className="flex flex-col gap-2 bg-void p-5">
@@ -69,11 +78,33 @@ export default function PackagingPage() {
         </div>
       </section>
 
-      <BrandDeck slides={MONAS_RENDERS} accent="#f08fab" bg="#fdf1f1" num="04" label="3D renders" />
-      <BrandDeck slides={MONAS_DIELINES} accent="#f08fab" bg="#ffffff" num="05" label="Dielines with print artwork" />
+      <BrandDeck slides={MONAS_RENDERS} accent="#f08fab" bg="#fdf1f1" num="04" label="Mona's: 3D renders" />
+      <BrandDeck slides={MONAS_DIELINES} accent="#f08fab" bg="#ffffff" num="05" label="Mona's: dielines with print artwork" />
+
+      <section className="border-b border-purple/40 px-[4vw] pb-[5vh] pt-[10vh]">
+        <p className="font-grotesk text-[10px] font-semibold tracking-[0.3em] text-bone/50">[ 06 ] Second system</p>
+        <h2 className="mt-2 font-condensed text-[clamp(3rem,13vw,10rem)] uppercase leading-[0.76]" style={{ color: "#3b5bff" }}>Motif Coffee Works</h2>
+        <div className="mt-3 flex flex-wrap gap-x-8 gap-y-2 font-grotesk text-[11px] font-semibold uppercase tracking-[0.18em] text-bone/60">
+          <span>Pouches / tins / discovery box / takeaway / merch</span>
+          <span>2026</span>
+        </div>
+        <p className="mt-6 max-w-[58ch] font-grotesk text-sm leading-relaxed text-bone/70">
+          A coffee brand built on one repeating shape, a four-petal bean-bloom. Four origins, four colours, one layout.
+          Rendered in Blender (cloth simulation for the fabric) and live in the browser below. Fictional concept: sizes
+          and board specs are assumptions until a supplier confirms.
+        </p>
+      </section>
+
+      <section className="border-b border-purple/40 bg-iron px-[3vw] py-[5vh]">
+        <p className="mb-4 font-grotesk text-[10px] font-semibold tracking-[0.3em] text-bone/50">[ 07 ] Motif: live site and 3D explorer</p>
+        <BrowserWindow origin={MOTIF_SITE} chapters={MOTIF_CHAPTERS} />
+      </section>
+
+      <BrandDeck slides={MOTIF_RENDERS} accent="#3b5bff" bg="#14141a" num="08" label="Motif: 3D renders" />
+      <BrandDeck slides={MOTIF_DIELINES} accent="#3b5bff" bg="#ffffff" num="09" label="Motif: print proofs and dielines" />
 
       <section className="border-b border-purple/40 px-[4vw] py-[12vh] text-center">
-        <p className="font-grotesk text-[10px] font-semibold tracking-[0.3em] text-bone/50">[ 06 ] Same brand, wider story</p>
+        <p className="font-grotesk text-[10px] font-semibold tracking-[0.3em] text-bone/50">[ 10 ] Same brand, wider story</p>
         <h2 className="mt-4 font-condensed text-[clamp(2rem,8vw,6rem)] uppercase leading-[0.85]" style={{ color: "#f08fab" }}>Homemade bakes,<br />made with love.</h2>
         <Link href="/work/branding/monas-baking" className="mt-8 inline-flex items-center gap-2 font-grotesk text-[11px] font-semibold uppercase tracking-[0.24em] text-yellow">
           Mona&apos;s Baking identity case study →
