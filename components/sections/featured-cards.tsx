@@ -40,7 +40,7 @@ export function FeaturedCards({ limit }: { limit?: number }) {
             <span className="pointer-events-none absolute inset-0 bg-purple/0 transition-colors duration-500 group-hover:bg-purple/15" />
           </div>
           <div className="flex flex-1 flex-col gap-2 p-3">
-            <h3 className="font-condensed text-lg uppercase leading-none transition-transform group-hover:translate-x-1" style={p.color ? { color: p.color } : undefined}>
+            <h3 className={`font-condensed text-lg uppercase leading-none transition-transform group-hover:translate-x-1${p.color ? " accent-name" : ""}`} style={p.color ? { color: p.color } : undefined}>
               {p.name}
             </h3>
             <div className="flex justify-between font-grotesk text-[9px] font-semibold uppercase tracking-[0.16em] text-bone/45">

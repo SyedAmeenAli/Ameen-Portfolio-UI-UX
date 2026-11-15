@@ -45,7 +45,7 @@ export function PosterRail({ posters }: { posters: Poster[] }) {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={p.src} alt={p.title} loading="lazy" className="h-full w-auto max-w-none object-contain" />
             <span className="absolute left-2 top-2 bg-bone px-1.5 py-0.5 font-grotesk text-[9px] font-bold text-void">{String(i + 1).padStart(2, "0")}</span>
-            <span className="absolute inset-x-0 bottom-0 flex items-center justify-between bg-gradient-to-t from-black/95 to-transparent p-3 pt-10 font-grotesk text-[9px] font-semibold uppercase tracking-[0.14em] text-bone opacity-0 transition-opacity group-hover:opacity-100">
+            <span className="absolute inset-x-0 bottom-0 flex items-center justify-between keep-dark bg-gradient-to-t from-black/95 to-transparent p-3 pt-10 font-grotesk text-[9px] font-semibold uppercase tracking-[0.14em] text-bone opacity-0 transition-opacity group-hover:opacity-100">
               <span className="text-bone">{p.title}</span>
               {p.meta && <span className="text-yellow">{p.meta}</span>}
             </span>

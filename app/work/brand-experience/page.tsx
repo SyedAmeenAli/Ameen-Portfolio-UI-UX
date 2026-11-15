@@ -35,7 +35,7 @@ export default function BrandExperiencePage() {
       <section className="border-b border-purple/40 px-[4vw] pb-[6vh] pt-[13vh]">
         <Link href="/work" className="-m-2 inline-block p-2 font-grotesk text-[10px] font-semibold uppercase tracking-[0.24em] text-bone/45 hover:text-yellow">← All work</Link>
         <p className="mt-6 font-grotesk text-[10px] font-semibold tracking-[0.3em] text-bone/50">[ 10 ] Brand experience</p>
-        <h1 className="mt-2 font-condensed text-[clamp(3.4rem,16vw,13rem)] uppercase leading-[0.74]" style={{ color: "#b98a64" }}>Aqarati</h1>
+        <h1 className="accent-name mt-2 font-condensed text-[clamp(3.4rem,16vw,13rem)] uppercase leading-[0.74]" style={{ color: "#b98a64" }}>Aqarati</h1>
         <div className="mt-3 flex flex-wrap gap-x-8 gap-y-2 font-grotesk text-[11px] font-semibold uppercase tracking-[0.18em] text-bone/60">
           <span>Brand guidelines / live website</span>
           <span className="text-purple">Trusted by design. Defined by place.</span>
@@ -111,7 +111,7 @@ export default function BrandExperiencePage() {
       {/* FINAL */}
       <section className="border-b border-purple/40 px-[4vw] py-[12vh] text-center">
         <p className="font-grotesk text-[10px] font-semibold tracking-[0.3em] text-bone/50">[ 06 ] Quietly distinctive</p>
-        <h2 className="mt-4 font-condensed text-[clamp(2rem,8vw,6rem)] uppercase leading-[0.85]" style={{ color: "#b98a64" }}>Trusted by design.<br />Defined by place.</h2>
+        <h2 className="accent-name mt-4 font-condensed text-[clamp(2rem,8vw,6rem)] uppercase leading-[0.85]" style={{ color: "#b98a64" }}>Trusted by design.<br />Defined by place.</h2>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-8">
           <a href={ORIGIN} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 font-grotesk text-[11px] font-semibold uppercase tracking-[0.24em] text-yellow">
             Open the full site ↗

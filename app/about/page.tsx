@@ -41,7 +41,7 @@ export default function AboutPage() {
           <div className="relative mt-4 border-2 border-purple/50 p-2" style={{ backgroundImage: "repeating-linear-gradient(0deg,rgba(176,0,255,0.08) 0 1px,transparent 1px 8px),repeating-linear-gradient(90deg,rgba(176,0,255,0.08) 0 1px,transparent 1px 8px)" }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/me/front.png" alt="Ameen, pixelated" className="mx-auto max-h-[62vh] w-auto object-contain" style={{ imageRendering: "pixelated" }} />
-            <span className="absolute -right-3 -top-3 bg-yellow px-2 py-0.5 font-grotesk text-[9px] font-bold text-black">01</span>
+            <span className="absolute -right-3 -top-3 bg-yellow px-2 py-0.5 font-grotesk text-[9px] font-bold text-void">01</span>
           </div>
           <p className="mt-3 font-grotesk text-[9px] font-semibold uppercase tracking-[0.2em] text-bone/45">
             The face stays a mark, not a photo.

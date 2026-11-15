@@ -69,7 +69,7 @@ export function PackagingBrands() {
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={c.img} alt="" className="h-32 w-32 shrink-0 object-cover sm:h-36 sm:w-36" />
                 <span className="flex flex-1 flex-col justify-center gap-1.5 p-4">
-                  <span className="font-condensed text-2xl uppercase leading-none sm:text-3xl" style={{ color: c.accent }}>{c.name}</span>
+                  <span className="accent-name font-condensed text-2xl uppercase leading-none sm:text-3xl" style={{ color: c.accent }}>{c.name}</span>
                   <span className="font-grotesk text-[11px] leading-snug text-bone/65">{c.line}</span>
                   <span className="font-grotesk text-[9px] font-semibold uppercase tracking-[0.2em] text-bone/45">{c.meta}</span>
                   <span className="mt-1 font-grotesk text-[10px] font-semibold uppercase tracking-[0.24em] text-yellow">{on ? "Close −" : "Open +"}</span>
@@ -96,7 +96,7 @@ export function PackagingBrands() {
             <div key={n} className="flex flex-col gap-2 bg-void p-5">
               <span className="font-condensed text-3xl leading-none text-purple">{String(i + 1).padStart(2, "0")}</span>
               <span className="font-condensed text-xl uppercase leading-none text-bone">{n}</span>
-              <span className="font-grotesk text-[10px] font-semibold uppercase tracking-[0.16em]" style={{ color: "#f08fab" }}>{s}</span>
+              <span className="accent-name font-grotesk text-[10px] font-semibold uppercase tracking-[0.16em]" style={{ color: "#f08fab" }}>{s}</span>
               <span className="font-grotesk text-[11px] leading-snug text-bone/60">{d}</span>
             </div>
           ))}
@@ -118,7 +118,7 @@ export function PackagingBrands() {
         <>
       <section className="border-b border-purple/40 px-[4vw] pb-[5vh] pt-[10vh]">
         <p className="font-grotesk text-[10px] font-semibold tracking-[0.3em] text-bone/50">[ 03 ] The system</p>
-        <h2 className="mt-2 font-condensed text-[clamp(3rem,13vw,10rem)] uppercase leading-[0.76]" style={{ color: "#3b5bff" }}>Motif Coffee Works</h2>
+        <h2 className="accent-name mt-2 font-condensed text-[clamp(3rem,13vw,10rem)] uppercase leading-[0.76]" style={{ color: "#3b5bff" }}>Motif Coffee Works</h2>
         <div className="mt-3 flex flex-wrap gap-x-8 gap-y-2 font-grotesk text-[11px] font-semibold uppercase tracking-[0.18em] text-bone/60">
           <span>Pouches / tins / discovery box / takeaway / merch</span>
           <span>2026</span>

@@ -42,7 +42,7 @@ export function BrowserWindow({ origin, chapters }: { origin: string; chapters: 
               onClick={() => setSize(s)}
               aria-pressed={size === s}
               className={`border px-3 py-2 transition-colors ${
-                size === s ? "border-purple bg-purple text-bone" : "border-purple/40 text-bone/60 hover:border-purple hover:text-bone"
+                size === s ? "border-purple bg-purple text-bone [:root[data-theme=light]_&]:text-white" : "border-purple/40 text-bone/60 hover:border-purple hover:text-bone"
               }`}
             >
               {s}

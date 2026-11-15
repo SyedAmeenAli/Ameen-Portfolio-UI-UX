@@ -29,7 +29,7 @@ export default function BrandIdentityPage() {
             <div className="flex flex-col justify-between gap-6 px-[3vw] py-[7vh]">
               <div>
                 <span className="font-grotesk text-[11px] font-semibold text-purple">{b.order}</span>
-                <h2 className="mt-2 font-condensed text-[clamp(2.6rem,7vw,5rem)] uppercase leading-none" style={{ color: b.accent }}>{b.name}</h2>
+                <h2 className="accent-name mt-2 font-condensed text-[clamp(2.6rem,7vw,5rem)] uppercase leading-none" style={{ color: b.accent }}>{b.name}</h2>
                 <p className="mt-2 font-grotesk text-[11px] font-semibold uppercase tracking-[0.18em] text-bone/55">{b.sectorLine}</p>
                 <p className="mt-4 max-w-[40ch] font-grotesk text-sm leading-relaxed text-bone/70">{b.concept}</p>
               </div>

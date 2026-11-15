@@ -15,7 +15,7 @@ export default function PackagingPage() {
       <section className="border-b border-purple/40 px-[4vw] pb-[6vh] pt-[13vh]">
         <Link href="/work" className="-m-2 inline-block p-2 font-grotesk text-[10px] font-semibold uppercase tracking-[0.24em] text-bone/45 hover:text-yellow">← All work</Link>
         <p className="mt-6 font-grotesk text-[10px] font-semibold tracking-[0.3em] text-bone/50">[ 11 ] Design packaging</p>
-        <h1 className="mt-2 font-condensed text-[clamp(3.4rem,15vw,12rem)] uppercase leading-[0.74]" style={{ color: "#f08fab" }}>Packaging</h1>
+        <h1 className="accent-name mt-2 font-condensed text-[clamp(3.4rem,15vw,12rem)] uppercase leading-[0.74]" style={{ color: "#f08fab" }}>Packaging</h1>
         <div className="mt-3 flex flex-wrap gap-x-8 gap-y-2 font-grotesk text-[11px] font-semibold uppercase tracking-[0.18em] text-bone/60">
           <span>Dieline / structure / print artwork</span>
           <span className="text-purple">Mona&apos;s Baking</span>

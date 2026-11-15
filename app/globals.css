@@ -53,11 +53,11 @@
   --color-line: rgba(128, 0, 128, 0.22);
   --color-line-soft: rgba(128, 0, 128, 0.10);
 
-  --color-yellow: #b8860b;
-  --color-gold: #b8860b;
+  --color-yellow: #8a6300;
+  --color-gold: #8a6300;
   --color-purple: #800080;
   --color-violet: #800080;
-  --color-red: #b8860b;
+  --color-red: #8a6300;
   --color-ember: #800080;
   --color-concrete: #555555;
   --color-concrete-dim: #6b6b6b;
@@ -210,3 +210,15 @@ h1, h2, h3 { font-family: var(--font-condensed); letter-spacing: 0.005em; line-h
     transition-duration: 0.001ms !important;
   }
 }
+
+/* Light theme: surfaces that stay dark by design (image overlays) keep the dark token set,
+   so their text remains readable. Brand-coloured names get darkened on white. */
+:root[data-theme="light"] .keep-dark {
+  --color-bone: #f2ebdd;
+  --color-void: #050505;
+  --color-yellow: #ffd900;
+  --color-purple: #b000ff;
+  --color-concrete: #7a7684;
+  color: var(--color-bone);
+}
+:root[data-theme="light"] .accent-name { filter: brightness(0.62) saturate(1.15); }

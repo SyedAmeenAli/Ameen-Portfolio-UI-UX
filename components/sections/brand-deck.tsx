@@ -42,7 +42,7 @@ export function BrandDeck({ slides, phone, accent, bg, label, num = "07" }: { sl
                 />
               </span>
               <span className="w-full">
-                <span className="flex items-center justify-between font-grotesk text-[10px] font-bold uppercase tracking-[0.14em]" style={{ color: accent ?? "var(--color-yellow)" }}>
+                <span className="accent-name flex items-center justify-between font-grotesk text-[10px] font-bold uppercase tracking-[0.14em]" style={{ color: accent ?? "var(--color-yellow)" }}>
                   {s.title}
                   <span className="text-bone/35">{String(i + 1).padStart(2, "0")}</span>
                 </span>
@@ -71,13 +71,13 @@ export function BrandDeck({ slides, phone, accent, bg, label, num = "07" }: { sl
               />
               {s.caption ? (
                 <span className="block bg-void p-3 text-left font-grotesk">
-                  <span className="flex items-center justify-between text-[10px] font-bold uppercase tracking-[0.14em]" style={{ color: accent ?? "var(--color-yellow)" }}>
+                  <span className="accent-name flex items-center justify-between text-[10px] font-bold uppercase tracking-[0.14em]" style={{ color: accent ?? "var(--color-yellow)" }}>
                     {s.title}<span className="text-bone/35">{String(i + 1).padStart(2, "0")}</span>
                   </span>
                   <span className="mt-1 block text-[10.5px] leading-snug text-bone/55">{s.caption}</span>
                 </span>
               ) : (
-                <span className="pointer-events-none absolute inset-x-0 bottom-0 flex items-center justify-between bg-gradient-to-t from-black/85 to-transparent p-3 pt-8 font-grotesk text-[9px] font-semibold uppercase tracking-[0.16em] text-bone opacity-0 transition-opacity group-hover:opacity-100">
+                <span className="pointer-events-none absolute inset-x-0 bottom-0 flex items-center justify-between keep-dark bg-gradient-to-t from-black/85 to-transparent p-3 pt-8 font-grotesk text-[9px] font-semibold uppercase tracking-[0.16em] text-bone opacity-0 transition-opacity group-hover:opacity-100">
                   <span>{s.title}</span>
                   <span className="text-yellow">{String(i + 1).padStart(2, "0")} / {slides.length}</span>
                 </span>

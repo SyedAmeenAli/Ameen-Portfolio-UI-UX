@@ -38,8 +38,8 @@ export default function ColoursPage() {
         <h2 className="font-condensed text-[clamp(3rem,14vw,11rem)] uppercase leading-none text-bone">60 / 30 / 10</h2>
         <div className="mt-10 grid gap-1 sm:grid-cols-[6fr_3fr_1fr]">
           <div className="flex h-40 items-end bg-ink p-4 font-mono text-[10px] uppercase tracking-[0.2em] text-bone/60" style={{ outline: "1px solid rgba(236,233,225,0.15)" }}>Dominant — background</div>
-          <div className="flex h-40 items-end bg-purple p-4 font-mono text-[10px] uppercase tracking-[0.2em] text-bone">Support — surfaces</div>
-          <div className="flex h-40 items-end bg-yellow p-4 font-mono text-[10px] uppercase tracking-[0.2em] text-bone">Accent</div>
+          <div className="flex h-40 items-end bg-purple p-4 font-mono text-[10px] uppercase tracking-[0.2em] text-bone [:root[data-theme=light]_&]:text-white">Support — surfaces</div>
+          <div className="flex h-40 items-end bg-yellow p-4 font-mono text-[10px] uppercase tracking-[0.2em] text-black">Accent</div>
         </div>
         <p className="mt-6 max-w-[44ch] text-sm text-bone/55">
           Most of the field carries the mood. A third structures it. A sliver does the shouting.

@@ -48,7 +48,7 @@ export default function ContactPage() {
             </dl>
             <a
               href={`mailto:${CONTACT}`}
-              className="inline-flex items-center justify-between border border-bone/30 px-6 py-4 font-grotesk text-[11px] font-semibold uppercase tracking-[0.25em] text-bone transition-colors hover:bg-yellow hover:text-black"
+              className="inline-flex items-center justify-between border border-bone/30 px-6 py-4 font-grotesk text-[11px] font-semibold uppercase tracking-[0.25em] text-bone transition-colors hover:bg-yellow hover:text-void"
             >
               Start a conversation <span className="text-2xl leading-none text-yellow">↗</span>
             </a>

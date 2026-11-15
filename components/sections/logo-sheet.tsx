@@ -30,7 +30,7 @@ export function LogoSheet() {
           <button
             key={f}
             onClick={() => setFilter(f)}
-            className={`px-2 py-0.5 transition-colors ${f === filter ? "bg-yellow text-black" : "text-bone/55 hover:text-bone"}`}
+            className={`px-2 py-0.5 transition-colors ${f === filter ? "bg-yellow text-void" : "text-bone/55 hover:text-bone"}`}
           >
             {f}
           </button>
